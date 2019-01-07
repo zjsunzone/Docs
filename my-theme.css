@@ -1,4 +1,4 @@
-﻿:root {
+:root {
     /* --base-font-size: 14px; */
     /* --theme-color   : purple; */
     --cover-color :red;
@@ -7,7 +7,7 @@
     --sidebar-nav-link-background-color--hover    : red;
     --cus-color: #0B93E9;
     --sidebar-nav-pagelink-background-image             : url('./assets/down.svg') no-repeat right center;
-    --sidebar-nav-pagelink-background-image--active     : url('./assets/up.svg') no-repeat 209px 17px;
+    --sidebar-nav-pagelink-background-image--active     : url('./assets/up.svg') no-repeat 223px 17px;
     
   }
 
@@ -143,13 +143,21 @@
 .sidebar-nav li.active>a[href^="#/"]:not([href*="?id="]):not(:only-child){
     background: var(--sidebar-nav-pagelink-background-image--active);
 }
-.anchor::before{
+
+.sidebar-nav li p>a[href^="#/"]:not([href*="?id="]):only-child{
+    background: var(--sidebar-nav-pagelink-background-image);
+}
+.sidebar-nav li p.active>a[href^="#/"]:not([href*="?id="]):not(:only-child){
+    background: var(--sidebar-nav-pagelink-background-image--active);
+}
+
+/* .anchor::before{
     position: static;
     display:block;
     content:'';
     width:100%;
     height:60px;
-}
+} */
 .markdown-section h2{
     margin-top:-45px;
 }
@@ -161,4 +169,10 @@
 }
 .sidebar-toggle{
     width: 56px
+}
+.markdown-section pre, .markdown-section pre > code {
+    font-size: initial;
+}
+.markdown-section pre{
+    padding: 1em
 }
