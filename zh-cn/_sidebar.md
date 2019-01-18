@@ -1,6 +1,6 @@
 - 基础
 - 
-- [介绍](zh-cn/README)
+- [介绍](zh-cn/[Chinese-Simplified]-介绍)
 - [白皮书](zh-cn/[Chinese-Simplified]-白皮书)
 - [快速指南](zh-cn/[Chinese-Simplified]-快速指南)
 - [安装指南](zh-cn/[Chinese-Simplified]-安装指南)
@@ -21,16 +21,15 @@
 - SDKs
 - 
 - [Javascript SDK](zh-cn/[Chinese-Simplified]-JS-SDK)
-- [Java SDK](zh-cn/[Chinese-Simplified]-Java-SDK)
+- [Java&Android SDK](zh-cn/[Chinese-Simplified]-Java-SDK)
 - [Python SDK](zh-cn/[Chinese-Simplified]Python-SDK)
-- [Android SDK](zh-cn/[Chinese-Simplified]Android-SDK)
-- [iOS SDK](zh-cn/[Chinese-Simplified]iOS-SDK)
+- [iOS SDK](zh-cn/[Chinese-Simplified]-Swift-SDK)
 - 
 - 技术文档
 - 
-- [Webassebly](zh-cn/[Chinese-Simplified]Webassebly)
-- [CBFT](zh-cn/[Chinese-Simplified]CBFT)
-- [PPoS](zh-cn/[Chinese-Simplified]PPoS)
+- [Webassebly](zh-cn/_PlatON-WebAssembly)
+- [CBFT](zh-cn/concurrent-bft/_Concurrent-BFT)
+- [PPoS](zh-cn/platon-ppos/_Probabilistic-POS)
 - [多方安全计算](zh-cn/[Chinese-Simplified]多方安全计算)
 - [可验证计算](zh-cn/[Chinese-Simplified]可验证计算)
 - [覆盖网络](zh-cn/[Chinese-Simplified]覆盖网络)

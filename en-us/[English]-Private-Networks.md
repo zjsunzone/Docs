@@ -1,60 +1,15 @@
-﻿
+
 Sometimes you might not need to connect to the live public network, you can instead choose to create your own private testnet. This is very useful if you don't need to test external contracts and want just to test the technology, because you won't have to compete with other minters and will easily generate a lot of test energon play around.
 
 We assume you are able to install `platon` following the [Installation Instructions](en-us/[English]-Installation-Instructions).
 
-We assumes that the working directory is `~/platon-node` on Ubuntu and is `D:\platon-node` on Windows. Please ensure that the platon program generated in Installation Instructions is copied to the working directory. 
+We assumes that the working directory is `~/platon-node` on Ubuntu and is `D:\platon-node` on Windows. 
 
 Please note: the following operations are performed in the working directory.
 
 ## Single node environment
 
-1. **Download the public and private key pair generation tool `ethkey` for the corresponding platform [here](https://download.platon.network/ethkey-windows-amd64.exe).**
-
-
-
-
-
-
-
-
-
-
-
-
-
-- Modify the file name after downloading to `D:\platon-node` through the browser on Windows
-
-
-```
-D:\platon-node> move ethkey-windows-amd64.exe ethkey.exe
-
-
-```
-
-
-
-
-
-
-
-
-
-
-
-
-
-- Ubuntu command line
-
-
-```
-$ wget https://download.platon.network/ethkey-linux-amd64
-$ mv ethkey-linux-amd64 ethkey
-
-
-```
-
-2. **Run the public and private key pair generation tool `ethkey` to generate a node ID and a node private key.**
+1. **Run the public and private key pair generation tool `ethkey` to generate a node ID and a node private key.**
 
 
 
@@ -106,7 +61,7 @@ PublicKey : 8917c748513c23db46d23f531cc083d2f6001b4cc2396eb8412d73a3e4450ffc5f52
 ```
 PublicKey is the ***node ID***, and PrivateKey its corresponding ***node private key***.
 
-3. **Generate a node coinbase account. For testing, you can pre-fund the account in the genesis block.**
+2. **Generate a node coinbase account. For testing, you can pre-fund the account in the genesis block.**
 
 
 
@@ -163,7 +118,7 @@ Address: {566c274db7ac6d38da2b075b4ae41f4a5c481d21}
 ```
 Be sure to note the generated **Address**.
 
-4. **Generate the genesis configuration file.**
+3. **Generate the genesis configuration file.**
 
 Download `platon.json` from [here](https://download.platon.network/platon.json) to the working directory. Change `your-node-pubkey` into the previously generated node ID to make the local common nodes participate in the consensus. Change `your-account-address` into the account generated in step 3. The contents of platon.json are as follows:
 
@@ -171,7 +126,7 @@ Download `platon.json` from [here](https://download.platon.network/platon.json) 
 ```
 {
     "config": {
-    "chainId": 300,
+    "chainId": 100,
     "homesteadBlock": 1,
     "eip150Block": 2,
     "eip150Hash": "0x0000000000000000000000000000000000000000000000000000000000000000",
@@ -183,10 +138,10 @@ Download `platon.json` from [here](https://download.platon.network/platon.json) 
     }
   },
   "nonce": "0x0",
-  "timestamp": "0x5c074288",
-  "extraData": "0x00",
-  "gasLimit": "0x47b760",
-  "difficulty": "0x40000",
+  "timestamp": "0x5bc94a8a",
+  "extraData": "0x00000000000000000000000000000000000000000000000000000000000000007a9ff113afc63a33d11de571a679f914983a085d1e08972dcb449a02319c1661b931b1962bce02dfc6583885512702952b57bba0e307d4ad66668c5fc48a45dfeed85a7e41f0bdee047063066eae02910000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+  "gasLimit": "0x99947b760",
+  "difficulty": "0x1",
   "mixHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
   "coinbase": "0x0000000000000000000000000000000000000000",
   "alloc": {
@@ -202,7 +157,7 @@ Download `platon.json` from [here](https://download.platon.network/platon.json) 
 
 ```
 
-5. **Configure the private key file of the node.**
+4. **Configure the private key file of the node.**
 
 Please note: the echo command line argument is the node private key and needs to be replaced with the node private key generated in step 2.
 
@@ -254,7 +209,7 @@ $ cat ./data/platon/nodekey
 
 ```
 
-6. **Execute the following command to initialize the genesis state.**
+5. **Execute the following command to initialize the genesis state.**
 
 
 
@@ -306,7 +261,7 @@ Successfully wrote genesis state
 
 ```
 
-7. **Start nodes**
+6. **Start nodes**
 
 
 
@@ -365,10 +320,10 @@ $ ./platon --identity "platon" --datadir ./data --port 16789 --rpcaddr 0.0.0.0 -
 
 At this time, log records containing the words "blockNumber" and "growth" appearing in the standard output **indicate that consensus was reached, the chain started successfully, and that blocks are being successfully created**.
 
-We have now built a Platon private network containing a single node with the network name `platon` and a network `ID` of `300`.
+We have now built a Platon private network containing a single node with the network name `platon` and a network `ID` of `100`.
 You can perform any operation on it, just like on a single node in a public network.
 
-8. **Running in the background**
+7. **Running in the background**
 
 So far we have let the `platon` process run in the foreground, which locks the terminal, and if we quit the terminal the program will exit.
 Background running is not supported on Windows.

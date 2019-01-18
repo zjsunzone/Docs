@@ -1,6 +1,6 @@
 - Basics
 - 
-- [Introduction](en-us/README)
+- [Introduction](en-us/[English]-Introduction)
 - [White Paper](en-us/[English]-Whitepaper)
 - [Getting Started](en-us/[English]-Getting-Started)
 - [Installation Instructions](en-us/[English]-Installation-Instructions)
@@ -21,10 +21,9 @@
 - Interact with PlatON
 - 
 - [Javascript SDK](en-us/[English]-JS-SDK)
-- [Java SDK](en-us/[English]-Java-SDK)
+- [Java&Android SDK](en-us/[English]-Java-SDK)
 - [Python SDK](en-us/[English]Python-SDK)
-- [Android SDK](en-us/[English]Android-SDK)
-- [iOS SDK](en-us/[English]iOS-SDK)
+- [iOS SDK](en-us/[English]-Swift-SDK)
 - 
 - Technologies
 - 
