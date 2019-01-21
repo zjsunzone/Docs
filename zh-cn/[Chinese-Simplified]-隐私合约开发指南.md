@@ -294,7 +294,7 @@ digest:
 
 下面简要说明在 Ubuntu 上发布编译生成的 Wasm 合约 `YaoMillionairesContract`，完成隐私合约发布流程。
 
-1. 下载 Ubuntu 版本 [Wasm合约开发包 ]() 并解压到 ${pWasm} 。若已下载，跳至下一步。
+1. 下载 Ubuntu 版本 [Wasm合约开发包](https://download.platon.network/0.3/pwasm-linux-amd64-0.3.0.tar.gz) 并解压到 ${pWasm} 。若已下载，跳至下一步。
 
 2. 进入 ${pWasm} 目录，执行以下命令生成Wasm合约项目 `YaoProblem`
 
@@ -316,8 +316,6 @@ $ make
 
 
 ```
-
-3. 下载 Ubuntu 版本 [ctool 编译工具](https://download.platon.network/ctool-linux-amd64) ，拷贝到 `${pWasm}/build/user/YaoProblem` 目录，重命名为 ctool 。若目录中已存在 ctool 工具，跳至下一步。
 
 4. 创建 `config.json` 配置文件，配置当前合约发布的信息：
 

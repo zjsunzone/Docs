@@ -25,7 +25,9 @@ Windows合约开发环境需要符合以下条件：
 
 ### 下载pWASM开发工具包
 
-`window` 版本pWASM开发工具包请从[这里](https://download.platon.network/pWASM.zip)下载。
+`Window` 版本pWASM开发工具: [https://download.platon.network/0.3/pwasm-windows-x86_64-0.3.0.zip](https://download.platon.network/0.3/pwasm-windows-x86_64-0.3.0.zip)
+
+`Linux` 版本pWASM开发工具: [https://download.platon.network/0.3/pwasm-linux-amd64-0.3.0.tar.gz](https://download.platon.network/0.3/pwasm-linux-amd64-0.3.0.tar.gz)
 
 pWASM开发工具包为一个压缩包，下载完成后解压到工作目录，如`D:\`（以下关于合约环境搭建的操作均在该目录下完成）。
 
@@ -33,7 +35,7 @@ pWASM开发工具包为一个压缩包，下载完成后解压到工作目录，
 
 
 ```shell
-$ wget https://download.platon.network/pWASM-linux.tar.gz
+$ wget https://download.platon.network/0.3/pwasm-linux-amd64-0.3.0.tar.gz
 $ tar -zxvf pWASM-linux.tar.gz
 $ mv pWASM-linux pWASM
 
@@ -44,6 +46,8 @@ $ mv pWASM-linux pWASM
 
 
 ```txt
+├── bin
+│   └── ctool
 ├── boost
 ├── CMakeModules
 ├── external
@@ -61,6 +65,7 @@ $ mv pWASM-linux pWASM
 ```
 
 部分文件夹功能概述：
+* `ctool`  用于发布调用`wasm`合约
 * `external` 用于存放编译过程中需要的二进制包，主要包含`abi`与`bin`文件的生成工具链
 * `user` 能量合约范例，仅供参考。同时也用于存放脚本自动生成合约模板文件
 * `platonlib` PlatON 专供的合约与区块链交互的库。具体参考：[Wasm合约内置库](https://pwasmdoc.platon.network/)
@@ -271,11 +276,6 @@ json-compilation-database: Error while opening JSON database: No such file or di
 ## 合约发布及测试
 
 ### 合约发布测试工具
-
-PlatON 平台提供了合约测试工具`ctool` ：
-
-- Windows版本 [点击下载](https://download.platon.network/ctool-windows-amd64.exe)
-- Linux版本 [点击下载](https://download.platon.network/ctool-linux-amd64)
 
 **ctool工具用法**：
 

@@ -11,7 +11,7 @@ We assumes that the working directory is `~/platon-node` on Ubuntu and is `D:\pl
 ### Connect to the Baleyworld testnet
 
 The Baleyworld TestNet is live. There are two ways to connect to it:
-* download the [Samurai Wallet](https://download.platon.network/Samurai-windows-amd64.exe) client and follow the [instructions here](en-us/[English]-Samurai-Wallet) to install and connect to TestNet.
+* download the [Samurai Wallet](https://download.platon.network/0.3/samurai-windows-x86_64-0.3.0.zip) client and follow the [instructions here](en-us/[English]-Samurai-Wallet) to install and connect to TestNet.
 * Use interactive command line tools to install and connect [learn more](https://github.com/PlatONnetwork/wiki/wiki/_javascript-console)
 
 ### Building a private network

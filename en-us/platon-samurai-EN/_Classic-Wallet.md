@@ -21,6 +21,7 @@
 
 
 ## <a name="import_wallet"></a>How to import & restore a wallet
+
  After replacing the computer or re-installing the system, it is mandatory to import or restore the existing wallet to the new installed client, as following: 
 
 1.On client’s [Wallet] home page, click [Import Wallet], as below:
@@ -48,6 +49,7 @@ Click [Mnemonic Phrase] tap, input the wallet’s mnemonic phrase, set new [wall
 
 
 ## <a name="send_recv_atp"></a>How to send and receive funds
+
 - **Send Energon**
 
 1.On the home page of [Wallet], select a  Wallet , The client will navigate to the [Wallet Detail] page, Click [Send], the client switches to the page as shown below:
@@ -73,14 +75,16 @@ The page display the wallet’s [QR Code of Address], [Address], provide them to
 ## <a name="why_is_cleard"></a>Why is the test Energon in the wallet cleard
 
 During your use, if you find that your wallet's test Energon has been cleared for no reason, don't be nervous. Samurai is still in the beta. When its version is greatly updated, the data of test chain will be removed. This means that your wallet test Energon will also be cleared. We apologize for the inconvenience and bad experience of using it.
+
 But it also indicate that Samurai has taken another big step forward. Samurai continues to iterate and optimize, and is committed to providing you with more basic and rich application functions. We hope to get your continuous attention and experience.
+
 In order to experience the function of the latest version, you need:
 
 1.Uninstall the Samurai client, then delete the saving folder of your wallets, as shown in the following figure:
 
 ![Image text](image/Keystore_address.png)
 
-2.Click [here](https://download.platon.network/Samurai-windows-amd64.exe) to download the latest installer and reinstall it.
+2.Click [here](https://download.platon.network/0.3/samurai-windows-x86_64-0.3.0.zip) to download the latest installer and reinstall it.
 
 3.After Installation, re-create your wallet and re-apply for the test Energon through [test Energon application channel](https://developer.platon.network/#/).
 

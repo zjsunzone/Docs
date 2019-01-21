@@ -4,7 +4,6 @@ Follow the appropriate link below to find installation instructions for your pla
 + Installation Instructions for Linux/Unix
   - [Ubuntu](#Installing-on-Ubuntu)
 + [Installation Instructions for Windows](#Installing-on-Windows)
-+ [Running in Docker Environment](#Running-in-Docker-Environment)
  
 ## Installing on Ubuntu
 
@@ -19,17 +18,15 @@ There are four ways of installation on Ubuntu:
 
 ### Binary package based installation
 
-The official binary package file download link for ubuntu is：[https://download.platon.network/0.3/platon-ubuntu-amd64-0.3.0.tar.gz](https://download.platon.network/0.3/platon-ubuntu-amd64-0.3.0.tar.gz)
+The official binary package file download link for ubuntu is: [https://download.platon.network/platon-ubuntu-amd64-bin.tar.gz](https://download.platon.network/platon-ubuntu-amd64-bin.tar.gz)
 
 ```bash
-$ wget https://download.platon.network/0.3/platon-ubuntu-amd64-0.3.0.tar.gz
-$ tar -xvzf platon-ubuntu-amd64-0.3.0.tar.gz
+$ wget https://download.platon.network/platon-ubuntu-amd64-bin.tar.gz
+$ tar -xvzf platon-ubuntu-amd64-bin.tar.gz
 ```
-
 The extracted files should be as following:
 - `platon` client executable file
 - `ethkey` key generator
-- `ctool`  wasm contract deploy kit
 
 ### PPA based installation
 
@@ -52,10 +49,10 @@ Download the `.deb` package and then install.
 
 ```bash
 # download
-$ wget https://download.platon.network/0.3/platon-ubuntu-amd64-0.3.0.deb
+$ wget https://download.platon.network/platon-all-ubuntu-amd64.deb
 
 # install
-$ sudo dpkg -i platon-ubuntu-amd64-0.3.0.deb
+$ sudo dpkg -i platon-all-ubuntu-amd64.deb
 ```
 
 After the installation, the binaries and other components of the package should be installed to `/usr/bin/`
@@ -114,7 +111,7 @@ $ cd PlatON-Go
 $ find ./build -name "*.sh" -exec chmod u+x {} \;
 $ make all-with-mpc
 ```
-After compilation, the `platon`、 `ethkey` and `ctool` executable files will be generated in the `PlatON-Go/build/bin` directory，and then copy these executable files to your own working directory.
+After compilation, the `platon`and `ethkey` executable files will be generated in the `PlatON-Go/build/bin` directory.
 
 >**Hint**：
 >MPC is secure multi-party computing feature supported by the Platon platform for privacy calculations. **Only Ubuntu supported now**. For more information about MPC, please refer [Reference](https://github.com/PlatONnetwork/wiki/wiki/%5BEnglish%5D-PlatON-Privacy-Contract-Guide)
@@ -129,21 +126,18 @@ The Windows environment supports three installation modes:
 
 ### Binary package based installation
 
-Windows version of the Platon binary download link is: [https://download.platon.network/0.3/platon-windows-x86_64-0.3.0.zip](https://download.platon.network/0.3/platon-windows-x86_64-0.3.0.zip) download. No installation is required after downloading, and it can be used directly by decompression.
+Windows version of the Platon binary download link is: [https://download.platon.network/platon-windows-amd64-bin.zip](https://download.platon.network/platon-windows-amd64-bin.zip) download. No installation is required after downloading, and it can be used directly by decompression.
 
 The extracted files should be as following:
 - `platon` client executable file
 - `ethkey` key generator
-- `ctool`  wasm contract deploy kit
 
 ### Installation via Chocolatey
-
-We use the Chocolatey package manager to install the required build tools. If you don't have Chocolatey, follow the instructions on [https://chocolatey.org](https://chocolatey.org).
 
 Start PowerShell as an administrator and install Platon using the choco command:
 
 ```
-choco install platonnetwork --version=0.3.0
+choco install platon --version=0.2.0
 ```
 
 You will find `platon`,`ethkey` in the default installation path `C:\ProgramData\chocolatey\bin`.
@@ -157,8 +151,11 @@ The Windows build environment requires:
 
 > Note: You can install the above compilation environment by yourself. Before compiling the `Platon` source code, make sure that the above environment works properly. The `chocolatey` installation can also be used, referring to the following ways:
 
+#### 1. Install chocolatey 
 
-#### 1. Install compilation environment
+ We use the Chocolatey package manager to install the required build tools. If you don't have Chocolatey, follow the instructions on [Chocolatey](https://chocolatey.org).
+
+#### 2. Install compilation environment
 
 Start PowerShell as an administrator and install Platon using the choco command:
 
@@ -173,7 +170,7 @@ choco install mingw
 
 Most of the software installed with the Chocolatey package manager use the default installation path, although some publishers override the default settings in their software. Installing these packages will modify the PATH environment variable. The final installation path can be found in PATH. 
 
-#### 2. Get `PlatON` source code
+#### 3. Get `PlatON` source code
 
 Create `src/github.com/PlatONnetwork/` and `bin` directories under the current `%GOPATH%` directory and clone the source code of `PlatON-GO` under the `PlatONnetwork` directory:
 
@@ -181,7 +178,7 @@ Create `src/github.com/PlatONnetwork/` and `bin` directories under the current `
 git clone https://github.com/PlatONnetwork/PlatON-Go.git
 ```
 
-#### 3. Compile
+#### 4. Compile
 
 Execute the compilation command under the source directory `PlatON-GO`, as follows:
 
@@ -189,73 +186,77 @@ Execute the compilation command under the source directory `PlatON-GO`, as follo
 go run build/ci.go install ./cmd/platon
 ```
 
-After compilation, the `platon`、 `ethkey` and `ctool` executable files will be generated in the `PlatON-Go/build/bin` directory，and then copy these executable files to your own working directory.
+After compilation, the `platon` and `ethkey` executable files will be generated in the `PlatON-Go/build/bin` directory.
 
 
-## Running-in-Docker-Environment
 
-#### Install docker
+## Docker环境运行
 
-The docker installation is relatively simple, you can refer to the following two ways to install:
+#### docker安装
 
-- Installation from [Aliyun image](https://yq.aliyun.com/articles/110806)
-- Installation From [Docker's official image](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
+docker安装比较简单，国内的话我们使用[阿里云Docker镜像源](https://yq.aliyun.com/articles/110806)，国外使用[Docker官方镜像](https://docs.docker.com/install/linux/docker-ce/ubuntu/)。
 
-#### Run Container
+#### 运行容器
 
-- Pull Platon Image
+(https://hub.docker.com/r/platonnetwork/platon)
+
+- 拉取platon镜像
  
 ```bash
 $ sudo docker pull platonnetwork/platon:tag #例如: platonnetwork/platon:0.3.0
 ```
 
-- Run Platon Container
+- 运行platon容器
 
-Start the `Platon` node in the container by executing the following commands. The default RPC port is 6789 and the P2P port is 16789:
+执行以下命令在容器中启动platon节点，其默认得RPC端口为6789，P2P端口为16789：
 
 ```bash
 $ sudo docker run -d platonnetwork/platon:tag
 ```
 
-To open port mapping, execute the following commands:
+若想开启端口映射，可执行以下命令：
 
 ```bash
 $ sudo docker run -d -e PLATONIP="192.168.120.20" -p 6789:6789  -p 16789:16789 --name platon platonnetwork/platon:0.3.0
 ```
 
-`PLATONIP`is the local server address.
+其中，`PLATONIP`为本机服务器地址。
 
-Execute the following commands to enter the container:
+- 进入容器:
 
 ```bash
-$ sudo docker exec -it container_name bash #container_name is the container name or id.
+$ sudo docker exec -it container_name bash #container_name为容器id或者名字
 ```
 
-Execute a command to enter the platform's JS terminal(The default directory is under /opt/node when you enter the container):
+执行一下命令进入platon的js终端(进入容器后默认目录就在/opt/node下):
 
 ```bash
 # platon attach ipc:./data/platon.ipc
 ```
 
-Note: If not enable port mapping, you can only enter into the JS terminal through the above commands in the container. After opening the port mapping, you can enter the JS terminal locally through the following commands:
+注意：若没有开通端口映射，只能在容器内进入以上命令进入js终端，开启端口映射之后可在本机通过以下命令进入js终端：
 
 ```bash
 # platon attach http://PLATONIP:6789
 ```
 
-Start and stop the platform service in the container using the following commands:
+- 服务启停命令
+
+在容器内运行以下命令可控制`Platon`节点启动和停止
 
 ```bash
-# supervisorctl start platon 
-# supervisorctl stop platon 
-# supervisorctl restart platon 
+# supervisorctl start platon #启动platon
+# supervisorctl stop platon #停止platon
+# supervisorctl restart platon #重启platon
 ```
 
-If the above command is invalid, use the following command：
+如果以上命令无效，请使用以下命令：
 
 ```bash
 # /etc/init.d/supervisor stop
 # /etc/init.d/supervisor start
 ```
 
-** Note: The data directory of Platon in the container is located in `opt/node` directory. By default, the system has only one wallet account, and the password is 123456**.
+**说明：容器中platon的数据目录位于`/opt/node`目录下，系统默认只有一个钱包账户，密码为:123456**
+
+
