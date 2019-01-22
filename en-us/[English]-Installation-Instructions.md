@@ -192,7 +192,7 @@ go run build/ci.go install ./cmd/platon
 After compilation, the `platon`、 `ethkey` and `ctool` executable files will be generated in the `PlatON-Go/build/bin` directory，and then copy these executable files to your own working directory.
 
 
-## Running-in-Docker-Environment
+## Running in Docker Environment
 
 #### Install docker
 
