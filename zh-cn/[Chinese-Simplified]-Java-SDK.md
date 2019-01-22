@@ -41,65 +41,62 @@
 
 1. jdk1.8
 
-### maven
+### 引入SDK
+
 1. 配置仓库
     
-    1. maven项目配置
+  + maven项目配置
 
-
-```
+	```
     <repository>
 	    <id>platon-public</id>
 	    <url>https://sdk.platon.network/nexus/content/groups/public/</url>
 	</repository>
-```
+	```
 
-    2. gradle项目配置
+  +	 gradle项目配置
 
-
-```
+	```
     repositories {
         maven { url "https://sdk.platon.network/nexus/content/groups/public/" }
     }
-```
+	```
 
 2. maven方式引用
 
-    Java 8:
+   - Java 8:
 
-
-```
+	```
     <dependency>
         <groupId>com.platon.client</groupId>
         <artifactId>core</artifactId>
         <version>0.3.0</version>
     </dependency>
-```
-    Android:
+	```
 
+  - Android:
 
-```
+    ```
     <dependency>
         <groupId>com.platon.client</groupId>
         <artifactId>core</artifactId>
         <version>0.3.0-android</version>
     </dependency>
-```
+    ```
     
 3. gradle方式引用
 
-    Java 8:
+   - Java 8:
 
-
-```
+	```
     compile "com.platon.client:core:0.3.0"
-```
-    Android:
+	```
 
+   - Android:
 
-```
+	```
     compile "com.platon.client:core:0.3.0-android"
-```
+	```
     
 ### 合约骨架生成工具
 1. 安装包下载 https://download.platon.network/client-sdk.zip

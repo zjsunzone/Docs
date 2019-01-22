@@ -33,17 +33,13 @@ pWASM开发工具包为一个压缩包，下载完成后解压到工作目录，
 
 `Linux` 下载
 
-
 ```shell
 $ wget https://download.platon.network/0.3/pwasm-linux-amd64-0.3.0.tar.gz
 $ tar -zxvf pWASM-linux.tar.gz
 $ mv pWASM-linux pWASM
-
-
 ```
 
 解压后所有文件均位于`pWASM`目录下，该目录文件结构如下：
-
 
 ```txt
 ├── bin
@@ -60,7 +56,6 @@ $ mv pWASM-linux pWASM
 ├── user
 ├── CMakeLists.txt
 └── README.md
-
 
 ```
 
@@ -93,48 +88,35 @@ $ mv pWASM-linux pWASM
 
 Windows
 
-
 ```shell
 $ cd {pWASM}
 $ ./script/autoproject.bat .
-
-
 ```
 
 Linux
 
-
 ```shell
 $ cd {pWASM}
 $ ./script/autoproject.sh .
-
-
 ```
 
 **执行脚本，生成新合约并构建**
 
 Windows
 
-
 ```shell
 $ cd {pWASM}
 $ ./script/autoproject.bat . firstdemo
-
-
 ```
 
 Linux
 
-
 ```shell
 $ cd {pWASM}
 $ ./script/autoproject.sh . firstdemo
-
-
 ```
 
 该 `firstdemo` 工程会默认在 `user` 目录生成。此时新生成的工程目录结构为：
-
 
 ```text
 ├──build/ 
@@ -142,8 +124,6 @@ $ ./script/autoproject.sh . firstdemo
   ├──firstdemo/
   ├── firstdemo.cpp
   └── CMakeLists.txt
-
-
 ```
 
 目录文件简述：
@@ -153,7 +133,6 @@ $ ./script/autoproject.sh . firstdemo
 **注意：默认生成的文件内容为空，后续的合约内容需要自行编写。下面介绍一个简单示例。**
 
 ### 合约代码示例
-
 
 ```c++
 #include <stdlib.h>
@@ -201,8 +180,6 @@ namespace demo {
 // 此处定义的函数会生成ABI文件供外部调用
 PLATON_ABI(demo::FirstDemo, invokeNotify)
 PLATON_ABI(demo::FirstDemo, getName)
-
-
 ```
 
 ### 编译合约
@@ -213,22 +190,16 @@ PLATON_ABI(demo::FirstDemo, getName)
 
 Windows
 
-
 ```shell
 $ cd {pWASM}/build/
 $ mingw32-make.exe
-
-
 ```
 
 Linux
 
-
 ```shell
 $ cd {pWASM}/build/
 $ make
-
-
 ```
 
 执行完成后，在`build/user`目录下会生成测试目录：`firstdemo`，同时也生成了目标文件，例如:
@@ -245,8 +216,6 @@ $ make
       ├── firstdemo.cpp.abi.json
       ├── firstdemo.cpp.bc 
       └── cmake_install.cmake
-
-
 ```
 
 主要文件简介：
@@ -269,8 +238,6 @@ $ make
 Could not auto-detect compilation database for file "/workspace/pWASM/hello/hello.cpp"
 No compilation database found in /workspace/pWASM/hello or any parent directory
 json-compilation-database: Error while opening JSON database: No such file or directory
-
-
 ```
 
 ## 合约发布及测试
@@ -285,8 +252,6 @@ Windows
 ```bash
 $ mv ctool-windows-amd64.exe ctool.exe
 $ ./ctool.exe <command> [--addr contractAddress] [--type txType(default:2)] [--func funcInfo] --abi <abi_path> --code <wasm_path> [--config <config_path>]
-
-
 ```
 
 Linux
@@ -296,8 +261,6 @@ Linux
 $ wget https://download.platon.network/ctool-linux-amd64
 $ mv ctool-linux-amd64 ctool
 $ ./ctool <command> [--addr contractAddress] [--type txType(default:2)] [--func funcInfo] --abi <abi_path> --code <wasm_path> [--config <config_path>]
-
-
 ```
 
 **参数：**
@@ -318,7 +281,6 @@ $ ./ctool <command> [--addr contractAddress] [--type txType(default:2)] [--func 
 
 配置文件示例：
 
-
 ```JSON
 {
   "url":"http://127.0.0.1:6789",
@@ -326,8 +288,6 @@ $ ./ctool <command> [--addr contractAddress] [--type txType(default:2)] [--func 
   "gasPrice":"0x333330",
   "from":"0x60ceca9c1290ee56b98d4e160ef0453f7c40d219"
 }
-
-
 ```
 
 配置文件字段简述：
@@ -349,8 +309,6 @@ $ ./ctool <command> [--addr contractAddress] [--type txType(default:2)] [--func 
 Unlock account 0x2d616026162ad2d513691b790806fa6f6bc3c2ef
 Passphrase:
 true
-
-
 ```
 
 4.进入编译目录`{pWASM}/build/user/firstdemo`，在此目录下创建 `config.json` 配置文件，并拷贝 `ctool.exe` (linux拷贝`ctool`) 到当前目录。然后执行：
@@ -361,8 +319,6 @@ Windows
 ```shell
 $ cd {pWASM}/build/user/firstdemo 
 $ ./ctool.exe deploy --abi ./firstdemo.cpp.abi.json --code ./firstdemo.wasm --config ./config.json
-
-
 ```
 
 Linux
@@ -371,18 +327,13 @@ Linux
 ```shell
 $ cd {pWASM}/build/user/firstdemo 
 $ ./ctool deploy --abi ./firstdemo.cpp.abi.json --code ./firstdemo.wasm --config ./config.json
-
-
 ```
 
 5.命令执行成功后，会返回合约地址：
 
-
 ```
 trasaction hash: 0xdb0f9a28fcd447702e8d5961f47144d1ea830979e3c984acc8f72c0dca8bdcfc
 contract address: 0x43355c787c50b647c425f594b441d4bd751951c1
-
-
 ```
 如果下一步需要进行合约调用则需要记录该地址信息！
 
@@ -398,8 +349,6 @@ Windows
 ```shell 
 $ cd {pWASM}/build/user/firstdemo
 $ ./ctool.exe invoke -addr "0x43355c787c50b647c425f594b441d4bd751951c1" --func 'invokeNotify("HelloWorld")' --abi ./firstdemo.cpp.abi.json --config ./config.json
-
-
 ```
 
 Linux
@@ -408,30 +357,22 @@ Linux
 ```shell 
 $ cd {pWASM}/build/user/firstdemo
 $ ./ctool invoke -addr "0x43355c787c50b647c425f594b441d4bd751951c1" --func 'invokeNotify("HelloWorld")' --abi ./firstdemo.cpp.abi.json --config ./config.json
-
-
 ```
 
 **交易查询**
 
 Windows
 
-
 ```shell 
 $ cd {pWASM}/build/user/firstdemo
 $ ./ctool.exe invoke -addr "0x43355c787c50b647c425f594b441d4bd751951c1" --func 'getName()' --abi ./firstdemo.cpp.abi.json --config ./config.json
-
-
 ```
 
 Linux
 
-
 ```shell 
 $ cd {pWASM}/build/user/firstdemo
 $ ./ctool invoke -addr "0x43355c787c50b647c425f594b441d4bd751951c1" --func 'getName()' --abi ./firstdemo.cpp.abi.json --config ./config.json
-
-
 ```
 
 > 实际操作中 `invokeNotify` 传入的参数在 `getName` 中查询出来，表示合约发布、交易、查询过程已全部成功。

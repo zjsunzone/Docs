@@ -34,7 +34,8 @@
 
 1. jdk1.8
 
-### maven
+### Import SDK
+
 1. SDK lib address https://sdk.platon.network/nexus/content/groups/public/
 2. Build by maven configuration
 
@@ -45,8 +46,6 @@
     <artifactId>core</artifactId>
     <version>x.x.x</version>
 </dependency>
-
-
 ```
 3. Build by gradle
 
