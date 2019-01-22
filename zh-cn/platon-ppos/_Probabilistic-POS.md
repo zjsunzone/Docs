@@ -1,5 +1,4 @@
 
-
 ## PPoS协议
 
 ![ppos protocol](images/platon_ppos_2.png)
@@ -22,14 +21,14 @@
 
 要参选候选节点，投资人需要进行以下操作：
 - 部署PlatON节点连接到PlatON网络
-- 通过[申请质押交易](#CandidateDeposit)质押一定的Energon，Energon锁定在[候选池合约](#verify-pool)中
+- 通过[申请质押交易](#质押申请或增加：CandidateDeposit)质押一定的Energon，Energon锁定在[候选池合约](#验证池合约)中
 
 候选节点规则如下：
 - 创世块内设置初始的候选节点（不需要质押，直接就是验证人）负责第1轮的共识。
 - 参选候选节点质押的Energon需要满足最低线，测试网络中设置为100,000 Energon。
 - 候选节点以质押Energon排名的方式选出，候选池总量限制为200，如果候选池总量已经达到上限，则质押的Energon必须比候选池内第200名候选节点质押的Energon高出至少10%才能入选，200名外的候选节点被淘汰并解锁其质押的Energon。
-- 候选池内的候选节点可以通过[增加质押交易](#CandidateDeposit)追加质押，追加成功后产生新的排名。
-- 质押的Energon被锁定在[候选池合约](#verify-pool)中，没有锁定期限，可以通过[申请退回质押交易](#CandidateApplyWithdraw)解锁，可以解锁部分（至少10%）或者全部。解锁的Energon需要至少在512个区块后才能通过[提取质押交易](#CandidateWithdraw)提取。
+- 候选池内的候选节点可以通过[增加质押交易](#质押申请或增加：CandidateDeposit)追加质押，追加成功后产生新的排名。
+- 质押的Energon被锁定在[候选池合约](#验证池合约)中，没有锁定期限，可以通过[申请退回质押交易](#质押退回：CandidateApplyWithdraw)解锁，可以解锁部分（至少10%）或者全部。解锁的Energon需要至少在512个区块后才能通过[提取质押交易](#质押提取：CandidateWithdraw)提取。
 
 ### 验证节点产生
 
@@ -46,20 +45,17 @@
 
 验证节点选出后，采用[CBFT](zh-cn/concurrent-bft/_Concurrent-BFT)协议进行共识产生区块。
 
-## <a name="verify-pool"></a>验证池合约
+## 验证池合约
 
 ### 合约地址
 
 候选池合约内置在创世区块中，合约地址如下：
 
-
 ```
 0x1000000000000000000000000000000000000001
-
-
 ```
 
-### <a name="CandidateDeposit"></a>质押申请/增加：CandidateDeposit
+### 质押申请或增加：CandidateDeposit
 
 申请/增加质押，质押金额为交易的value值。
 入参：
@@ -75,7 +71,7 @@
 * `Data`: string  返回数据(空)
 * `ErrMsg`: string 错误信息
 
-### <a name="CandidateApplyWithdraw"></a>质押退回：CandidateApplyWithdraw
+### 质押退回：CandidateApplyWithdraw
 
 质押金退回申请，申请成功后候选节点将被重新排序，权限校验from==owner。
 入参：
@@ -87,7 +83,7 @@
 * `Data`: string  返回数据(空)
 * `ErrMsg`: string 错误信息
 
-### <a name="CandidateWithdraw"></a>质押提取：CandidateWithdraw
+### 质押提取：CandidateWithdraw
 
 节点质押金提取，调用成功后会提取所有已申请退回的质押金到owner账户。
 入参：
@@ -197,6 +193,5 @@
  * `Host`: string 节点IP
  * `Port`: string 节点P2P端口号
  * `Extra`: string 附加数据(有长度限制，限制值待定)
-
 
 > 注：所有返回值均为json格式

@@ -1,7 +1,7 @@
-## <a name="what_is"></a>What is joint wallet
+## What is joint wallet
  A joint wallet is a digital wallet controlled and managed by multiple users. Transaction of the joint wallet needs to gain predefined more than one signatures before it can be executed.
 
-## <a name="how_to_create"></a>How to create a joint wallet
+## How to create a joint wallet
 
 1.On the page of [Wallet]-[Joint Wallet], click [Create Wallet], as shown below.
 
@@ -21,7 +21,7 @@
 
 5.Once done, the new wallet will be displayed on the [Joint Wallet] page and works minutes later.
 
-## <a name="how_to_add"></a>How to add a joint wallet that has been created
+## How to add a joint wallet that has been created
 An existing joint wallet can be added by user into their [Joint wallets], the steps are as below.
 
 1.On the page of [Wallet]-[Joint Wallet], click [Import Wallet], as shown below:
@@ -34,7 +34,7 @@ An existing joint wallet can be added by user into their [Joint wallets], the st
 3.After completing，the client will synchronize the existing joint Wallet’s balance data automatically.
 
 
-## <a name="how_to_use"></a>How to send and receive funds with shared wallet
+## How to send and receive funds with Joint wallet
 
 + **send Energon**
 

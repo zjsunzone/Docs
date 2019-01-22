@@ -133,7 +133,7 @@ PlatON还是一个处于开发初期，尚不完备的系统，所以非常需�
 
 PlatON是一个基于服务的计算架构，除了提供计算、数据、存储、网络等基础服务外，分布式应用开发者也可在PlatON上发布自己的分布式应用服务。PlatON 上每个应用的运行都要消耗一定的资源（包括算力、带宽、存储、数据等）。为实现资源的公平合理使用，避免资源的滥用，PlatON通过一系列算法实现资源的合理调度和有效性验证，并使用能量块Energon来度量资源的使用情况。Energon也是驱动PlatON 这个&quot;计算工厂&quot;运转所需的能量。各应用链也可以创建自己的应用Energon。在PlatON网络中，用户只需要一个统一账户就可以管理和使用自己的Energon。
 
-访问[https://developer.platon.network](https://developer.platon.network)，下载钱包客户端并安装，生成钱包地址。在领取页面 [https://developer.platon.network/#/energon](https://developer.platon.network/#/energon) 输入您的钱包地址和邮箱，即可领取测试Energon。
+访问[https://developer.platon.network](https://developer.platon.network)，下载钱包客户端并安装，生成钱包地址。在领取页面 [https://developer.platon.network/#/energon](https://developer.platon.network/#/energon?lang=zh) 输入您的钱包地址和邮箱，即可领取测试Energon。
 
 <div style="text-align: right;font-style:italic;color:#C0C0C0">感谢微信昵称为“G星”的热心网友提问</div>
 

@@ -1,5 +1,5 @@
 
-## <a name="create_wallet"></a>How to create a wallet
+## How to create a wallet
 
 1.On client’s [Wallet] home page, click [Create Wallet], as shown below:
 
@@ -20,7 +20,7 @@
 2. *Disk damage, system re-installation, or mistaken deletion will result in the loss of .json file. Therefor, be sure to back up the encrypted .json file or the private key in plain text, and ensure they won’t be leaked, deleted or lost. Once lost, the wallet cannot be retrieved.*
 
 
-## <a name="import_wallet"></a>How to import & restore a wallet
+## How to import & restore a wallet
 
  After replacing the computer or re-installing the system, it is mandatory to import or restore the existing wallet to the new installed client, as following: 
 
@@ -48,7 +48,7 @@ Click [Mnemonic Phrase] tap, input the wallet’s mnemonic phrase, set new [wall
     ![Image text](image/Private_key_Mnemonic_phrase.png)
 
 
-## <a name="send_recv_atp"></a>How to send and receive funds
+## How to send and receive funds
 
 - **Send Energon**
 
@@ -72,7 +72,7 @@ Click [receive], the client will display the page as below:
 
 The page display the wallet’s [QR Code of Address], [Address], provide them to the sender as required.
 
-## <a name="why_is_cleard"></a>Why is the test Energon in the wallet cleard
+## Why is the test Energon in the wallet cleard
 
 During your use, if you find that your wallet's test Energon has been cleared for no reason, don't be nervous. Samurai is still in the beta. When its version is greatly updated, the data of test chain will be removed. This means that your wallet test Energon will also be cleared. We apologize for the inconvenience and bad experience of using it.
 

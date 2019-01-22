@@ -1,8 +1,8 @@
-## <a name="what_is_msc"></a>What is Wasm contract
+## What is Wasm contract
 Wasm contracts are applications built with webassebly. and deployed on PlatON. User can publish services directly by submitting code then deploying it via PlatON Samurai.
 
 
-## <a name="how_to_deploy"></a>How to deploy a contract
+## How to deploy a contract
 
 1.On the [Contracts] page, click [Deploy Contract], as shown below:
 
@@ -24,7 +24,7 @@ Wasm contracts are applications built with webassebly. and deployed on PlatON. U
 
 *After the contract being compiled, an ABI file suffixed with .json will also be generated. ABI is the abbreviation of Application Binary Interface, which can be understood as a contract interface description. after the contract being compiled, its corresponding ABI is also formed. ABI is somewhat similar to the interface definition in the program, describing the field name, field type, method name, parameter name, parameter type, method return value type etc.*
 
-## <a name="how_to_add"></a>How to add a contract that has been created 
+## How to add a contract that has been created 
 After a contract being created by someone, you can add it to your client, the steps are as below.
 
 1.On the [contract] page, click [Watch Contract], as shown below:
@@ -46,7 +46,7 @@ As shown in the following figure:
 ![Image text](image/Address_abi.png)
 
 
-## <a name="how_to_run"></a>How to execute a contract
+## How to execute a contract
 
 1.On the home page of [Contract], select an existing contract, the client navigates to [Contract Information] page, as shown below:
 

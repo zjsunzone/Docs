@@ -10,25 +10,17 @@ Please note: the following operations are performed in the working directory.
 ## Single node environment
 
 1. **Run the public and private key pair generation tool `ethkey` to generate a node ID and a node private key.**
-
-
 
 - Windows command line:
-
 
 ```
 D:\platon-node> ethkey.exe genkeypair
 Address : 0xA9051ACCa5d9a7592056D07659f3F607923173ad
 PrivateKey: 1abd1200759d4693f4510fbcf7d5caad743b11b5886dc229da6c0747061fca36
 PublicKey : 8917c748513c23db46d23f531cc083d2f6001b4cc2396eb8412d73a3e4450ffc5f5235757abf9873de469498d8cf45f5bb42c215da79d59940e17fcb22dfc127
-
-
 ```
-
-
 
 - Ubuntu command line:
-
 
 ```
 $ chmod u+x ethkey
@@ -36,17 +28,12 @@ $ ./ethkey genkeypair
 Address : 0xA9051ACCa5d9a7592056D07659f3F607923173ad
 PrivateKey: 1abd1200759d4693f4510fbcf7d5caad743b11b5886dc229da6c0747061fca36
 PublicKey : 8917c748513c23db46d23f531cc083d2f6001b4cc2396eb8412d73a3e4450ffc5f5235757abf9873de469498d8cf45f5bb42c215da79d59940e17fcb22dfc127
-
-
 ```
 PublicKey is the ***node ID***, and PrivateKey its corresponding ***node private key***.
 
 2. **Generate a node coinbase account. For testing, you can pre-fund the account in the genesis block.**
-
-
 
 - Windows command line:
-
 
 ```
 D:\platon-node> platon.exe --datadir .\data account new
@@ -56,14 +43,9 @@ Your new account is locked with a password. Please give a password. Do not forge
 Passphrase:
 Repeat passphrase:
 Address: {566c274db7ac6d38da2b075b4ae41f4a5c481d21}
-
-
 ```
-
-
 
 - Ubuntu command line:
-
 
 ```
 $ ./platon --datadir ./data account new
@@ -73,15 +55,12 @@ Your new account is locked with a password. Please give a password. Do not forge
 Passphrase:
 Repeat passphrase:
 Address: {566c274db7ac6d38da2b075b4ae41f4a5c481d21}
-
-
 ```
 Be sure to note the generated **Address**.
 
 3. **Generate the genesis configuration file.**
 
-Download `platon.json` from [here](https://download.platon.network/platon.json) to the working directory. Change `your-node-pubkey` into the previously generated node ID to make the local common nodes participate in the consensus. Change `your-account-address` into the account generated in step 3. The contents of platon.json are as follows:
-
+Download `platon.json` from [here](https://download.platon.network/0.3/platon.json) to the working directory. Change `your-node-pubkey` into the previously generated node ID to make the local common nodes participate in the consensus. Change `your-account-address` into the account generated in step 3. The contents of platon.json are as follows:
 
 ```
 {
@@ -113,31 +92,21 @@ Download `platon.json` from [here](https://download.platon.network/platon.json) 
   "gasUsed": "0x0",
   "parentHash": "0x0000000000000000000000000000000000000000000000000000000000000000"
 }
-
-
 ```
 
 4. **Configure the private key file of the node.**
 
 Please note: the echo command line argument is the node private key and needs to be replaced with the node private key generated in step 2.
-
-
 
 - Windows command line:
-
 
 ```
 D:\platon-node> mkdir .\data\platon
 D:\platon-node> echo "1abd1200759d4693f4510fbcf7d5caad743b11b5886dc229da6c0747061fca36" > .\data\platon\nodekey
 D:\platon-node> type .\data\platon\nodekey
-
-
 ```
-
-
 
 - Ubuntu command line:
-
 
 ```
 $ pwd
@@ -145,64 +114,39 @@ $ pwd
 $ mkdir -p ./data/platon
 $ echo "1abd1200759d4693f4510fbcf7d5caad743b11b5886dc229da6c0747061fca36" > ./data/platon/nodekey
 $ cat ./data/platon/nodekey
-
-
 ```
 
 5. **Execute the following command to initialize the genesis state.**
-
-
 
 - Windows command line:
-
 
 ```
 D:\platon-node> platon.exe --datadir .\data init platon.json
-
-
 ```
-
-
 
 - Ubuntu command line:
-
 
 ```
 $ ./platon --datadir ./data init platon.json
-
-
 ```
 The following prompt indicates that a genesis node was successfully created:
 
-
 ```
 Successfully wrote genesis state
-
-
 ```
 
 6. **Start nodes**
-
-
 
 - Windows command line:
 
-
 ```
 D:\platon-node> platon.exe --identity "platon" --datadir .\data --port 16789 --rpcaddr 0.0.0.0 --rpcport 6789 --rpcapi "db,eth,net,web3,admin, personal" --rpc --nodiscover --nodekey ".\data\platon\nodekey"
-
-
 ```
-
-
 
 - Ubuntu command line:
 
-
 ```
 $ ./platon --identity "platon" --datadir ./data --port 16789 --rpcaddr 0.0.0.0 --rpcport 6789 --rpcapi "db,eth,net,web3,admin,personal" --rpc --nodiscover --nodekey "./data/platon/nodekey"
-
-
 ```
 
 ***Prompt:***
@@ -229,38 +173,26 @@ So far we have let the `platon` process run in the foreground, which locks the t
 Background running is not supported on Windows.
 Now start the program with nohup on Ubuntu:
 
-
 ```
 $ nohup ./platon --identity "platon" --datadir ./data --port 16789 --rpcaddr 0.0.0.0 --rpcport 6789 --rpcapi "db,eth,net,web3,admin,personal" --rpc --nodiscover --nodekey "./data/platon/nodekey" &
-
-
 ```
+
 This way the process will keep running in the background even if you exit the terminal window.
 
 
 ## PlatON cluster
+
 A `PlatON Cluster` is a network consisting of multiple nodes. At this point we assume that you already know how to build a single Platon node. We will now build a network consisting of two nodes; a network of more nodes will follow a similar workflow.
 
 In order to run multiple `platon` nodes locally, you must ensure that:
-
-
 - Each node instance has a separate data directory (--datadir)
-
-
 - Each instance runs on a different port, both `platon` and rpc (--port and --rpcport )
-
-
 - Each node must know about the other
-
-
 - The IPC port must be restricted or unique
 
 1. **Create two data directories called data0 and data1 in platon-node directory and two new coinbase accounts for each of the two nodes.**
-
-
 
 - Windows command line:
-
 
 ```
 D:\platon-node> mkdir data0
@@ -276,14 +208,9 @@ Your new account is locked with a password. Please give a password. Do not forge
 Passphrase:
 Repeat passphrase:
 Address: {ce3a4aa58432065c4c5fae85106aee4aef77a115}
-
-
 ```
-
-
 
 - Ubuntu command line:
-
 
 ```
 $ mkdir -p data0
@@ -299,15 +226,11 @@ Your new account is locked with a password. Please give a password. Do not forge
 Passphrase:
 Repeat passphrase:
 Address: {ce3a4aa58432065c4c5fae85106aee4aef77a115}
-
-
 ```
-2. **Run`ethkey` to generate a node ID and a node private key for each of the two nodes.**
-
 
+2. **Run`ethkey` to generate a node ID and a node private key for each of the two nodes.**
 
 - Windows command line:
-
 
 ```
 D:\platon-node> ethkey.exe genkeypair
@@ -319,14 +242,9 @@ D:\platon-node> ethkey.exe genkeypair
 Address   :  0x44b8d81F443DdEF731CE02831203afcd9F2027da
 PrivateKey:  9baaf2b3e0dadae0e265de63c70421364fb4415022cd3885c4bbeec0539a5320
 PublicKey :  1b22ffc514b806c752b3f145aa644173469e2b425b4847c9ce7c318451a1a249d061aa66058df501b90dc329369ecee475c7ba52b31b25edad44aac0d9847e06
-
-
 ```
-
-
 
 - Ubuntu command line:
-
 
 ```
 $ chmod u+x ethkey
@@ -340,8 +258,6 @@ $ ./ethkey genkeypair
 Address   :  0x44b8d81F443DdEF731CE02831203afcd9F2027da
 PrivateKey:  9baaf2b3e0dadae0e265de63c70421364fb4415022cd3885c4bbeec0539a5320
 PublicKey :  1b22ffc514b806c752b3f145aa644173469e2b425b4847c9ce7c318451a1a249d061aa66058df501b90dc329369ecee475c7ba52b31b25edad44aac0d9847e06
-
-
 ```
 PublicKey is the ***node ID***, and PrivateKey its corresponding ***node private key***.
 
@@ -350,19 +266,11 @@ PublicKey is the ***node ID***, and PrivateKey its corresponding ***node private
 Add the node information of the two nodes to the **initialNodes** array. Since we are generating a cluster consisting of two nodes, the array length will be two. 
 
 Modify the platon.json file:
-
-
 - Replace `node0-pubkey` with the ***node ID*** of node 0 generated in step 2.
-
-
-- Replace `node1-pubkey` with the ***node ID*** of node 1 generated in step 2.
-
+- Replace `node1-pubkey` with the ***node ID*** of node 1 generated in step 2.
 
 - Replace `node0-account-address` with the ***Address*** of node 0 generated in step 1.
-
-
 - Replace `node1-account-address` with the ***Address*** of node 1 generated in step 1.
-
 
 ```
 ……
@@ -381,18 +289,13 @@ Modify the platon.json file:
     }
   },
 ……
-
-
 ```
 
 4. **Create a file called `nodekey` for each node and save the node's private key to it.**
 
 Please note: the echo command line argument is the node private key and needs to be replaced with the node private key generated in step 2.
-
-
 
 - Windows command line:
-
 
 ```
 D:\platon-node> mkdir .\data0\platon
@@ -402,14 +305,9 @@ D:\platon-node> type .\data0\platon\nodekey
 D:\platon-node> mkdir .\data1\platon
 D:\platon-node> echo 9baaf2b3e0dadae0e265de63c70421364fb4415022cd3885c4bbeec0539a5320> .\data1\platon\nodekey
 D:\platon-node> type .\data1\platon\nodekey
-
-
 ```
-
-
 
 - Ubuntu command line:
-
 
 ```
 $ mkdir -p ./data0/platon
@@ -419,60 +317,39 @@ $ cat ./data0/platon/nodekey
 $ mkdir -p ./data1/platon
 $ echo "9baaf2b3e0dadae0e265de63c70421364fb4415022cd3885c4bbeec0539a5320" > ./data1/platon/nodekey
 $ cat ./data1/platon/nodekey
-
-
 ```
 
 5. **Initialize the genesis information for node 0 and start the node.**
-
-
 
 - Windows command line:
-
 
 ```
 D:\platon-node> platon.exe --datadir .\data0 init platon.json
 D:\platon-node> platon.exe --identity "platon" --datadir .\data0 --port 16789 --rpcaddr 0.0.0.0 --rpcport 6789 --rpcapi "db,eth,net,web3,admin,personal" --rpc --nodiscover --nodekey ".\data0\platon\nodekey"
-
-
 ```
-
-
 
 - Ubuntu command line:
-
 
 ```
 $ ./platon --datadir ./data0 init platon.json
 $ ./platon --identity "platon" --datadir ./data0 --port 16789 --rpcaddr 0.0.0.0 --rpcport 6789 --rpcapi "db,eth,net,web3,admin,personal" --rpc --nodiscover --nodekey "./data0/platon/nodekey"
-
-
 ```
 
 6. **Initialize the genesis information for node 1 and start the node.**
-
-
 
 - Windows command line:
-
 
 ```
 D:\platon-node> platon.exe --datadir .\data1 init platon.json
 D:\platon-node> platon.exe --identity "platon" --datadir .\data1 --port 16790 --rpcaddr 0.0.0.0 --rpcport 6790 --rpcapi "db,eth,net,web3,admin,personal" --rpc --nodiscover --ipcdisable --nodekey ".\data1\platon\nodekey"
-
-
 ```
 Please note: all nodes except the first node must be started with --ipcdisable option on Windows.
-
-
 
 - Ubuntu command line:
-
 
 ```
 $ ./platon --datadir ./data1 init platon.json
 $ ./platon --identity "platon" --datadir ./data1 --port 16790 --rpcaddr 0.0.0.0 --rpcport 6790 --rpcapi "db,eth,net,web3,admin,personal" --rpc --nodiscover --nodekey "./data1/platon/nodekey"
-
 
 ```
 

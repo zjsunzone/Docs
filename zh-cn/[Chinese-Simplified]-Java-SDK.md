@@ -38,6 +38,7 @@
 ## 安装或引入
 
 ### 环境要求
+
 1. jdk1.8
 
 ### maven
@@ -51,8 +52,6 @@
 	    <id>platon-public</id>
 	    <url>https://sdk.platon.network/nexus/content/groups/public/</url>
 	</repository>
-
-
 ```
 
     2. gradle项目配置
@@ -62,8 +61,6 @@
     repositories {
         maven { url "https://sdk.platon.network/nexus/content/groups/public/" }
     }
-
-
 ```
 
 2. maven方式引用
@@ -77,8 +74,6 @@
         <artifactId>core</artifactId>
         <version>0.3.0</version>
     </dependency>
-
-
 ```
     Android:
 
@@ -89,8 +84,6 @@
         <artifactId>core</artifactId>
         <version>0.3.0-android</version>
     </dependency>
-
-
 ```
     
 3. gradle方式引用
@@ -100,16 +93,12 @@
 
 ```
     compile "com.platon.client:core:0.3.0"
-
-
 ```
     Android:
 
 
 ```
     compile "com.platon.client:core:0.3.0-android"
-
-
 ```
     
 ### 合约骨架生成工具
@@ -125,8 +114,6 @@
 +-- _lib
 |   +-- xxx.jar                        //类库
 |   +-- ...
-
-
 ```
 3. 到bin目录执行 ./client-sdk
 
@@ -142,8 +129,6 @@ __      _____| |__      / /_     _   ___
                         |__/
 
 Usage: client-sdk version|wallet|solidity|truffle|wasm ...
-
-
 ```
 
 ## 初始化代码
@@ -151,8 +136,6 @@ Usage: client-sdk version|wallet|solidity|truffle|wasm ...
 
 ```
 Web3j web3 = Web3j.build(new HttpService("http://localhost:6789"));
-
-
 ```
 
 # 合约
@@ -206,19 +189,15 @@ namespace demo {
 // 此处定义的函数会生成ABI文件供外部调用
 PLATON_ABI(demo::FirstDemo, invokeNotify)
 PLATON_ABI(demo::FirstDemo, getName)
-
-
 ```
 
 ## 合约骨架生成
-1. wasm智能合约的编写及其ABI(wasm文件)和BIN(json文件)生成方法请参考 [WASM合约开发指南](https://github.com/PlatONnetwork/wiki/wiki/%5BChinese-Simplified%5D-Wasm%E5%90%88%E7%BA%A6%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97)
+1. wasm智能合约的编写及其ABI(wasm文件)和BIN(json文件)生成方法请参考 [WASM合约开发指南](/zh-cn/%5BChinese-Simplified%5D-Wasm%E5%90%88%E7%BA%A6%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97)
 2. 使用合约骨架生成工具
 
 
 ```
 client-sdk wasm generate /path/to/firstdemo.wasm /path/to/firstdemo.cpp.abi.json -o /path/to/src/main/java -p com.your.organisation.name
-
-
 ```
 
 ## 加载合约
@@ -236,8 +215,6 @@ byte[] dataBytes = Files.readBytes(new File("<wasm file path>"));
 String binData = Hex.toHexString(dataBytes);
 
 Firstdemo contract = Firstdemo.load(binData, "0x<address>", web3j, credentials, new DefaultWasmGasProvider());
-
-
 ```
 
 ## 部署合约
@@ -256,8 +233,6 @@ byte[] dataBytes = Files.readBytes(new File("<wasm file path>"));
 String binData = Hex.toHexString(dataBytes);
 
 Firstdemo contract = Firstdemo.deploy(web3j, credentials, binData, new DefaultWasmGasProvider()).send();
-
-
 ```
 
 ## 合约call调用
@@ -267,8 +242,6 @@ Firstdemo contract = Firstdemo.deploy(web3j, credentials, binData, new DefaultWa
 //abi中方法描述	constant=true 的生成的骨架方法里面调用的是call查询
 String name = contract.getName().send();
 System.out.println(name);
-
-
 ```
 
 ## 合约sendRawTransaction调用
@@ -284,13 +257,11 @@ for(NotifyEventResponse r:eventResponses) {
     System.out.println(r.param1);
     System.out.println(r.param2);
 }
-
-
 ```
 
 ## 内置合约
 ###  CandidateContract
-> PlatOn经济模型中候选人相关的合约接口 [合约描述](_Probabilistic-POS#%e9%aa%8c%e8%af%81%e6%b1%a0%e5%90%88%e7%ba%a6)
+> PlatOn经济模型中候选人相关的合约接口[合约描述](zh-cn/platon-ppos/_Probabilistic-POS#%e9%aa%8c%e8%af%81%e6%b1%a0%e5%90%88%e7%ba%a6)
 
 #### 加载合约
 
@@ -304,8 +275,6 @@ Web3j web3j = Web3jFactory.build(new HttpService("http://localhost:6789"));
 Credentials credentials = WalletUtils.loadCredentials("password", "/path/to/walletfile");
 
 CandidateContract contract = CandidateContract.load(web3j, credentials, new DefaultWasmGasProvider());
-
-
 ```
 
 #### **`CandidateDeposit`**
@@ -333,8 +302,6 @@ Extra描述
 	"nodeDiscription":string,              //机构简介
 	"nodeDepartment":string                //机构名称
 }
-
-
 ```
 
 **返回事件**
@@ -351,8 +318,6 @@ param1描述
 	"Ret":boolean,                         //是否成功 true:成功  false:失败
 	"ErrMsg":string                        //错误信息，失败时存在
 }
-
-
 ```
 
 **合约使用**
@@ -394,8 +359,6 @@ List<CandidateDepositEventEventResponse>  events = contract.getCandidateDepositE
 for (CandidateDepositEventEventResponse event : events) {
 	 logger.debug("CandidateDeposit event:{}", JSON.toJSONString(event.param1));
 }
-
-
 ```
 
 #### **`CandidateApplyWithdraw`**
@@ -423,8 +386,6 @@ param1描述
 	"Ret":boolean,                         //是否成功 true:成功  false:失败
 	"ErrMsg":string                        //错误信息，失败时存在
 }
-
-
 ```
 
 **合约使用**
@@ -445,8 +406,6 @@ List<CandidateApplyWithdrawEventEventResponse>  events = ownerContract.getCandid
 for (CandidateApplyWithdrawEventEventResponse event : events) {
 	 logger.debug("event:{}", JSON.toJSONString(event.param1));
 }
-
-
 ```
 
 #### **`CandidateWithdraw`**
@@ -473,12 +432,9 @@ param1描述
 	"Ret":boolean,                         //是否成功 true:成功  false:失败
 	"ErrMsg":string                        //错误信息，失败时存在
 }
-
-
 ```
 
 **合约使用**
-
 
 ```
 //节点id
@@ -508,7 +464,6 @@ for (CandidateWithdrawEventEventResponse event : events) {
 
 Extra描述
 
-
 ```
 {
 	"nodeName":string,                     //节点名称
@@ -517,8 +472,6 @@ Extra描述
 	"nodeDiscription":string,              //机构简介
 	"nodeDepartment":string                //机构名称
 }
-
-
 ```
 
 **返回事件**
@@ -529,18 +482,14 @@ Extra描述
 
 param1描述
 
-
 ```
 {
 	"Ret":boolean,                         //是否成功 true:成功  false:失败
 	"ErrMsg":string                        //错误信息，失败时存在
 }
-
-
 ```
 
 **合约使用**
-
 
 ```
 //节点id
@@ -569,8 +518,6 @@ List<SetCandidateExtraEventEventResponse>  events = contract.getSetCandidateExtr
 for (SetCandidateExtraEventEventResponse event : events) {
     logger.debug("event:{}", JSON.toJSONString(event.param1));
 }
-
-
 ```
 
 #### **`CandidateWithdrawInfos`**
@@ -586,7 +533,6 @@ for (SetCandidateExtraEventEventResponse event : events) {
 
 - String：json格式字符串
 
-
 ```
 {
 	"Ret": true,                      
@@ -597,8 +543,6 @@ for (SetCandidateExtraEventEventResponse event : events) {
 		"LockBlockCycle": 1            //退款金额锁定周期
 	}]
 }
-
-
 ```
 
 **合约使用**
@@ -611,8 +555,6 @@ String nodeId = "0x6bad331aa2ec6096b2b6034570e1761d687575b38c3afc3a3b5f892dac4c8
 //调用接口
 String result = contract.CandidateWithdrawInfos(nodeId).send();
 logger.debug("CandidateWithdrawInfos:{}",result);
-
-
 ```
 
 #### **`CandidateDetails`**
@@ -652,12 +594,9 @@ logger.debug("CandidateWithdrawInfos:{}",result);
 	//出块奖励佣金比，以10000为基数(eg：5%，则fee=500)
 	"Fee": 500
 }
-
-
 ```
 
 **合约使用**
-
 
 ```
 //节点id
@@ -666,8 +605,6 @@ String nodeId = "0x6bad331aa2ec6096b2b6034570e1761d687575b38c3afc3a3b5f892dac4c8
 //调用接口
 String result = contract.CandidateDetails(nodeId).send();
 logger.debug("CandidateDetails:{}",result);
-
-
 ```
 
 #### **`GetBatchCandidateDetail`**
@@ -682,7 +619,6 @@ logger.debug("CandidateDetails:{}",result);
 **返回**
 
 - String：json格式字符串
-
 
 ```
 [{
@@ -708,8 +644,6 @@ logger.debug("CandidateDetails:{}",result);
 	"Extra": "{\"nodeName\":\"xxxx-noedeName\",\"officialWebsite\":\"xxxx-officialWebsite\",\"nodePortrait\":\"group2/M00/00/12/wKgJVlw0XSyAY78cAAH3BKJzz9Y83.jpeg\",\"nodeDiscription\":\"xxxx-nodeDiscription1\",\"nodeDepartment\":\"xxxx-nodeDepartment\"}",
 	"Fee": 500
 }]
-
-
 ```
 
 **合约使用**
@@ -728,8 +662,6 @@ stringBuilder.append("0xc0e69057ec222ab257f68ca79d0e74fdb720261bcdbdfa83502d509a
 //调用接口
 String result = contract.GetBatchCandidateDetail(stringBuilder.toString()).send();
 logger.debug("GetBatchCandidateDetail:{}",result);
-
-
 ```
 
 #### **`CandidateList`**
@@ -743,7 +675,6 @@ logger.debug("GetBatchCandidateDetail:{}",result);
 
 - String：json格式字符串
 
-
 ```
 [{
 	"Deposit": 11100000000000000000,
@@ -768,18 +699,13 @@ logger.debug("GetBatchCandidateDetail:{}",result);
 	"Extra": "{\"nodeName\":\"xxxx-noedeName\",\"officialWebsite\":\"xxxx-officialWebsite\",\"nodePortrait\":\"group2/M00/00/12/wKgJVlw0XSyAY78cAAH3BKJzz9Y83.jpeg\",\"nodeDiscription\":\"xxxx-nodeDiscription1\",\"nodeDepartment\":\"xxxx-nodeDepartment\"}",
 	"Fee": 500
 }]
-
-
 ```
 
 **合约使用**
 
-
 ```
 String nodeInfoList = contract.CandidateList().send();
 logger.debug("CandidateList:{}",nodeInfoList);
-
-
 ```
 
 #### **`VerifiersList`**
@@ -793,7 +719,6 @@ logger.debug("CandidateList:{}",nodeInfoList);
 
 - String：json格式字符串
 
-
 ```
 [{
 	"Deposit": 11100000000000000000,
@@ -818,18 +743,13 @@ logger.debug("CandidateList:{}",nodeInfoList);
 	"Extra": "{\"nodeName\":\"xxxx-noedeName\",\"officialWebsite\":\"xxxx-officialWebsite\",\"nodePortrait\":\"group2/M00/00/12/wKgJVlw0XSyAY78cAAH3BKJzz9Y83.jpeg\",\"nodeDiscription\":\"xxxx-nodeDiscription1\",\"nodeDepartment\":\"xxxx-nodeDepartment\"}",
 	"Fee": 500
 }]
-
-
 ```
 
 合约使用：
 
-
 ```
 String result = contract.VerifiersList().send();
 logger.debug("VerifiersList:{}",result);
-
-
 ```
 
 # web3

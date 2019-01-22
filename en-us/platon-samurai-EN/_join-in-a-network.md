@@ -1,5 +1,5 @@
 
-## <a name="join_net"></a>How to join in PlatON TestNet
+## How to join in PlatON TestNet
 
 1.When client starts the first time, it switches to the ‘Network Configuration’ interface. Select [Join the PlatON Testnet],click [JOINING NETWORK], the system will initiate as testnet node, connect to the testnet, and synchronize transaction data of blocks.
 
@@ -10,7 +10,7 @@
 ![Image text](image/Welcome_to_Samurai.png)
 
 
-## <a name="create_private"></a>How to create and join in PlatON Private-net
+## How to create a PlatON PrivateNet
 
 ### Creating private-net
 

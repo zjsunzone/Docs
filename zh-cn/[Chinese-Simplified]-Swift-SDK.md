@@ -54,27 +54,19 @@
 
 2. 在Podfile文件中添加引用
 
-
 ```
 pod 'platonWeb3', '~> 0.3.0'
-
-
 ```
-
 
 ## 初始化代码
 
-
 ```
 let web3 : Web3 = Web3(rpcURL: "http://192.168.1.100:6789")
-
-
 ```
 
 # 合约
 
 ## 合约示例
-
 
 ```
 #include <stdlib.h>
@@ -122,15 +114,11 @@ namespace demo {
 // 此处定义的函数会生成ABI文件供外部调用
 PLATON_ABI(demo::FirstDemo, invokeNotify)
 PLATON_ABI(demo::FirstDemo, getName)
-
-
 ```
 
 ## 部署合约
 
-
 ### **`platonDeployContract`**
-
 
 **入参**
 
@@ -149,7 +137,6 @@ PLATON_ABI(demo::FirstDemo, getName)
 
 ContractDeployCompletion定义如下
 
-
 ```
 public typealias ContractDeployCompletion = (
 _ result : PlatonCommonResult,                  //执行结果
@@ -157,12 +144,9 @@ _ result : PlatonCommonResult,                  //执行结果
 _ address : String?,                            //合约地址
 _ receipt: EthereumTransactionReceiptObject?    //交易回执
 ) -> ()
-
-
 ```
 
 示例：
-
 
 ```
     func deploy(completion: () -> Void){
@@ -181,14 +165,11 @@ _ receipt: EthereumTransactionReceiptObject?    //交易回执
             }
         })
     }
-
-
 ```
 
 ## 合约call调用
 
 ### **`platonCall`**
-
 
 **入参**
 
@@ -204,7 +185,6 @@ _ receipt: EthereumTransactionReceiptObject?    //交易回执
 
 ExecuteCode含义如下
 
-
 ```
 public enum ExecuteCode {
 case Transfer           //主币转账交易
@@ -218,24 +198,18 @@ case ReducePledge       //减持质押
 case DrawPledge         //提取质押
 case InnerContract      //内置合约调用
 }
-
-
 ```
 
 ContractCallCompletion定义如下
-
 
 ```
 public typealias ContractCallCompletion = (
 _ result : PlatonCommonResult,      //执行结果
 _ data : AnyObject?                 //返回数据
 ) -> ()
-
-
 ```
 
 示例：
-
 
 ```
     func getName(){
@@ -257,8 +231,6 @@ _ data : AnyObject?                 //返回数据
             }
         }
     }
-
-
 ```
 
 ## 合约sendRawTransaction调用
@@ -288,12 +260,9 @@ public typealias ContractSendRawCompletion = (
 _ result : PlatonCommonResult,          //执行结果
 _ data : Data?                          //交易hash
 ) -> ()
-
-
 ```
 
 示例：
-
 
 ```
     func invokeNotify(msg: String){
@@ -316,14 +285,11 @@ _ data : Data?                          //交易hash
             }
         }
     }
-
-
 ```
 
 ## 合约Event
 
 ### **`platonGetTransactionReceipt`**
-
 
 **入参**
 
@@ -335,18 +301,14 @@ _ data : Data?                          //交易hash
 
 PlatonCommonCompletion定义如下
 
-
 ```
 public typealias PlatonCommonCompletion = (
 _ result : PlatonCommonResult,          //执行结果
 _ obj : AnyObject?                      //返回数据
 ) -> ()
-
-
 ```
 
 示例：
-
 
 ```
     func Notify(){
@@ -368,14 +330,11 @@ _ obj : AnyObject?                      //返回数据
             }
         }
     }
-
-
 ```
 
 ## 内置合约
 ###  CandidateContract
-> PlatOn经济模型中候选人相关的合约接口 [合约描述](https://note.youdao.com/)
-
+> PlatOn经济模型中候选人相关的合约接口 [合约描述](/zh-cn/platon-ppos/_Probabilistic-POS?id=验证池合约)
 
 #### **`CandidateDeposit`**
 > 节点候选人申请/增加质押
@@ -397,9 +356,7 @@ _ obj : AnyObject?                      //返回数据
 | value  | BigUInt  | 质押金额                   |
 | completion  | PlatonCommonCompletion  | 回调闭包                   |
 
-
 Extra描述
-
 
 ```
 {
@@ -409,18 +366,13 @@ Extra描述
     "nodeDiscription":string,              //机构简介
     "nodeDepartment":string                //机构名称
 }
-
-
 ```
-
-
 
 出参（事件：CandidateDepositEvent）：
 * `Ret`: bool 操作结果
 * `ErrMsg`: string 错误信息
 
 合约方法
-
 
 ```
     func CandidateDeposit(){
@@ -470,8 +422,6 @@ Extra描述
             }
         }
     }
-
-
 ```
 
 #### **`CandidateApplyWithdraw`**
@@ -498,18 +448,14 @@ Extra描述
 
 param1描述
 
-
 ```
 {
     "Ret":boolean,                         //是否成功 true:成功  false:失败
     "ErrMsg":string                        //错误信息，失败时存在
 }
-
-
 ```
 
 **合约使用**
-
 
 ```
     func CandidateApplyWithdraw(){
@@ -546,8 +492,6 @@ param1描述
             }
         }
     }
-
-
 ```
 
 #### **`CandidateWithdraw`**
@@ -573,18 +517,14 @@ param1描述
 
 param1描述
 
-
 ```
 {
     "Ret":boolean,                         //是否成功 true:成功  false:失败
     "ErrMsg":string                        //错误信息，失败时存在
 }
-
-
 ```
 
 **合约使用**
-
 
 ```
     func CandidateWithdraw(){
@@ -616,8 +556,6 @@ param1描述
             }
         }
     }
-
-
 ```
 
 #### **`SetCandidateExtra`**
@@ -636,7 +574,6 @@ param1描述
 | completion  | PlatonCommonCompletion  | 回调闭包                   |
 Extra描述
 
-
 ```
 {
     "nodeName":string,                     //节点名称
@@ -645,8 +582,6 @@ Extra描述
     "nodeDiscription":string,              //机构简介
     "nodeDepartment":string                //机构名称
 }
-
-
 ```
 
 **返回事件**
@@ -657,18 +592,14 @@ Extra描述
 
 param1描述
 
-
 ```
 {
     "Ret":boolean,                         //是否成功 true:成功  false:失败
     "ErrMsg":string                        //错误信息，失败时存在
 }
-
-
 ```
 
 **合约使用**
-
 
 ```
     func SetCandidateExtra(){
@@ -715,11 +646,10 @@ param1描述
             }
         }
     }
-
-
 ```
 
 #### **`CandidateWithdrawInfos`**
+
 > 获取节点申请的退款记录列表
 
 **入参**
@@ -732,7 +662,6 @@ param1描述
 
 - String：json格式字符串
 
-
 ```
 {
     "Ret": true,                      
@@ -743,12 +672,9 @@ param1描述
         "LockBlockCycle": 1            //退款金额锁定周期
     }]
 }
-
-
 ```
 
 **合约使用**
-
 
 ```
     func CandidateWithdrawInfos() {
@@ -763,8 +689,6 @@ param1描述
             }
         }
     }
-
-
 ```
 
 #### **`CandidateDetails`**
@@ -779,7 +703,6 @@ param1描述
 **返回**
 
 - String：json格式字符串
-
 
 ```
 {
@@ -804,12 +727,9 @@ param1描述
     //出块奖励佣金比，以10000为基数(eg：5%，则fee=500)
     "Fee": 500
 }
-
-
 ```
 
 **合约使用**
-
 
 ```
     func CandidateDetails(){
@@ -824,11 +744,10 @@ param1描述
             }
         }
     }
-
-
 ```
 
 #### **`GetBatchCandidateDetail`**
+
 > 批量获取候选人信息
 
 **入参**
@@ -840,7 +759,6 @@ param1描述
 **返回**
 
 - String：json格式字符串
-
 
 ```
 [{
@@ -866,12 +784,9 @@ param1描述
     "Extra": "{\"nodeName\":\"xxxx-noedeName\",\"officialWebsite\":\"xxxx-officialWebsite\",\"nodePortrait\":\"group2/M00/00/12/wKgJVlw0XSyAY78cAAH3BKJzz9Y83.jpeg\",\"nodeDiscription\":\"xxxx-nodeDiscription1\",\"nodeDepartment\":\"xxxx-nodeDepartment\"}",
     "Fee": 500
 }]
-
-
 ```
 
 **合约使用**
-
 
 ```
     func GetBatchCandidateDetail(){
@@ -890,11 +805,10 @@ param1描述
             }
         }
     }
-
-
 ```
 
 #### **`CandidateList`**
+
 > 获取所有入围节点的信息列表
 
 **入参**
@@ -904,7 +818,6 @@ param1描述
 **返回**
 
 - String：json格式字符串
-
 
 ```
 [{
@@ -930,12 +843,9 @@ param1描述
     "Extra": "{\"nodeName\":\"xxxx-noedeName\",\"officialWebsite\":\"xxxx-officialWebsite\",\"nodePortrait\":\"group2/M00/00/12/wKgJVlw0XSyAY78cAAH3BKJzz9Y83.jpeg\",\"nodeDiscription\":\"xxxx-nodeDiscription1\",\"nodeDepartment\":\"xxxx-nodeDepartment\"}",
     "Fee": 500
 }]
-
-
 ```
 
 **合约使用**
-
 
 ```
     func CandidateList(){
@@ -950,11 +860,10 @@ param1描述
             }
         }
     }
-
-
 ```
 
 #### **`VerifiersList`**
+
 > 获取参与当前共识的验证人列表
 
 **入参**
@@ -964,7 +873,6 @@ param1描述
 **返回**
 
 - String：json格式字符串
-
 
 ```
 [{
@@ -990,12 +898,9 @@ param1描述
     "Extra": "{\"nodeName\":\"xxxx-noedeName\",\"officialWebsite\":\"xxxx-officialWebsite\",\"nodePortrait\":\"group2/M00/00/12/wKgJVlw0XSyAY78cAAH3BKJzz9Y83.jpeg\",\"nodeDiscription\":\"xxxx-nodeDiscription1\",\"nodeDepartment\":\"xxxx-nodeDepartment\"}",
     "Fee": 500
 }]
-
-
 ```
 
 合约使用：
-
 
 ```
     func VerifiersList(){
@@ -1010,10 +915,10 @@ param1描述
             }
         }
     }
-
-
 ```
 
 # web3
+
 ## web3 eth相关 (标准JSON RPC )
+
 - Swift可 api的使用请参考[Web3.swift github](https://github.com/Boilertalk/Web3.swift)

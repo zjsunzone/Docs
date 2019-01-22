@@ -1,5 +1,5 @@
 
-## <a name="comfire_txs"></a>How to confirm a transaction
+## How to confirm a transaction
 
 [Transaction] page displays all transaction records of all your wallet. By selecting and clicking one of them, the client navigates to [Transaction Information] of transaction details.
 

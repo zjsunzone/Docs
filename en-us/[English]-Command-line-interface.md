@@ -15,24 +15,24 @@
 
 ### platon 
 
-* [Platon Command Line Options Introduction](_command-line-options)
+* [Platon Command Line Options Introduction](en-us/cmd-line-interface/_command-line-options)
 	- Introducing the program `platon` instructions
 
 ### ctool
 
-* [ctool instructions for use](_ctool-usage)
+* [ctool instructions for use](en-us/cmd-line-interface/_ctool-usage)
 	- Easy tools for contract deploy, transaction delivery and call functions.
 
 ### console
 
-* [console command line tool](_javascript-console)
+* [console command line tool](en-us/cmd-line-interface/_javascript-console)
 	- A javascript runtime environment (JSRE) that can be used in either interactive (console) or non-interactive (script) mode.
 
 ### Other projects, tools, etc.
 
 * [JSON RPC API](https://github.com/ethereum/wiki/wiki/JSON-RPC)
 * [Javascript API](https://github.com/ethereum/wiki/wiki/JavaScript-API)
-* [Wasm Contract](https://github.com/PlatONnetwork/wiki/wiki/%5BChinese-Simplified%5D-Wasm%E5%90%88%E7%BA%A6%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97)
+* [Wasm Contract](en-us/%5BEnglish%5D-Wasm-Contract-Development-Guide)
 
 
 

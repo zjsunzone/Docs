@@ -9,7 +9,7 @@
 - 
 - 用户手册
 - 
-- [命令行界面](zh-cn/[Chinese-Simplified]命令行界面)
+- [命令行界面](zh-cn/[Chinese-Simplified]-命令行界面)
 - [Samurai钱包](zh-cn/[Chinese-Simplified]-Samurai-钱包)
 - 
 - 开发文档

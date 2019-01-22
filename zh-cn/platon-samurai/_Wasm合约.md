@@ -1,8 +1,8 @@
-## <a name="what_is_msc"></a>Wasm合约是什么
+## Wasm合约是什么
 Wasm合约是使用webassebly构建，部署于PlatON上的应用。用户只需要通过Samurai客户端提交Wasm合约代码到PlatON上，就可以对外发布服务。
 
 
-## <a name="how_to_deploy"></a>如何部署一个Wasm合约
+## 如何部署一个Wasm合约
 
 1.客户端【合约】页面，点击【部署合约】，如下图所示：
 
@@ -24,7 +24,7 @@ Wasm合约是使用webassebly构建，部署于PlatON上的应用。用户只需
 
 *在合约编译后，也会产生一份后缀为.json的ABI文件。ABI全称 Application Binary Interface，字面意思是应用程序二进制接口，可以通俗地理解为合约的接口说明，当合约被编译后，它对应的ABI也就确定了。ABI有点类似于程序中的接口定义，描述了字段名称、字段类型、方法名称、参数名称、参数类型、方法返回值类型等。*
 
-## <a name="how_to_add"></a>如何添加别人已部署的合约
+## 如何添加别人已部署的合约
 一个合约创建完成之后，其他用户可以将该合约添加到客户端进行观察及运行，添加步骤如下：
 
 1.客户端【合约】页面，点击【添加合约】，如下图所示：
@@ -46,7 +46,7 @@ Wasm合约是使用webassebly构建，部署于PlatON上的应用。用户只需
 ![Image text](image/Address+ABI-cn.png)
 
 
-## <a name="how_to_run"></a>怎样运行Wasm合约
+## 怎样运行Wasm合约
 
 1.【合约】页面，点击任意一个创建好的合约，进入该合约详情页面，如下图所示：
 

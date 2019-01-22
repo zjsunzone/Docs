@@ -59,66 +59,65 @@ Installation instruction of tar.xz package.
 1.Download Linux Samurai package,such as Samurai-Linux64.tar.xz
 2.Right click to extract the installation package.
 3.Go to the extracted folder and double-click the executable Samurai to open the client.
-
-
 ```
+
 + **Brief installation instruction on MacOS:**
 
 MacOS is not supported for the time being
-
-
 
 ## How to use Samurai
 
 ### Network
 
-- [How to join in PlatON TestNet](en-us/platon-samurai-EN/_Join-in-a-Network#join_net)
+- [How to join in PlatON TestNet](en-us/platon-samurai-EN/_Join-in-a-Network#How-to-join-in-PlatON-TestNet)
 
-- [How to create a PlatON Private-net](en-us/platon-samurai-EN/_Join-in-a-Network#create_private)
+- [How to create a PlatON Private-net](en-us/platon-samurai-EN/_Join-in-a-Network#How-to-create-a-PlatON-Private-net)
 
 ### Wallet
 
-- [How to create a wallet](en-us/platon-samurai-EN/_Classic-Wallet#create_wallet)
+- [How to create a wallet](en-us/platon-samurai-EN/_Classic-Wallet#How-to-create-a-wallet)
 
-- [How to import & restore a wallet](en-us/platon-samurai-EN/_Classic-Wallet#import_wallet)
+- [How to import & restore a wallet](en-us/platon-samurai-EN/_Classic-Wallet#how-to-import-amp-restore-a-wallet&-restore-a-wallet)
 
-- [How to send and receive funds](en-us/platon-samurai-EN/_Classic-Wallet#send_recv_atp)
+- [How to send and receive funds](en-us/platon-samurai-EN/_Classic-Wallet#How-to-send-and-receive-funds)
 
-- [Why is the test Energon in the wallet cleard](en-us/platon-samurai-EN/_Classic-Wallet#why_is_cleard)
+- [Why is the test Energon in the wallet cleard](en-us/platon-samurai-EN/_Classic-Wallet#Why-is-the-test-Energon-in-the-wallet-cleard)
 
 ### Joint Wallet
 
-- [What is Joint wallet](en-us/platon-samurai-EN/_Joint-Wallet#what_is)
-- [How to create a Joint wallet](en-us/platon-samurai-EN/_Joint-Wallet#how_to_create)
+- [What is Joint wallet](en-us/platon-samurai-EN/_Joint-Wallet#What-is-joint-wallet)
+- [How to create a Joint wallet](en-us/platon-samurai-EN/_Joint-Wallet#How-to-create-a-joint-wallet)
 
-- [How to add a Joint wallet that has been created](en-us/platon-samurai-EN/_Joint-Wallet#how_to_add)
-- [How to send and receive funds with Joint wallet](en-us/platon-samurai-EN/_Joint-Wallet#how_to_use)
+- [How to add a Joint wallet that has been created](en-us/platon-samurai-EN/_Joint-Wallet#How-to-add-a-joint-wallet-that-has-been-created)
+- [How to send and receive funds with Joint wallet](en-us/platon-samurai-EN/_Joint-Wallet#How-to-send-and-receive-funds-with-Joint-wallet)
 
 ### Transaction
 
-- [How to confirm a transaction](en-us/platon-samurai-EN/_Confirm-Transactions#comfire_txs)
+- [How to confirm a transaction](en-us/platon-samurai-EN/_Confirm-Transactions#How-to-confirm-a-transaction)
 
 ### Wasm contracts
 
-- [What is wasm contract](en-us/platon-samurai-EN/_Wasm-Contracts#what_is_msc)
+- [What is wasm contract](en-us/platon-samurai-EN/_Wasm-Contracts#What-is-Wasm-contract)
 
-- [How to deploy a contract](en-us/platon-samurai-EN/_Wasm-Contracts#how_to_deploy)
+- [How to deploy a contract](en-us/platon-samurai-EN/_Wasm-Contracts#how-to-deploy-a-contract)
 
-- [How to add a contract that has been created ](en-us/platon-samurai-EN/_Wasm-Contracts#how_to_add)
+- [How to add a contract that has been created ](en-us/platon-samurai-EN/_Wasm-Contracts#How-to-add-a-contract-that-has-been-created)
 
-- [How to execute a contract ](en-us/platon-samurai-EN/_Wasm-Contracts#how_to_run)
+- [How to execute a contract ](en-us/platon-samurai-EN/_Wasm-Contracts#How-to-execute-a-contract)
+
 ### Validator Node
-- [What’s candidate node](en-us/platon-samurai-EN/_Validator-Node#what_is_CN)
 
-- [How to be a validator node](en-us/platon-samurai-EN/_Validator-Node#how_to_be_VN)
+- [What’s candidate node](en-us/platon-samurai-EN/_Validator-Node#What's-candidate-node)
 
-- [How to improve the probability to become validator node](en-us/platon-samurai-EN/_Validator-Node#how_to_improve)
+- [How to be a validator node](en-us/platon-samurai-EN/_Validator-Node#How-to-be-a-validator-node)
 
-- [Why are candidate nodes eliminated](en-us/platon-samurai-EN/_Validator-Node#why_be_eliminated)
+- [How to improve the probability to become validator node](en-us/platon-samurai-EN/_Validator-Node#how-to-improve-the-probability-to-become-validator-node)
 
-- [How to re-apply for validator node if eliminated](en-us/platon-samurai-EN/_Validator-Node#how_to_re-apply)
+- [Why are candidate nodes eliminated](en-us/platon-samurai-EN/_Validator-Node#Why-are-candidate-nodes-eliminated)
 
-- [How to withdraw the application](en-us/platon-samurai-EN/_Validator-Node#how_to_withdraw)
+- [How to re-apply for validator node if eliminated](en-us/platon-samurai-EN/_Validator-Node#how-to-re-apply-for-validator-node-if-eliminated)
 
-- [How to redeem the stakes](en-us/platon-samurai-EN/_Validator-Node#how_to_redeem_stakes)
+- [How to withdraw the application](en-us/platon-samurai-EN/_Validator-Node#How-to-withdraw-the-application)
+
+- [How to redeem the stakes](en-us/platon-samurai-EN/_Validator-Node#How-to-redeem-the-stakes)
 
