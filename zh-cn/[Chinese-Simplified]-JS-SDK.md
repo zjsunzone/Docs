@@ -64,7 +64,6 @@ wasm智能合约的编写及其ABI(wasm文件)和BIN(json文件)生成方法请�
 
 #### 合约示例
 
-
 ```
     namespace platon {
         class ACC : public token::Token {
@@ -131,7 +130,6 @@ wasm智能合约的编写及其ABI(wasm文件)和BIN(json文件)生成方法请�
 |callback|Funciton  |可选|回调函数，用于支持异步的方式执行|
 
 ##### 示例
-
 
 ````js
 const Web3 = require('web3'),
@@ -291,7 +289,6 @@ function getParams(data = '', value = "0x0") {
 > PlatON经济模型中候选人相关的合约接口[合约描述](zh-cn/platon-ppos/_Probabilistic-POS#%e9%aa%8c%e8%af%81%e6%b1%a0%e5%90%88%e7%ba%a6)
 
 ##### 加载合约
-
 
 ````js
 const Web3 = require('web3'),
@@ -790,7 +787,6 @@ param1描述
 ```
 
 ###### 示例
-
 
 ````js
 const nodeId = '0xeebeaa496d954f8ee864e6460719755398f1e5b36e7a0c911f527fe3247b02a0a4db17aa59c5235e923602df1aeb26042149b8d2fd71cf990046b08d3b323b9a' // 节点ID(公钥)

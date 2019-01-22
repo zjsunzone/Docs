@@ -39,7 +39,6 @@
 1. SDK lib address https://sdk.platon.network/nexus/content/groups/public/
 2. Build by maven configuration
 
-
 ```
 <dependency>
     <groupId>com.platon.client</groupId>
@@ -49,16 +48,14 @@
 ```
 3. Build by gradle
 
-
 ```
 compile "com.platon.client:core:x.x.x"
-
-
 ```
+
 ### Building contract Java wrapper
+
 1. Download SDK package from url: https://download.platon.network/client-sdk.zip
 2. Folder structures after uncompress
-
 
 ```
 .
@@ -71,8 +68,8 @@ compile "com.platon.client:core:x.x.x"
 
 
 ```
-3. Execute coresponding ./client-sdk command in bin folder above
 
+3. Execute coresponding ./client-sdk command in bin folder above
 
 ```
               _      _____ _     _
@@ -85,23 +82,17 @@ __      _____| |__      / /_     _   ___
                         |__/
 
 Usage: client-sdk version|wallet|solidity|truffle|wasm ...
-
-
 ```
 
 ## Code initialization
 
-
 ```
 Web3j web3 = Web3j.build(new HttpService("http://localhost:6789"));
-
-
 ```
 
 # Contract
 
 ## Contract Sample Code
-
 
 ```
 namespace platon {
@@ -153,24 +144,19 @@ extern "C" {
     }
 }
 //platon autogen end
-
-
 ```
 
 ## Build contract Java wrapper
+
 1. How to code wasm contract, ABI(wasm file) and BIN(json file), please refer to [Wasm Contract Development Guide](https://github.com/PlatONnetwork/wiki/wiki/%5BEnglish%5D-Wasm-Contract-Development-Guide)
 
 2. Use contract Java wrapper building toolkit
 
-
 ```
 client-sdk wasm generate /path/to/token.wasm /path/to/token.cpp.abi.json -o /path/to/src/main/java -p com.your.organisation.name
-
-
 ```
 
 ## Load Contract
-
 
 ```
 Web3j web3j = Web3j.build(new HttpService("http://localhost:6789"));
@@ -180,12 +166,9 @@ byte[] dataBytes = Files.readBytes(new File("<wasm file path>"));
 String binData = Hex.toHexString(dataBytes);
 
 Token contract = Token.load(binData, "0x<address>", web3j, credentials, new StaticGasProvider(GAS_PRICE, GAS_LIMIT));
-
-
 ```
 
 ## Deploy Contract
-
 
 ```
 Web3j web3 = Web3j.build(new HttpService("http://localhost:6789"));
@@ -195,12 +178,9 @@ byte[] dataBytes = Files.readBytes(new File("<wasm file path>"));
 String binData = Hex.toHexString(dataBytes);
 
 Token contract = Token.deploy(web3, credentials, binData, new StaticGasProvider(GAS_PRICE,GAS_LIMIT)).send();
-
-
 ```
 
 ## Contract ethCall call
-
 
 ```
 Request<?, org.web3j.protocol.core.methods.response.EthCall> req = web3j.ethCall(Transaction.createEthCallTransaction(
@@ -210,12 +190,9 @@ Request<?, org.web3j.protocol.core.methods.response.EthCall> req = web3j.ethCall
                DefaultBlockParameter.valueOf("latest"));
 org.web3j.protocol.core.methods.response.EthCall res = req.send();
 String value = res.getValue();
-
-
 ```
 
 ## Contract sendRawTransaction call
-
 
 ```
 Web3j web3j = Web3j.build(new HttpService("http://localhost:6789"));
@@ -224,12 +201,11 @@ String signedData = "0xd46e8dd67c5d32be8d46e8dd67c5d32be8058bb8eb970870f07244567
 Request<?, org.web3j.protocol.core.methods.response.EthSendTransaction> req = web3j.ethSendRawTransaction(signedData);
 org.web3j.protocol.core.methods.response.EthSendTransaction res = req.send();
 String transactionHash = res.getTransactionHash();
-
-
 ```
-## Contract event
-Assume Contrace has an event "transfer", then we could monitor this event as below
 
+## Contract event
+
+Assume Contrace has an event "transfer", then we could monitor this event as below
 
 ```
 String contractAddress = "0x223424fskljlsldfsf";
@@ -240,15 +216,16 @@ filter.addSingleTopic(EventEncoder.encode(event));
 web3j.ethLogObservable(filter).subscribe(log -> {
     System.out.println(log);
 });
-
-
 ```
 
 # web3
+
 ## web3 eth related (standard JSON RPC)
+
 - For detailed api usage please refer [web3j github](https://github.com/web3j/web3j)
 
 ## New interfaces
+
 ### ethPendingTx
 >Returns the pending transaction list.
 
@@ -268,6 +245,4 @@ transactions data member of EthPendingTransactions object
 Request<?, EthPendingTransactions> req = web3j.ethPendingTx();
 EthPendingTransactions res = req.send();
 List<Transaction> transactions = res.getTransactions();
-
-
 ```

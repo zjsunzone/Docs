@@ -130,7 +130,6 @@ Usage: client-sdk version|wallet|solidity|truffle|wasm ...
 
 ## 初始化代码
 
-
 ```
 Web3j web3 = Web3j.build(new HttpService("http://localhost:6789"));
 ```
@@ -138,7 +137,6 @@ Web3j web3 = Web3j.build(new HttpService("http://localhost:6789"));
 # 合约
 
 ## 合约示例
-
 
 ```
 #include <stdlib.h>
@@ -192,13 +190,11 @@ PLATON_ABI(demo::FirstDemo, getName)
 1. wasm智能合约的编写及其ABI(wasm文件)和BIN(json文件)生成方法请参考 [WASM合约开发指南](/zh-cn/%5BChinese-Simplified%5D-Wasm%E5%90%88%E7%BA%A6%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97)
 2. 使用合约骨架生成工具
 
-
 ```
 client-sdk wasm generate /path/to/firstdemo.wasm /path/to/firstdemo.cpp.abi.json -o /path/to/src/main/java -p com.your.organisation.name
 ```
 
 ## 加载合约
-
 
 ```
 //Java 8
@@ -215,7 +211,6 @@ Firstdemo contract = Firstdemo.load(binData, "0x<address>", web3j, credentials, 
 ```
 
 ## 部署合约
-
 
 ```
 //Java 8
@@ -234,7 +229,6 @@ Firstdemo contract = Firstdemo.deploy(web3j, credentials, binData, new DefaultWa
 
 ## 合约call调用
 
-
 ```
 //abi中方法描述	constant=true 的生成的骨架方法里面调用的是call查询
 String name = contract.getName().send();
@@ -242,7 +236,6 @@ System.out.println(name);
 ```
 
 ## 合约sendRawTransaction调用
-
 
 ```
 //abi中方法描述	constant=false 的生成的骨架方法里面调用的是sendRawTransaction
@@ -257,11 +250,12 @@ for(NotifyEventResponse r:eventResponses) {
 ```
 
 ## 内置合约
+
 ###  CandidateContract
+
 > PlatOn经济模型中候选人相关的合约接口[合约描述](zh-cn/platon-ppos/_Probabilistic-POS#%e9%aa%8c%e8%af%81%e6%b1%a0%e5%90%88%e7%ba%a6)
 
 #### 加载合约
-
 
 ```
 //Java 8
@@ -275,6 +269,7 @@ CandidateContract contract = CandidateContract.load(web3j, credentials, new Defa
 ```
 
 #### **`CandidateDeposit`**
+
 > 节点候选人申请/增加质押
 
 **入参**
@@ -289,7 +284,6 @@ CandidateContract contract = CandidateContract.load(web3j, credentials, new Defa
 | Extra | String | 附加数据，json格式字符串类型 |
 
 Extra描述
-
 
 ```
 {
@@ -309,7 +303,6 @@ Extra描述
 
 param1描述
 
-
 ```
 {
 	"Ret":boolean,                         //是否成功 true:成功  false:失败
@@ -318,7 +311,6 @@ param1描述
 ```
 
 **合约使用**
-
 
 ```
 //节点id
@@ -359,6 +351,7 @@ for (CandidateDepositEventEventResponse event : events) {
 ```
 
 #### **`CandidateApplyWithdraw`**
+
 > 节点质押金退回申请，申请成功后节点将被重新排序，发起的地址必须是质押金退款的地址 from==owner
 
 **入参**
@@ -377,7 +370,6 @@ for (CandidateDepositEventEventResponse event : events) {
 
 param1描述
 
-
 ```
 {
 	"Ret":boolean,                         //是否成功 true:成功  false:失败
@@ -386,7 +378,6 @@ param1描述
 ```
 
 **合约使用**
-
 
 ```
 //节点id
@@ -406,6 +397,7 @@ for (CandidateApplyWithdrawEventEventResponse event : events) {
 ```
 
 #### **`CandidateWithdraw`**
+
 > 节点质押金提取，调用成功后会提取所有已申请退回的质押金到owner账户。
 
 **入参**
@@ -422,7 +414,6 @@ for (CandidateApplyWithdrawEventEventResponse event : events) {
 | param1 | String | 执行结果，json格式字符串类型 |
 
 param1描述
-
 
 ```
 {
@@ -446,11 +437,10 @@ List<CandidateWithdrawEventEventResponse>  events = contract.getCandidateWithdra
 for (CandidateWithdrawEventEventResponse event : events) {
     logger.debug("event:{}", JSON.toJSONString(event.param1));
 }
-
-
 ```
 
 #### **`SetCandidateExtra`**
+
 > 设置节点附加信息, 发起的地址必须是质押金退款的地址 from==owner
 
 **入参**
@@ -518,6 +508,7 @@ for (SetCandidateExtraEventEventResponse event : events) {
 ```
 
 #### **`CandidateWithdrawInfos`**
+
 > 获取节点申请的退款记录列表
 
 **入参**
@@ -544,7 +535,6 @@ for (SetCandidateExtraEventEventResponse event : events) {
 
 **合约使用**
 
-
 ```
 //节点id
 String nodeId = "0x6bad331aa2ec6096b2b6034570e1761d687575b38c3afc3a3b5f892dac4c86d0fc59ead0f0933ae041c0b6b43a7261f1529bad5189be4fba343875548dc9efd3"; 
@@ -555,6 +545,7 @@ logger.debug("CandidateWithdrawInfos:{}",result);
 ```
 
 #### **`CandidateDetails`**
+
 > 获取候选人信息
 
 **入参**
@@ -566,7 +557,6 @@ logger.debug("CandidateWithdrawInfos:{}",result);
 **返回**
 
 - String：json格式字符串
-
 
 ```
 {
@@ -605,6 +595,7 @@ logger.debug("CandidateDetails:{}",result);
 ```
 
 #### **`GetBatchCandidateDetail`**
+
 > 批量获取候选人信息
 
 **入参**
@@ -645,7 +636,6 @@ logger.debug("CandidateDetails:{}",result);
 
 **合约使用**
 
-
 ```
 //节点id
 StringBuilder stringBuilder = new StringBuilder();
@@ -662,6 +652,7 @@ logger.debug("GetBatchCandidateDetail:{}",result);
 ```
 
 #### **`CandidateList`**
+
 > 获取所有入围节点的信息列表
 
 **入参**
@@ -706,6 +697,7 @@ logger.debug("CandidateList:{}",nodeInfoList);
 ```
 
 #### **`VerifiersList`**
+
 > 获取参与当前共识的验证人列表
 
 **入参**
@@ -768,11 +760,8 @@ EthPendingTransactions属性中的transactions即为对应存储数据
 
 **示例**
 
-
 ```
 Request<?, EthPendingTransactions> req = web3j.ethPendingTx();
 EthPendingTransactions res = req.send();
 List<Transaction> transactions = res.getTransactions();
-
-
 ```
