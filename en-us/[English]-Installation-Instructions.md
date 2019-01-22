@@ -1,4 +1,4 @@
-**This document provides `PlatON` installation guide for different environments， After installation, you can refer to the document [Private Network](https://github.com/PlatONnetwork/wiki/wiki/%5BEnglish%5D-Private-Networks) to start.**
+**This document provides `PlatON` installation guide for different environments， After installation, you can refer to the document [Private Network](en-us/%5BEnglish%5D-Private-Networks) to start.**
 
 Follow the appropriate link below to find installation instructions for your platform.
 + Installation Instructions for Linux/Unix
@@ -9,7 +9,7 @@ Follow the appropriate link below to find installation instructions for your pla
 ## Installing on Ubuntu
 
 The Ubuntu runtime environment needs to meet the following requirements:
-- System version: `Ubuntu 16.04.1 or above`
+- System version: `Ubuntu 16.04.1 or above` 
 
 There are four ways of installation on Ubuntu: 
 - binaries package
