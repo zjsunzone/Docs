@@ -60,7 +60,7 @@ Be sure to note the generated **Address**.
 
 3. **Generate the genesis configuration file.**
 
-Create genesis block files in the work directory and copy the following. Change `your-node-pubkey` into the previously generated node ID to make the local common nodes participate in the consensus. Change `your-account-address` into the account generated in step 3. The contents of platon.json are as follows:
+Create genesis block file in the work directory and copy the following. Change `your-node-pubkey` into the previously generated node ID to make the local common nodes participate in the consensus. Change `your-account-address` into the account generated in step 3. The contents of platon.json are as follows:
 
 ```
 {
