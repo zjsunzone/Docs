@@ -58,7 +58,7 @@ Address: {566c274db7ac6d38da2b075b4ae41f4a5c481d21}
 
 3.生成创世块配置文件`platon.json`
 
-从[这里](https://download.platon.network/0.3/platon.json)下载创世配置文件模板`platon.json`保存到工作目录下，修改 `your-node-pubkey` 为第2步生成的 ***节点ID*** ，使本地节点成为共识节点参与共识。修改 `your-account-address` 为第3步生成的 ***Address***。`platon.json`内容如下：
+在工作目录下创建创世区块文件，拷贝以下内容，修改 `your-node-pubkey` 为第2步生成的 ***节点ID*** ，使本地节点成为共识节点参与共识。修改 `your-account-address` 为第3步生成的 ***Address***。`platon.json`内容如下：
 
 ```
 {
