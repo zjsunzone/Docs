@@ -19,7 +19,7 @@ There are four ways of installation on Ubuntu:
 
 ### Binary package based installation
 
-The official binary package file download link for ubuntu is：[https://download.platon.network/0.3/platon-ubuntu-amd64-0.3.0.tar.gz](https://download.platon.network/0.3/platon-ubuntu-amd64-0.3.0.tar.gz)
+The official binary package file download link for ubuntu is：<https://download.platon.network/0.3/platon-ubuntu-amd64-0.3.0.tar.gz>
 
 ```bash
 $ wget https://download.platon.network/0.3/platon-ubuntu-amd64-0.3.0.tar.gz
@@ -117,7 +117,7 @@ $ make all-with-mpc
 After compilation, the `platon`、 `ethkey` and `ctool` executable files will be generated in the `PlatON-Go/build/bin` directory，and then copy these executable files to your own working directory.
 
 >**Hint**：
->MPC is secure multi-party computing feature supported by the Platon platform for privacy calculations. **Only Ubuntu supported now**. For more information about MPC, please refer [Reference](https://github.com/PlatONnetwork/wiki/wiki/%5BEnglish%5D-PlatON-Privacy-Contract-Guide)
+>MPC is secure multi-party computing feature supported by the Platon platform for privacy calculations. **Only Ubuntu supported now**. For more information about MPC, please refer [Reference](en-us/%5BEnglish%5D-PlatON-Privacy-Contract-Guide)
 
 
 ## Installing on Windows
@@ -129,7 +129,7 @@ The Windows environment supports three installation modes:
 
 ### Binary package based installation
 
-Windows version of the Platon binary download link is: [https://download.platon.network/0.3/platon-windows-x86_64-0.3.0.zip](https://download.platon.network/0.3/platon-windows-x86_64-0.3.0.zip) download. No installation is required after downloading, and it can be used directly by decompression.
+Windows version of the Platon binary download link is: <https://download.platon.network/0.3/platon-windows-x86_64-0.3.0.zip> download. No installation is required after downloading, and it can be used directly by decompression.
 
 The extracted files should be as following:
 - `platon` client executable file
@@ -138,7 +138,7 @@ The extracted files should be as following:
 
 ### Installation via Chocolatey
 
-We use the Chocolatey package manager to install the required build tools. If you don't have Chocolatey, follow the instructions on [https://chocolatey.org](https://chocolatey.org).
+We use the Chocolatey package manager to install the required build tools. If you don't have Chocolatey, follow the instructions on <https://chocolatey.org>.
 
 Start PowerShell as an administrator and install Platon using the choco command:
 

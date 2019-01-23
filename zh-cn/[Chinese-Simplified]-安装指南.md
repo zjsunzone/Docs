@@ -20,7 +20,7 @@ Ubuntu环境支持以下四种安装方式：
 
 ### 官方二进制包下载
 
-ubuntu版本官方二进制包文件下载地址：[https://download.platon.network/0.3/platon-ubuntu-amd64-0.3.0.tar.gz](https://download.platon.network/0.3/platon-ubuntu-amd64-0.3.0.tar.gz)
+ubuntu版本官方二进制包文件下载地址：<https://download.platon.network/0.3/platon-ubuntu-amd64-0.3.0.tar.gz>
 
 ```bash
 # 下载
@@ -80,7 +80,7 @@ Ubuntu编译环境要求：
 
 #### 1. 获取源码
 
-源码地址：[https://github.com/PlatONnetwork/PlatON-Go.git](https://github.com/PlatONnetwork/PlatON-Go.git)，执行如下命令编译生成 `platon` 可执行文件:
+源码地址：<https://github.com/PlatONnetwork/PlatON-Go.git>，执行如下命令编译生成 `platon` 可执行文件:
 
 ```
 $ git clone https://github.com/PlatONnetwork/PlatON-Go.git --recurive
@@ -137,7 +137,7 @@ Window环境支持以下三种安装方式：
 - 源码
 
 ### 官方二进制下载安装
-Windows版本的`platon`二进制文件下载地址：[https://download.platon.network/0.3/platon-windows-x86_64-0.3.0.zip](https://download.platon.network/0.3/platon-windows-x86_64-0.3.0.zip)下载。下载后无需安装，直接解压即可使用。
+Windows版本的`platon`二进制文件下载地址：<https://download.platon.network/0.3/platon-windows-x86_64-0.3.0.zip>下载。下载后无需安装，直接解压即可使用。
 
 解压内容如下：
 
@@ -149,7 +149,7 @@ Windows版本的`platon`二进制文件下载地址：[https://download.platon.n
 
 #### 1. chocolatey安装
 
-我们使用`chocolatey`包管理器来安装所需的构建工具。如果你还没有`chocolatey`，可以按照[https://chocolatey.org](https://chocolatey.org)上的说明进行安装。
+我们使用`chocolatey`包管理器来安装所需的构建工具。如果你还没有`chocolatey`，可以按照<https://chocolatey.org>上的说明进行安装。
 
 用管理员身份启动`PowerShell`,然后使用`choco`命令安装`platon`：
 
