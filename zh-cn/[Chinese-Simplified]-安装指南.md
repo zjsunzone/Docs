@@ -103,7 +103,7 @@ $ make all
 - 编译`MPC VM`
 
 请参考[隐私合约虚拟机编译](https://github.com/PlatONnetwork/privacy-contract-vm#building--installing)。
-假定编译目录为`~/home/path/to/mpcvm/build`，编译将输出`MPC VM`运行库到`~/home/path/to/mpcvm/build/lib`。
+假定编译目录为`~/home/path/to/mpcvm/build`，编译将输出`MPC VM`运行库到`~/home/path/to/mpcvm/build/lib`.
 
 - 配置环境
 
@@ -124,9 +124,7 @@ $ make all-with-mpc
 
 编译完成之后在`PlatON-Go/build/bin`目录下会生成`platon`、`ethkey`和`ctool`可执行文件，将此三个可执行文件拷贝到自己工作目录运行即可。
 
->**提示**：
-
->`MPC`计算功能是`PlatON` 平台实现隐私计算提供的基础设施，**当前仅支持 Ubuntu 系统**。更多MPC相关请[参考这里](zh-cn/[Chinese-Simplified]-%e9%9a%90%e7%a7%81%e5%90%88%e7%ba%a6%e5%bc%80%e5%8f%91%e6%8c%87%e5%8d%97)
+>**提示**：`MPC`计算功能是`PlatON` 平台实现隐私计算提供的基础设施，**当前仅支持 Ubuntu 系统**。更多MPC相关请[参考这里](zh-cn/[Chinese-Simplified]-%e9%9a%90%e7%a7%81%e5%90%88%e7%ba%a6%e5%bc%80%e5%8f%91%e6%8c%87%e5%8d%97)
 
 ## Windows安装
 
