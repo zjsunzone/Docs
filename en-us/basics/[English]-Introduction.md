@@ -16,7 +16,7 @@
 
 ## PlatON Basic Concepts
 ### Nodes
-<img src="/en-us/basics/images/nodes-en.png"  alt="nodes" />
+<img src="en-us/basics/images/nodes-en.png"  alt="nodes" />
 
 PlatON decouples transaction execution from blockchain consensus and builds a scalable trustless computing network off the chain. Therefore, the nodes in PlatON mainly are of the following categories:
 
@@ -39,7 +39,7 @@ Compared to the account model, UTXO does not support smart contracts, and many D
 
 ### Smart Contracts
 From a technical point of view, the PlatON computing network is essentially a decentralized FaaS platform. Correspondingly, smart contracts can be thought of as FaaS functions. The smart contracts in PlatON fall into three categories.
-<img src="/en-us/basics/images/contracts-en.png"  alt="contracts" />
+<img src="en-us/basics/images/contracts-en.png"  alt="contracts" />
 
 **Wasm Contracts** support high-level language development and compiles to executable Wasm. Transactions that trigger wasm contracts are packaged by the consensus nodes, and the nodes in the entire network repeat the verification. The statuses of the wasm contracts are saved to the public ledger.
 
