@@ -4,12 +4,11 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Contents**
 
-- [MPC SDK接入手册](#MPC-SDK%e6%8e%a5%e5%85%a5%e6%89%8b%e5%86%8c)
+- [MPC SDK接入手册](#mpc-sdk%E6%8E%A5%E5%85%A5%E6%89%8B%E5%86%8C)
   - [引言](#%E5%BC%95%E8%A8%80)
   - [背景](#%E8%83%8C%E6%99%AF)
   - [名词解释](#%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A)
   - [环境要求](#%E7%8E%AF%E5%A2%83%E8%A6%81%E6%B1%82)
-  - [基本流程](#%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B)
   - [隐私合约应用开发](#%E9%9A%90%E7%A7%81%E5%90%88%E7%BA%A6%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91)
     - [姚氏百万富翁经典案例](#%E5%A7%9A%E6%B0%8F%E7%99%BE%E4%B8%87%E5%AF%8C%E7%BF%81%E7%BB%8F%E5%85%B8%E6%A1%88%E4%BE%8B)
     - [快速开始](#%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B)
@@ -61,7 +60,7 @@ MPC计算虚拟机`MPC VM`作为 PlatON 计算架构中作为关键组件，提�
 	- [Google Protobuf 3.5.2](#)
 	
 * 节点要求
-	- 部署MPC计算环境，要求计算节点数量至少为`2`个。节点部署可参考[PlatON私有网络多节点搭建](https://github.com/PlatONnetwork/wiki/wiki/[Chinese-Simplified]-%E7%A7%81%E6%9C%89%E7%BD%91%E7%BB%9C)
+	- 部署MPC计算环境，要求计算节点数量至少为`2`个。节点部署可参考[PlatON私有网络多节点搭建](zh-cn/basics/[Chinese-Simplified]-私有网络)
 
 ## 隐私合约应用开发
 
@@ -202,7 +201,7 @@ $ ./plang ./YaoMillionairesProblem.cpp -config ./config.json -I ./include
 #### 发布WASM合约
 
 在上一步中编译后获得文件`mpcc.cpp`，该文件是由隐私合约编译后生成的`WASM`合约，该合约需要经过
-编译后并发布到区块链上。具体参考：[WASM合约使用手册](https://github.com/PlatONnetwork/wiki/wiki/[Chinese-Simplified]-Wasm%E5%90%88%E7%BA%A6%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97)
+编译后并发布到区块链上。具体参考：[WASM合约使用手册](zh-cn/development/[Chinese-Simplified]-Wasm合约开发指南)
 
 假定合约发布后的合约地址为：
 

@@ -1,21 +1,24 @@
--   [Overview](#Overview)
--   [Release notes](#Release-notes)
-    -   [v0.2.0 Release notes](#v0.2.0-Release-notes)
--   [Quick start](#Quick-start)
-    -   [Installation instruction](#Installation-instruction)
-    -   [Code initialization](#Code-initialization)
--   [Contract](#Contract)
-    -   [Contract Sample Code](#Contract-Sample-Code)
-    -   [Contract Java wrapper building](#Contract-Java-wrapper-building)
-    -   [Load Contract](#Load-Contract)
-    -   [Deploy Contract](#Deploy-Contract)
-    -   [Contract function call](#Contract-function-call)
-    -   [Contract sendRawTransaction function](#Contract-sendrawtransaction-function)
-    -   [Contract event](#Contract-event)
--   [web3](#web3)
-    -   [web3 eth related (standard JSON RPC )](#web3-eth-related-standard-json-rpc)
-    -   [New interfaces](#New-interfaces) 
-        -   [ethPendingTx](#ethpendingtx)
+- [Overview](#overview)
+- [Release notes](#release-notes)
+  - [v0.2.0 Release notes](#v020-release-notes)
+- [Quick start](#quick-start)
+  - [Installation instruction](#installation-instruction)
+    - [Environment requirement](#environment-requirement)
+    - [Import SDK](#import-sdk)
+    - [Building contract Java wrapper](#building-contract-java-wrapper)
+  - [Code initialization](#code-initialization)
+- [Contract](#contract)
+  - [Contract Sample Code](#contract-sample-code)
+  - [Build contract Java wrapper](#build-contract-java-wrapper)
+  - [Load Contract](#load-contract)
+  - [Deploy Contract](#deploy-contract)
+  - [Contract ethCall call](#contract-ethcall-call)
+  - [Contract sendRawTransaction call](#contract-sendrawtransaction-call)
+  - [Contract event](#contract-event)
+- [web3](#web3)
+  - [web3 eth related (standard JSON RPC)](#web3-eth-related-standard-json-rpc)
+  - [New interfaces](#new-interfaces)
+    - [ethPendingTx](#ethpendingtx)
 	
 # Overview
 > Java SDK is a Java development kit provided by PlatON for Java developers working on PlatON public chain.
@@ -148,7 +151,7 @@ extern "C" {
 
 ## Build contract Java wrapper
 
-1. How to code wasm contract, ABI(wasm file) and BIN(json file), please refer to [Wasm Contract Development Guide](https://github.com/PlatONnetwork/wiki/wiki/%5BEnglish%5D-Wasm-Contract-Development-Guide)
+1. How to code wasm contract, ABI(wasm file) and BIN(json file), please refer to [Wasm Contract Development Guide](en-us/development/%5BEnglish%5D-Wasm-Contract-Development-Guide)
 
 2. Use contract Java wrapper building toolkit
 
