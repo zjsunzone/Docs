@@ -16,7 +16,7 @@
 
 ## PlatON Basic Concepts
 ### Nodes
-![nodes](images/PlatONnetwork/wiki/nodes-en.png)
+![nodes](images/nodes-en.png)
 
 PlatON decouples transaction execution from blockchain consensus and builds a scalable trustless computing network off the chain. Therefore, the nodes in PlatON mainly are of the following categories:
 
