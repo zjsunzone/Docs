@@ -4,14 +4,19 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Contents**
 
-- [共识](#%E5%85%B1%E8%AF%86)
-- [CBFT 简介](#cbft-%E7%AE%80%E4%BB%8B)
-- [理论假设](#%E7%90%86%E8%AE%BA%E5%81%87%E8%AE%BE)
-- [区块产生](#%E5%8C%BA%E5%9D%97%E4%BA%A7%E7%94%9F)
-- [区块验证](#%E5%8C%BA%E5%9D%97%E9%AA%8C%E8%AF%81)
-- [区块执行](#%E5%8C%BA%E5%9D%97%E6%89%A7%E8%A1%8C)
-- [区块写入](#%E5%8C%BA%E5%9D%97%E5%86%99%E5%85%A5)
-- [流程图](#%E6%B5%81%E7%A8%8B%E5%9B%BE)
+- [PlatON CBFT(Concurrent Byzantine Fault Tolerance)](#platon-cbftconcurrent-byzantine-fault-tolerance)
+	- [共识](#%E5%85%B1%E8%AF%86)
+		- [理解共识算法](#%E7%90%86%E8%A7%A3%E5%85%B1%E8%AF%86%E7%AE%97%E6%B3%95)
+			- [CBFT](#cbft)
+	- [CBFT 简介](#cbft-%E7%AE%80%E4%BB%8B)
+	- [理论假设](#%E7%90%86%E8%AE%BA%E5%81%87%E8%AE%BE)
+	- [区块产生](#%E5%8C%BA%E5%9D%97%E4%BA%A7%E7%94%9F)
+	- [区块验证](#%E5%8C%BA%E5%9D%97%E9%AA%8C%E8%AF%81)
+		- [合法性判断](#%E5%90%88%E6%B3%95%E6%80%A7%E5%88%A4%E6%96%AD)
+		- [合理性判断](#%E5%90%88%E7%90%86%E6%80%A7%E5%88%A4%E6%96%AD)
+	- [区块执行](#%E5%8C%BA%E5%9D%97%E6%89%A7%E8%A1%8C)
+	- [区块写入](#%E5%8C%BA%E5%9D%97%E5%86%99%E5%85%A5)
+	- [流程图](#%E6%B5%81%E7%A8%8B%E5%9B%BE)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
