@@ -7,7 +7,7 @@
 ## 总体架构
 
 <div align=left>
-<img src="./verifiable-contract/images/vc-structure.png" width = "890" height="720" align=left/>
+<img src="zh-cn/development/verifiable-contract/images/vc-structure.png" width = "890" height="720" />
 </div>
 
 **架构说明**：
