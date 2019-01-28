@@ -18,7 +18,7 @@ zk-SNARK是“zero knowledge Succinct Non-interactive ARgument of Knowledge”�
 例如求解 x<sup>3</sup> + x +5 = 35
 假设Alice知道x=3是解，但不想泄露给Bob，同时又要证明她知道这个方程式的解。
 
-![QAp转化](https://i.loli.net/2019/01/02/5c2c22d5b1d35.png)
+![QAp转化](./verifiable-computation/images/decomposition-factor.png)
 
 **解决过程如下：**
 
