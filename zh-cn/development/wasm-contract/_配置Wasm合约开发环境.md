@@ -25,18 +25,18 @@ Windows合约开发环境需要符合以下条件：
 
 ### 下载pWASM开发工具包
 
-`Window` 版本pWASM开发工具: [https://download.platon.network/0.3/pwasm-windows-x86_64-0.3.0.zip](https://download.platon.network/0.3/pwasm-windows-x86_64-0.3.0.zip)
+`Window` 版本pWASM开发工具: <https://download.platon.network/0.3/pwasm-windows-x86_64-0.3.0.zip>
 
-`Linux` 版本pWASM开发工具: [https://download.platon.network/0.3/pwasm-linux-amd64-0.3.0.tar.gz](https://download.platon.network/0.3/pwasm-linux-amd64-0.3.0.tar.gz)
+`Linux` 版本pWASM开发工具: <https://download.platon.network/0.4/pwasm-linux-amd64-0.4.0.tar.gz>
 
 pWASM开发工具包为一个压缩包，下载完成后解压到工作目录，如`D:\`（以下关于合约环境搭建的操作均在该目录下完成）。
 
 `Linux` 下载
 
 ```shell
-$ wget https://download.platon.network/0.3/pwasm-linux-amd64-0.3.0.tar.gz
-$ tar -zxvf pWASM-linux.tar.gz
-$ mv pWASM-linux pWASM
+$ wget https://download.platon.network/0.4/pwasm-linux-amd64-0.4.0.tar.gz
+$ tar -xzvf pwasm-linux-amd64-0.4.0.tar.gz
+$ mv pwasm-linux-amd64-0.4.0 pWASM
 ```
 
 解压后所有文件均位于`pWASM`目录下，该目录文件结构如下：
@@ -56,7 +56,6 @@ $ mv pWASM-linux pWASM
 ├── user
 ├── CMakeLists.txt
 └── README.md
-
 ```
 
 部分文件夹功能概述：
@@ -204,7 +203,6 @@ $ make
 
 执行完成后，在`build/user`目录下会生成测试目录：`firstdemo`，同时也生成了目标文件，例如:
 
-
 ```text
 ├──build/ 
   ├──user/
@@ -233,7 +231,6 @@ $ make
 **提示：**
 如果在编译中出现如下错误信息，请不要惊慌，正常输出。
 
-
 ```code
 Could not auto-detect compilation database for file "/workspace/pWASM/hello/hello.cpp"
 No compilation database found in /workspace/pWASM/hello or any parent directory
@@ -248,14 +245,12 @@ json-compilation-database: Error while opening JSON database: No such file or di
 
 Windows
 
-
 ```bash
 $ mv ctool-windows-amd64.exe ctool.exe
 $ ./ctool.exe <command> [--addr contractAddress] [--type txType(default:2)] [--func funcInfo] --abi <abi_path> --code <wasm_path> [--config <config_path>]
 ```
 
 Linux
-
 
 ```bash 
 $ wget https://download.platon.network/ctool-linux-amd64
@@ -294,7 +289,6 @@ $ ./ctool <command> [--addr contractAddress] [--type txType(default:2)] [--func 
 - `url` PlatON节点开放的`JSON-RPC`地址信息； 
 - `from` 发布合约者的账户地址。
 
-
 ### 发布合约
 
 1.你既可以把Wasm合约发布到[测试网络](zh-cn/basics/[Chinese-Simplified]-快速指南#%e8%bf%9e%e6%8e%a5%e5%88%b0%e8%b4%9d%e8%8e%b1%e4%b8%96%e7%95%8c%e6%b5%8b%e8%af%95%e7%bd%91%e7%bb%9c)，也可以把合约发布到我们的PlatON主网(暂未开放)，但前提是你已经在网络中拥有了账号，并持有一定的Energon。如果没有，你也可以自行搭建一个[私有网络](zh-cn/basics/[Chinese-Simplified]-私有网络)以供测试。
@@ -302,7 +296,6 @@ $ ./ctool <command> [--addr contractAddress] [--type txType(default:2)] [--func 
 2.连接到PlatON节点，连接到节点的操作请[查看这里](zh-cn/basics/[Chinese-Simplified]-快速指南#%e8%bf%9e%e6%8e%a5%e5%88%b0%e7%bd%91%e7%bb%9c)。
 
 3.确保节点启动时开启 `personal` 相关RPC接口。解锁持有Energon的账户，输入账户密码
-
 
 ```
 > personal.unlockAccount("your-account")
@@ -315,14 +308,12 @@ true
 
 Windows
 
-
 ```shell
 $ cd {pWASM}/build/user/firstdemo 
 $ ./ctool.exe deploy --abi ./firstdemo.cpp.abi.json --code ./firstdemo.wasm --config ./config.json
 ```
 
 Linux
-
 
 ```shell
 $ cd {pWASM}/build/user/firstdemo 
@@ -335,6 +326,7 @@ $ ./ctool deploy --abi ./firstdemo.cpp.abi.json --code ./firstdemo.wasm --config
 trasaction hash: 0xdb0f9a28fcd447702e8d5961f47144d1ea830979e3c984acc8f72c0dca8bdcfc
 contract address: 0x43355c787c50b647c425f594b441d4bd751951c1
 ```
+
 如果下一步需要进行合约调用则需要记录该地址信息！
 
 ### 测试合约
@@ -345,14 +337,12 @@ contract address: 0x43355c787c50b647c425f594b441d4bd751951c1
 
 Windows
 
-
 ```shell 
 $ cd {pWASM}/build/user/firstdemo
 $ ./ctool.exe invoke -addr "0x43355c787c50b647c425f594b441d4bd751951c1" --func 'invokeNotify("HelloWorld")' --abi ./firstdemo.cpp.abi.json --config ./config.json
 ```
 
 Linux
-
 
 ```shell 
 $ cd {pWASM}/build/user/firstdemo
