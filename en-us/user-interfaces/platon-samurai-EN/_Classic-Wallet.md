@@ -84,7 +84,7 @@ In order to experience the function of the latest version, you need:
 
 ![Image text](image/Keystore_address.png)
 
-2.Click [here](https://download.platon.network/0.3/samurai-windows-x86_64-0.3.0.zip) to download the latest installer and reinstall it.
+2.Click https://download.platon.network/0.4 to download the latest installer and reinstall it.
 
 3.After Installation, re-create your wallet and re-apply for the test Energon through [test Energon application channel](https://developer.platon.network/#/?lang=en).
 

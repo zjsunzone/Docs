@@ -5,7 +5,7 @@ Follow the appropriate link below to find installation instructions for your pla
   - [Ubuntu](#Installing-on-Ubuntu)
 + [Installation Instructions for Windows](#Installing-on-Windows)
 + [Running in Docker Environment](#Running-in-Docker-Environment)
- 
+
 ## Installing on Ubuntu
 
 The Ubuntu runtime environment needs to meet the following requirements:
@@ -19,11 +19,11 @@ There are four ways of installation on Ubuntu:
 
 ### Binary package based installation
 
-The official binary package file download link for ubuntu is：<https://download.platon.network/0.3/platon-ubuntu-amd64-0.3.0.tar.gz>
+The official binary package file download link for ubuntu is：<https://download.platon.network/0.4/platon-ubuntu-amd64-0.4.0.tar.gz>
 
 ```bash
-$ wget https://download.platon.network/0.3/platon-ubuntu-amd64-0.3.0.tar.gz
-$ tar -xvzf platon-ubuntu-amd64-0.3.0.tar.gz
+$ wget https://download.platon.network/0.4/platon-ubuntu-amd64-0.4.0.tar.gz
+$ tar -xvzf platon-ubuntu-amd64-0.4.0.tar.gz
 ```
 
 The extracted files should be as following:
@@ -52,10 +52,10 @@ Download the `.deb` package and then install.
 
 ```bash
 # download
-$ wget https://download.platon.network/0.3/platon-ubuntu-amd64-0.3.0.deb
+$ wget https://download.platon.network/0.4/platon-ubuntu-amd64-0.4.0.deb
 
 # install
-$ sudo dpkg -i platon-ubuntu-amd64-0.3.0.deb
+$ sudo dpkg -i platon-ubuntu-amd64-0.4.0.deb
 ```
 
 After the installation, the binaries and other components of the package should be installed to `/usr/bin/`
@@ -129,7 +129,7 @@ The Windows environment supports three installation modes:
 
 ### Binary package based installation
 
-Windows version of the Platon binary download link is: <https://download.platon.network/0.3/platon-windows-x86_64-0.3.0.zip> download. No installation is required after downloading, and it can be used directly by decompression.
+Windows version of the Platon binary download link is: <https://download.platon.network/0.4/platon-windows-x86_64-0.4.0.zip> download. No installation is required after downloading, and it can be used directly by decompression.
 
 The extracted files should be as following:
 - `platon` client executable file
@@ -143,7 +143,7 @@ We use the Chocolatey package manager to install the required build tools. If yo
 Start PowerShell as an administrator and install Platon using the choco command:
 
 ```
-choco install platonnetwork --version=0.3.0
+choco install platonnetwork --version=0.4.0
 ```
 
 You will find `platon`,`ethkey` in the default installation path `C:\ProgramData\chocolatey\bin`.
@@ -204,9 +204,9 @@ The docker installation is relatively simple, you can refer to the following two
 #### Run Container
 
 - Pull Platon Image
- 
+
 ```bash
-$ sudo docker pull platonnetwork/platon:tag #例如: platonnetwork/platon:0.3.0
+$ sudo docker pull platonnetwork/platon:tag #e.g: platonnetwork/platon:0.4.0
 ```
 
 - Run Platon Container
@@ -220,7 +220,7 @@ $ sudo docker run -d platonnetwork/platon:tag
 To open port mapping, execute the following commands:
 
 ```bash
-$ sudo docker run -d -e PLATONIP="192.168.120.20" -p 6789:6789  -p 16789:16789 --name platon platonnetwork/platon:0.3.0
+$ sudo docker run -d -e PLATONIP="192.168.120.20" -p 6789:6789  -p 16789:16789 --name platon platonnetwork/platon:0.4.0
 ```
 
 `PLATONIP`is the local server address.

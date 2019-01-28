@@ -36,7 +36,7 @@
 
 **Note: **
 
-*To learn how to get the node's private key, IP, port, click [here*](en-us/asics/[English]-Private-Networks)
+*To learn how to get the node's private key, IP, port, click [here](en-us/basics/[English]-Private-Networks)*
 
 
 

@@ -297,7 +297,7 @@ $ ./ctool <command> [--addr contractAddress] [--type txType(default:2)] [--func 
 
 ### 发布合约
 
-1.你既可以把Wasm合约发布到[测试网络](zh-cn/basics/[Chinese-Simplified]-快速指南#%e8%bf%9e%e6%8e%a5%e5%88%b0%e8%b4%9d%e8%8e%b1%e4%b8%96%e7%95%8c%e6%b5%8b%e8%af%95%e7%bd%91%e7%bb%9c)，也可以把合约发布到我们的PlatON主网(暂未开放)，单前提是你已经在网络中拥有了账号，并持有一定的Energon。如果没有，你也可以自行搭建一个[私有网络](zh-cn/basics/[Chinese-Simplified]-私有网络)以供测试。
+1.你既可以把Wasm合约发布到[测试网络](zh-cn/basics/[Chinese-Simplified]-快速指南#%e8%bf%9e%e6%8e%a5%e5%88%b0%e8%b4%9d%e8%8e%b1%e4%b8%96%e7%95%8c%e6%b5%8b%e8%af%95%e7%bd%91%e7%bb%9c)，也可以把合约发布到我们的PlatON主网(暂未开放)，但前提是你已经在网络中拥有了账号，并持有一定的Energon。如果没有，你也可以自行搭建一个[私有网络](zh-cn/basics/[Chinese-Simplified]-私有网络)以供测试。
 
 2.连接到PlatON节点，连接到节点的操作请[查看这里](zh-cn/basics/[Chinese-Simplified]-快速指南#%e8%bf%9e%e6%8e%a5%e5%88%b0%e7%bd%91%e7%bb%9c)。
 

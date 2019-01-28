@@ -20,14 +20,14 @@ Ubuntu环境支持以下四种安装方式：
 
 ### 官方二进制包下载
 
-ubuntu版本官方二进制包文件下载地址：<https://download.platon.network/0.3/platon-ubuntu-amd64-0.3.0.tar.gz>
+ubuntu版本官方二进制包文件下载地址：<https://download.platon.network/0.4/platon-ubuntu-amd64-0.4.0.tar.gz>
 
 ```bash
 # 下载
-$ wget https://download.platon.network/0.3/platon-ubuntu-amd64-0.3.0.tar.gz
+$ wget https://download.platon.network/0.4/platon-ubuntu-amd64-0.4.0.tar.gz
 
 # 解压
-$ tar -xvzf platon-ubuntu-amd64-0.3.0.tar.gz
+$ tar -xvzf platon-ubuntu-amd64-0.4.0.tar.gz
 ```
 
 解压内容如下：
@@ -57,10 +57,10 @@ $ sudo apt-get install platon-all
 
 ```bash
 # 下载安装包 
-$ wget https://download.platon.network/0.3/platon-ubuntu-amd64-0.3.0.deb
+$ wget https://download.platon.network/0.4/platon-ubuntu-amd64-0.4.0.deb
 
 # 安装
-$ sudo dpkg -i platon-ubuntu-amd64-0.3.0.deb
+$ sudo dpkg -i platon-ubuntu-amd64-0.4.0.deb
 ```
 
 安装完成后，可执行程序将安装到： `/usr/bin/`
@@ -112,6 +112,7 @@ $ make all
 
 ```bash
 grep "export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:~/home/path/to/mpcvm/build/lib" ~/.bashrc || echo "export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:~/home/path/to/mpcvm/build/lib" >> ~/.bashrc
+
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/home/path/to/mpcvm/build/lib
 ```
 
@@ -136,7 +137,7 @@ Window环境支持以下三种安装方式：
 - 源码
 
 ### 官方二进制下载安装
-Windows版本的`platon`二进制文件下载地址：<https://download.platon.network/0.3/platon-windows-x86_64-0.3.0.zip>下载。下载后无需安装，直接解压即可使用。
+Windows版本的`platon`二进制文件下载地址：<https://download.platon.network/0.4/platon-windows-x86_64-0.4.0.zip>下载。下载后无需安装，直接解压即可使用。
 
 解压内容如下：
 
@@ -153,10 +154,10 @@ Windows版本的`platon`二进制文件下载地址：<https://download.platon.n
 用管理员身份启动`PowerShell`,然后使用`choco`命令安装`platon`：
 
 ```
-choco install platonnetwork --version=0.3.0
+choco install platonnetwork --version=0.4.0
 ```
 
-`platon`,`ethkey`等将默认被安装到`C:\ProgramData\chocolatey\bin`目录。
+`platon`，`ethkey`等将默认被安装到`C:\ProgramData\chocolatey\bin`目录。
 
 ### 源码编译安装
 
@@ -214,9 +215,9 @@ docker安装比较简单，可参考以下两种安装方式：
 #### 运行容器
 
 - 拉取platon镜像
- 
+
 ```bash
-$ sudo docker pull platonnetwork/platon:tag #例如: platonnetwork/platon:0.3.0
+$ sudo docker pull platonnetwork/platon:tag #例如: platonnetwork/platon:0.4.0
 ```
 
 - 运行platon容器
@@ -230,7 +231,7 @@ $ sudo docker run -d platonnetwork/platon:tag
 若想开启端口映射，可执行以下命令：
 
 ```bash
-$ sudo docker run -d -e PLATONIP="192.168.120.20" -p 6789:6789  -p 16789:16789 --name platon platonnetwork/platon:0.3.0
+$ sudo docker run -d -e PLATONIP="192.168.120.20" -p 6789:6789  -p 16789:16789 --name platon platonnetwork/platon:0.4.0
 ```
 
 其中，`PLATONIP`为本机服务器地址。

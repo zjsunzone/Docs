@@ -2,7 +2,7 @@
 
 ## What is Samurai
 
-Samurai is PlatON's open-sourced digital wallet desktop client terminal (the client), which can manage basic wallet as well as multi-signature wallet (or Joint wallet). It also provides deployment and operational guides of meta-smart contracts for developers, procedures of PlatON private chain building, voting mechanism of candidate nodes according to PlatON economic model, participation rules of PlatON ecosystem governance etc.
+Samurai is PlatON's open-sourced digital wallet desktop client terminal (the client), which can manage basic wallet as well as multi-signature wallet (or Joint wallet). It also provides deployment and operational guides of meta-smart contracts for developers, procedures of PlatON private chain building, voting mechanism of block producers according to PlatON economic model, participation rules of PlatON ecosystem governance etc.
 
 In the future, Samurai will provide more rich functions for different users, and we are dedicated to help user to understand and use the PlatON ecosystem better and deeper.
 
@@ -20,12 +20,11 @@ In the future, Samurai will provide more rich functions for different users, and
 
 - Contracts debug test and deployment
 
-- Application for Validator candidate node with staking
+- Application for block producer with staking
 
-- Participating in Validator node voting (To be released)
+- Participating in block producers voting (To be released)
 
-Btw, Current Samurai is a beta release. This manual intents to help you solving common issue, please feel free to submit any relevant questions at [issues](https://github.com/PlatONnetwork/wiki/issues),  and welcome to join our technical community!
-
+Btw, Current Samurai is a beta release. This manual intents to help you solving common issue, please feel free to submit any relevant questions at [issues](https://github.com/PlatONnetwork/Docs/issues),  and welcome to join our technical community!
 
 ## How to download and install Samurai
 
@@ -33,30 +32,22 @@ At present，Samurai can run on Windows and Linux, please click [here](https://g
 
 + **Brief installation instruction on Windows:**
 
-
 ```
 1.Download Windows installer samurai.exe.
 2.Dual-click the installer and follow the Installation wizard.
 3.Shortcut of Samurai will be created on the desktop automatically.
-
-
 ```
 **Note**:  
 
 *Just follow the Installation wizard for the first time Samurai being  installed, otherwith,  you need to manually delete the folder (Default path: <u>C:\Users\Username\AppData\Roaming\Samurai</u>，and the Username is the account name of your login to the PC. ) where you saved the Blockchain data and as shown in the following figure, and then follow the installation wizard to install.*
 
-
-
-![Image text](platon-samurai-EN/image/Keystore_address.png)
-
-
+<img src="en-us/user-interfaces/platon-samurai-EN/image/Keystore_address.png" width = "503" height="390"/>  
 
 + **Brief installation instruction on Linux:**
 
-
 ```
 Installation instruction of tar.xz package.
-1.Download Linux Samurai package,such as Samurai-Linux64.tar.xz
+1.Download Linux Samurai package,such as samurai-ubuntu-amd64-0.4.0.tar.xz
 2.Right click to extract the installation package.
 3.Go to the extracted folder and double-click the executable Samurai to open the client.
 ```
@@ -69,9 +60,9 @@ MacOS is not supported for the time being
 
 ### Network
 
-- [How to join in PlatON TestNet](en-us/user-interfaces/platon-samurai-EN/_join-in-a-network#How-to-join-in-PlatON-TestNet)
+- [How to join in PlatON TestNet](en-us/user-interfaces/platon-samurai-EN/_Join-in-a-Network#How-to-join-in-PlatON-TestNet)
 
-- [How to create a PlatON Private-net](en-us/user-interfaces/platon-samurai-EN/_join-in-a-network#How-to-create-a-PlatON-Private-net)
+- [How to create a PlatON Private-net](en-us/user-interfaces/platon-samurai-EN/_Join-in-a-Network#How-to-create-a-PlatON-Private-net)
 
 ### Wallet
 
@@ -93,31 +84,29 @@ MacOS is not supported for the time being
 
 ### Transaction
 
-- [How to confirm a transaction](en-us/user-interfaces/platon-samurai-EN/_confirm-transactions#How-to-confirm-a-transaction)
+- [How to confirm a transaction](en-us/user-interfaces/platon-samurai-EN/_Confirm-Transactions#How-to-confirm-a-transaction)
 
 ### Wasm contracts
 
-- [What is wasm contract](en-us/user-interfaces/platon-samurai-EN/_wasm-contracts#What-is-Wasm-contract)
+- [What is wasm contract](en-us/user-interfaces/platon-samurai-EN/_Wasm-Contracts#What-is-Wasm-contract)
 
-- [How to deploy a contract](en-us/user-interfaces/platon-samurai-EN/_wasm-contracts#how-to-deploy-a-contract)
+- [How to deploy a contract](en-us/user-interfaces/platon-samurai-EN/_Wasm-Contracts#how-to-deploy-a-contract)
 
-- [How to add a contract that has been created ](en-us/user-interfaces/platon-samurai-EN/_wasm-contracts#How-to-add-a-contract-that-has-been-created)
+- [How to add a contract that has been created ](en-us/user-interfaces/platon-samurai-EN/_Wasm-Contracts#How-to-add-a-contract-that-has-been-created)
 
-- [How to execute a contract ](en-us/user-interfaces/platon-samurai-EN/_wasm-contracts#How-to-execute-a-contract)
+- [How to execute a contract ](en-us/user-interfaces/platon-samurai-EN/_Wasm-Contracts#How-to-execute-a-contract)
 
-### Validator Node
+### Blcok Producers
 
-- [What’s candidate node](en-us/user-interfaces/platon-samurai-EN/_Validator-Node#What's-candidate-node)
+- [How to be a block producer](en-us/user-interfaces/platon-samurai-EN/_Validator-Node#How-to-be-a-block-producer)
 
-- [How to be a validator node](en-us/user-interfaces/platon-samurai-EN/_Validator-Node#How-to-be-a-validator-node)
+- [How to improve consensus probability](en-us/user-interfaces/platon-samurai-EN/_Validator-Node#how-to-improve-consensus-probability)
 
-- [How to improve the probability to become validator node](en-us/user-interfaces/platon-samurai-EN/_Validator-Node#how-to-improve-the-probability-to-become-validator-node)
+- [Why are block producer eliminated](en-us/user-interfaces/platon-samurai-EN/_Validator-Node#Why-are-block-producer-eliminated)
 
-- [Why are candidate nodes eliminated](en-us/user-interfaces/platon-samurai-EN/_Validator-Node#Why-are-candidate-nodes-eliminated)
+- [How to re-register for block producer if eliminated](en-us/user-interfaces/platon-samurai-EN/_Validator-Node#how-to-re-register-for-block-producer-if-eliminated)
 
-- [How to re-apply for validator node if eliminated](en-us/user-interfaces/platon-samurai-EN/_Validator-Node#how-to-re-apply-for-validator-node-if-eliminated)
-
-- [How to withdraw the application](en-us/user-interfaces/platon-samurai-EN/_Validator-Node#How-to-withdraw-the-application)
+- [How to revoke the block producer](en-us/user-interfaces/platon-samurai-EN/_Validator-Node#How-to-revoke-the-block-producer)
 
 - [How to redeem the stakes](en-us/user-interfaces/platon-samurai-EN/_Validator-Node#How-to-redeem-the-stakes)
 

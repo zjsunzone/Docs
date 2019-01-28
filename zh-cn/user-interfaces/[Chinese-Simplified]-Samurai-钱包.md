@@ -2,21 +2,27 @@
 
 ## 什么是Samurai
 
-**Samurai**是PlatON开源的图形化桌面版钱包客户端，支持基础的普通钱包管理，基于多重签名技术的联名钱包管理，同时为开发者提供Wasm合约的部署与运行，PlatON私用链的可视化搭建，以及基于PlatON经济模型下的候选节点竞选申请与投票，参与PlatON生态治理等功能。未来，Samurai将持续为不同用户提供更加基础、更加丰富的应用功能，让大家更好的了解和使用PlatON生态服务。
+**Samurai**是PlatON开源的图形化桌面版钱包客户端，支持基础的普通钱包管理，基于多重签名技术的联名钱包管理，同时为开发者提供Wasm合约的部署与运行，PlatON私用链的可视化搭建，以及基于PlatON经济模型下的共识节点注册与投票，参与PlatON生态治理等功能。未来，Samurai将持续为不同用户提供更加基础、更加丰富的应用功能，让大家更好的了解和使用PlatON生态服务。
 
 Samurai核心功能如下：
 
 - 搭建PlatON私用网络
+
 - 创建钱包/导入钱包（支持使用Keystore，助记词，私钥）
+
 - 支持联名钱包（基于多重签名技术）
+
 - 查看钱包余额及交易明细
+
 - 发送及提取Energon
+
 - 合约部署与测试运行
-- 候选节点竞选申请与质押管理
-- 参与候选节点投票(敬请期待)
 
-请注意，Samurai仍处于测试阶段，可能会出现一些问题。 本指南将帮助您解决一些最常见的问题。如有更多问题欢迎提交到[issues](https://github.com/PlatONnetwork/wiki/issues) ！
+- 共识节点注册与质押管理
 
+- 参与节点投票(敬请期待)
+
+请注意，Samurai仍处于测试阶段，可能会出现一些问题。 本指南将帮助您解决一些最常见的问题。如有更多问题欢迎提交到[issues](https://github.com/PlatONnetwork/Docs/issues) ！
 
 ## 如何下载安装PlatON Samurai客户端
 
@@ -28,16 +34,13 @@ Windows安装程序下载后，双击安装程序并按照说明进行操作。�
 
 *注意：由于当前测试阶段，底层版本更新比较大，非初次安装，请您先卸载完后再手动删除如下图所示的保存区块数据的文件夹（默认路径：C:\Users\Username\AppData\Roaming\Samurai，其中Username为您登陆PC的账号名称），然后再按照安装引导进行安装。*
 
-
-
-![Image text](platon-samurai/image/Keystore_address-cn.png)
-
+<img src="zh-cn/user-interfaces/platon-samurai/image/Keystore_address-cn.png" width = "503" height="362"/>  
 
 ### Linux安装
 
 tar.xz源代码包安装说明：
 
-1.下载Linux版Samurai安装包，如：Samurai-Linux64.tar.xz
+1.下载Linux版Samurai安装包，如：samurai-ubuntu-amd64-0.4.0.tar.xz
 
 2.右键解压安装包
 
@@ -85,12 +88,17 @@ tar.xz源代码包安装说明：
 
 - [怎样运行wasm合约](zh-cn/user-interfaces/platon-samurai/_Wasm合约#怎样运行Wasm合约)
 
-### 应用-竞选节点
-- [什么是候选节点](zh-cn/user-interfaces/platon-samurai/_竞选节点#什么是候选节点)
-- [怎样参与候选节点竞选](zh-cn/user-interfaces/platon-samurai/_竞选节点#怎样参与候选节点竞选)
-- [如何提高成为验证人概率](zh-cn/user-interfaces/platon-samurai/_竞选节点#如何提高成为验证人概率)
-- [候选节点为什么会被淘汰](zh-cn/user-interfaces/platon-samurai/_竞选节点#候选节点为什么会被淘汰)
-- [被淘汰的节点如何再次加入竞选](zh-cn/user-interfaces/platon-samurai/_竞选节点#被淘汰的节点如何再次加入竞选)
-- [如何退出竞选](zh-cn/user-interfaces/platon-samurai/_竞选节点#如何退出竞选)
+### 应用-共识节点
+
+- [怎样注册共识节点](zh-cn/user-interfaces/platon-samurai/_竞选节点#怎样注册共识节点)
+
+- [如何提高共识概率](zh-cn/user-interfaces/platon-samurai/_竞选节点#如何提高共识概率)
+
+- [共识节点为什么会被淘汰](zh-cn/user-interfaces/platon-samurai/_竞选节点#共识节点为什么会被淘汰)
+
+- [被淘汰的节点如何再次加入](zh-cn/user-interfaces/platon-samurai/_竞选节点#被淘汰的节点如何再次加入)
+
+- [如何注销共识节点](zh-cn/user-interfaces/platon-samurai/_竞选节点#如何注销共识节点)
+
 - [如何提取被质押的资产](zh-cn/user-interfaces/platon-samurai/_竞选节点#如何提取被质押的资产)
 
