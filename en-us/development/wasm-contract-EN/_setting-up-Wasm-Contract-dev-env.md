@@ -227,7 +227,7 @@ Main documents:
 
 **Please note**
 
-Use `firstdemo.wast` and `firstdemo.cpp.abi.json` from the directory above for contract deployment.
+Use `firstdemo.wasm` and `firstdemo.cpp.abi.json` from the directory above for contract deployment.
 
 **Please note**
 
