@@ -58,35 +58,33 @@
 
 ## 快速开始 
 
-现在使用MPC领域的经典案例 [姚氏百万富翁问题](https://en.wikipedia.org/wiki/Yao%27s_Millionaires%27_Problem) 开始隐私合约开发介绍。
+现在使用MPC领域的经典案例 [姚氏百万富翁问题](https://en.wikipedia.org/wiki/Yao%27s_Millionaires%27_Problem) 开始介绍隐私合约开发。
 
-**案例表述**：
+**1. 案例表述**：
 
-两个百万富翁`Alice`和`Bob`想知道他们两个谁更富有，但他们都不想让对方知道自己财富的任何信息。
+​	两个百万富翁`Alice`和`Bob`想知道他们两个谁更富有，但他们都不想让对方知道自己财富的任何信息。
 
-**解决方案**：
+**2. 解决方案**：
 
-使用`MPC`计算，两个富翁可以在不知道对方具体财产的情况下，与对方进行比较，并计算出谁最富有。
+​	使用`MPC`计算，两个富翁可以在不知道对方具体财产的情况下，与对方进行比较，并计算出谁最富有。
 
 ### 搭建构建环境
 
-下面以Ubuntu16.04操作系统为例搭建构建环境，我们假设 ${privacy-contract-compiler} 目录为 Ubuntu 对应目录 `/home/platon/privacy-contract-compiler`，  {pWasm} 为 Ubuntu 对应目录 `/home/platon/pWasm` ，其中 `platon` 为当前登录用户。用户对应自己登录的用户即可。
+下面以 `Ubuntu16.04` 操作系统为例搭建构建环境，我们假设 ${privacy-contract-compiler} 目录为 Ubuntu 对应目录 `/home/platon/privacy-contract-compiler`，  {pWasm} 为 Ubuntu 对应目录 `/home/platon/pWasm` ，其中 `platon` 为当前登录用户。用户对应自己登录的用户即可。
 
 **依赖组件：**
 
-- PlatON 集群环境
+- **PlatON 集群环境**
 
-隐私合约运行依赖于`PlatON` 网络集群环境，提供区块链的核心功能，想要让节点提供 MPC 计算能力必须启用MPC计算功能。
+  隐私合约运行依赖于`PlatON` 网络集群环境，提供区块链的核心功能，想要让节点提供 MPC 计算能力必须启用MPC计算功能。
 
-   1. 安装带 `MPC` 功能的 `platon` 可执行程序，查看[安装指南](zh-cn/basics/[Chinese-Simplified]-%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97)；
+  1. 安装带 `MPC` 功能的 `platon` 可执行程序，查看[安装指南](zh-cn/basics/[Chinese-Simplified]-%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97)
+  2. 集群环境搭建，查看 [PlatON集群环境](zh-cn/basics/[Chinese-Simplified]-%e7%a7%81%e6%9c%89%e7%bd%91%e7%bb%9c#PlatON+%e9%9b%86%e7%be%a4%e7%8e%af%e5%a2%83)
+  3. 在节点启用 MPC 计算功能，查看[启用MPC计算功能](zh-cn/basics/[Chinese-Simplified]-%e7%a7%81%e6%9c%89%e7%bd%91%e7%bb%9c#%e4%b8%ba%e8%8a%82%e7%82%b9%e5%90%af%e7%94%a8MPC%e5%8a%9f%e8%83%bd)
 
-   2. 集群环境搭建，查看 [PlatON集群环境](zh-cn/basics/[Chinese-Simplified]-%e7%a7%81%e6%9c%89%e7%bd%91%e7%bb%9c#PlatON+%e9%9b%86%e7%be%a4%e7%8e%af%e5%a2%83)；
+- **protobuf 3.5.2**
 
-   3. 在节点启用 MPC 计算功能，查看[启用MPC计算功能](zh-cn/basics/[Chinese-Simplified]-%e7%a7%81%e6%9c%89%e7%bd%91%e7%bb%9c#%e4%b8%ba%e8%8a%82%e7%82%b9%e5%90%af%e7%94%a8MPC%e5%8a%9f%e8%83%bd)。
-
-- protobuf 3.5.2
-
-在隐私合约中用 [protobuf](https://github.com/protocolbuffers/protobuf) 来实现自定义结构体，并提供pb消息打包和解包能力。当前 protobuf 需为 `3.5.2` 版本，安装步骤如下：
+  在隐私合约中用 [protobuf](https://github.com/protocolbuffers/protobuf) 来实现自定义结构体，并提供pb消息打包和解包能力。当前 protobuf 需为 `3.5.2` 版本，安装步骤如下：
 
 ```bash
 # 下载v3.5.2代码
@@ -99,22 +97,22 @@ $ cd build && cmake ..
 $ sudo make && make install
 ```
 
-- plang 编译器
+- **plang 编译器**
 
-`plang` 是`PlatON`定制的编译器，用来编译隐私合约生成 `Wasm智能合约` 源代码文件、JAVA代理程序。官网提供了 [privacy-contract-compiler](https://github.com/PlatONnetwork/privacy-contract-compiler#Build)  开源工具包，下载后解压到 ${privacy-contract-compiler} 目录，按照 **README** 安装即可。
+  `plang` 是`PlatON`定制的编译器，用来编译隐私合约生成 `Wasm智能合约` 源代码文件、JAVA代理程序。官网提供了 [privacy-contract-compiler](https://github.com/PlatONnetwork/privacy-contract-compiler#Build)  开源工具包，下载后解压到 ${privacy-contract-compiler} 目录，按照 **README** 安装即可。
 
-**注意：**
-plang 编译器集成了 `llvm` 和 `clang 编译器` 源码包，运行时依赖于 clang ，它需要与 clang 安装到同一个目录。  
+  **注意：**
+  plang 编译器集成了 `llvm` 和 `clang 编译器` 源码包，运行时依赖于 clang ，它需要与 clang 安装到同一个目录。  
 
-- emp-tool 库
+- **emp-tool 库**
 
-使用 [emp-tool](https://github.com/PlatONnetwork/emp-tool) 提供核心的MPC计算对象，下载合约包使用以下命令。
+  使用 [emp-tool](https://github.com/PlatONnetwork/emp-tool) 提供核心的MPC计算对象，下载该库使用以下命令。
 
 ```bash
 $ git clone https://github.com/PlatONnetwork/emp-tool.git
 ```
 
-emp-tool/include目录包含所需头文件：
+  emp-tool/include目录包含合约开发项目所需头文件：
 
 ```bash
 include/
@@ -260,11 +258,11 @@ digest:
 
 ### 隐私合约发布
 
-隐私合约作为提供隐私计算的链上服务，最终想要发布到 `PlatON` 网络，需先编译成 [WASM合约](zh-cn/development/[Chinese-Simplified]-Wasm%e5%90%88%e7%ba%a6%e5%bc%80%e5%8f%91%e6%8c%87%e5%8d%97#Wasm%e5%90%88%e7%ba%a6%e7%ae%80%e8%bf%b0) 文件，然后通过编译、发布 WASM 合约的方式才能最终实现隐私合约发布上链。
+隐私合约作为提供隐私计算的链上服务，最终想要发布到 `PlatON` 网络，需先编译成 [Wasm合约](zh-cn/development/[Chinese-Simplified]-Wasm%e5%90%88%e7%ba%a6%e5%bc%80%e5%8f%91%e6%8c%87%e5%8d%97#Wasm%e5%90%88%e7%ba%a6%e7%ae%80%e8%bf%b0) 文件，然后通过编译、发布 Wasm 合约的方式才能最终实现隐私合约发布上链。
 
-下面简要说明在 Ubuntu 上发布编译生成的 Wasm 合约 `YaoMillionairesContract`，完成隐私合约发布流程。
+下面简要说明在 Ubuntu 上发布编译生成的 Wasm 合约 `YaoMillionairesContract`，完成隐私合约发布流程。更多 `Ubuntu` 下 Wasm合约开发信息请参考 [Wasm合约开发指南](zh-cn/development/[Chinese-Simplified]-Wasm%e5%90%88%e7%ba%a6%e5%bc%80%e5%8f%91%e6%8c%87%e5%8d%97#%e7%bc%96%e8%af%91%e5%90%88%e7%ba%a6)。
 
-1. 下载 Ubuntu 版本 [Wasm合约开发包](https://download.platon.network/0.3/pwasm-linux-amd64-0.3.0.tar.gz) 并解压到 ${pWasm} 。若已下载，跳至下一步。
+1. 下载 Ubuntu 版本 [Wasm合约开发包 0.4](https://download.platon.network/0.4/pwasm-linux-amd64-0.4.0.tar.gz) 并解压到 ${pWasm} 。若已下载，跳至下一步。
 
 2. 进入 ${pWasm} 目录，执行以下命令生成Wasm合约项目 `YaoProblem`
 
@@ -291,7 +289,9 @@ $ make
   "from":"0x9a568e649c3a9d43b7f565ff2c835a24934ba447"
 }
 ```
-说明：发布合约可以是由任意账户发起。
+**说明：**
+
+发布合约可以是由任意账户发起。
 
 5. 连接 `http://127.0.0.1:6789` 节点，解锁 `0x9a568e649c3a9d43b7f565ff2c835a24934ba447` 账户
 
@@ -312,8 +312,6 @@ $ ./ctool deploy --abi ./YaoProblem.cpp.abi.json --code ./YaoProblem.wasm --conf
 
 假定合约发布后的合约地址为：
 > 0x43355c787c50b647c425f594b441d4bd75198888
-
-**更多 `Ubuntu` 下 `Wasm合约` 详情请参考** [Wasm合约开发指南](zh-cn/development/[Chinese-Simplified]-Wasm%e5%90%88%e7%ba%a6%e5%bc%80%e5%8f%91%e6%8c%87%e5%8d%97#%e7%bc%96%e8%af%91%e5%90%88%e7%ba%a6)。
 
 ### 隐私数据服务实现
 
@@ -787,7 +785,8 @@ const Bit & operator[](int index) const; //取index上的值
 
 完整的隐私计算对象`emp::Integer`头文件可在[这里](https://github.com/kelvinskk/emp-tool/blob/8d86e41a8f5e234465698fe4da4a6730cf4e0cee/include/integer.h)查看。
 
-***注意*** :
+**注意** :
+
 - 隐私计算运算类型变量运算要求Alice和Bob在同类型、同长度的条件下进行，否则计算报错。
 - 隐私计算运算类型变量运算要求计算双方，一个为Alice角色，另一个为Bob角色，否则计算无法进行。
 
