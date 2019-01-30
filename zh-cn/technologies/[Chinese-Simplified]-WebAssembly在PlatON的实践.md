@@ -14,7 +14,7 @@ PlatON 目前选择C++作为智能合约的编写语言，针对C++提供以下�
 * llvm-link : llvm链接器， 负责将`.bc`文件进行链接。主要是C/C++标准库的`.bc`文件与目标代码的`.bc`文件进行链接。
 * llc : 负责将`.bc`文件编译到汇编文件`.s`
 * platon-s2wasm(binaryen的s2wasm) : 负责将汇编代码生成为wast格式
-*  platon-wast2wasm(binaryen的wasm-dis) : 负责将wast(文本格式)生成为wasm(二进制格式)
+* platon-wast2wasm(binaryen的wasm-dis) : 负责将wast(文本格式)生成为wasm(二进制格式)
 
 ### 虚拟机
 
