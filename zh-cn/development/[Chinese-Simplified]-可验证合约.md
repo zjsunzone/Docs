@@ -231,7 +231,7 @@ $ make
 
 ### 发布合约
 
-将上一步骤编译 `vcc.cpp` 文件生成的 `demo.wast`， `demo.cpp.abi.json` 发布上链，发布方式请参考[Wasm合约发布](zh-cn/development/wasm-contract/_配置Wasm合约开发环境#发布合约)。
+将上一步骤编译 `vcc.cpp` 文件生成的 `demo.wasm`， `demo.cpp.abi.json` 发布上链，发布方式请参考[Wasm合约发布](zh-cn/development/wasm-contract/_配置Wasm合约开发环境#发布合约)。
 
 合约发布成功后，返回合约地址如下：
 
