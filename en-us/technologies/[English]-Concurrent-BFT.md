@@ -63,15 +63,15 @@ After the verifier generates blocks, the order of the proposed blocks will be de
 - `N`: current system time (UTC time, milliseconds);
 - `I`: the location of the current node among all sorted verifier accounting nodes;
 - `n`: number of verifiers selected in each round;
-- `p`: block production interval (seconds);
+- `p`: time window for each verification node to producing block, default 10 (seconds);
 - `O`: The block production time window for each proposer (milliseconds)/2 - 1000; 
 - `D`: average network delay (in milliseconds) for the current node and the producing node;
 
 Then the current verification node determines whether it is in the block production window period like this:
 
-    I * 10 * 1000 < (N - L) % (n * 10 * 1000) < (I + 1) * 10 * 1000
+    I * p * 1000 < (N - L) % (n * p * 1000) < (I + 1) * p * 1000
 
-If the equation is correct, the `CBFT` consensus module will produce the next block based on the current highest legitimate block and broadcast it to other verifier nodes every `p` seconds.
+If the equation is correct, the `CBFT` consensus module will produce the next block based on the current highest legitimate block and broadcast it to other verifier nodes every `1` seconds.
 
 ## Block Verification
 
@@ -81,8 +81,8 @@ When a verification node receives a block proposed by another node, it first det
 
 This block is considered legal if any of the following conditions are met (requires further verification):
 
-    I * 10 * 1000 < (N - L - O) % (n * 10 * 1000) < (I + 1) * 10 * 1000
-    I * 10 * 1000 < (N - L + O) % (n * 10 * 1000) < (I + 1) * 10 * 1000
+    I * p * 1000 < (N - L - O) % (n * p * 1000) < (I + 1) * p * 1000
+    I * p * 1000 < (N - L + O) % (n * p * 1000) < (I + 1) * p * 1000
 
 If the above conditions are not met, the block is considered to be an illegal block and is discarded directly.
 
@@ -92,7 +92,7 @@ Block legality check is a coarse-grained decision-making process based entirely 
 
 - The block is legal;
 - The height of the current block matches the time window period of its author;
-- The current block block creation time and the previous block time meet the block creation time interval requirement (`p * 90%`);
+- The current block block creation time and the previous block time meet the block creation time interval requirement (`p * (1 +/- 10%)`);
 - The highest irreversible block of the current node is the ancestor of the block;
 - The current node has not signed other blocks of the same height;
 
