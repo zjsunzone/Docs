@@ -88,22 +88,26 @@ Address: {550ae58b051a8e942f858ef22019c1c622292f7e}
 ## 初始化本地节点
 
 - Windows命令行
+
 ```
 D:\platon-node> platon.exe --datadir ./data init platon.json
 ```
 
 - Linux命令行
+
 ```
 $ ./platon --datadir ./data init platon.json
 ```
 
 ## 启动本地节点
 - Windows命令行
+
 ```
 D:\platon-node> platon.exe --identity platon --datadir .\data --port 16789 --rpcport 6789 --rpcapi "db,eth,net,web3,admin,personal" --rpc --debug --verbosity 3 --rpcaddr 0.0.0.0  --nodiscover  --syncmode "full" --gcmode "archive"
 ```
 
 - Linux命令行
+
 ```
 $ ./platon --identity platon --datadir ./data --port 16789 --rpcport 6789 --rpcapi "db,eth,net,web3,admin,personal" --rpc --debug --verbosity 3 --rpcaddr 0.0.0.0  --nodiscover  --syncmode "full" --gcmode "archive"
 ```
@@ -128,11 +132,13 @@ $ ./platon --identity platon --datadir ./data --port 16789 --rpcport 6789 --rpca
 1.通过`http`方式进入`platon`控制台
 
 - Windows命令行
+
 ```
 D:\platon-node> platon.exe attach http://localhost:6789
 ```
 
 - Linux命令行：
+
 ```
 $ ./platon attach http://localhost:6789
 ```
