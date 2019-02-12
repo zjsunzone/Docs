@@ -138,19 +138,16 @@ $ ./platon attach http://localhost:6789
 ```
 
 2.在控制台添加测试网络节点
-
 ```
 > admin.addPeer("enode://4f2a8690b376a6fa9c23cc2ca7e9065136b55cfa1829ef037ce46717867304832c4da172e014354e96259fb4dec79f5f4c8da74bff8b03b1d86475d18143affc@13.67.44.50:16791")
 ```
 
 3.在控制台查看是否添加成功
-
 ```
 > admin.peers
 ```
 
 4.显示如下内容则表示添加成功
-
 ```
 [{
     caps: ["eth/62", "eth/63"],
