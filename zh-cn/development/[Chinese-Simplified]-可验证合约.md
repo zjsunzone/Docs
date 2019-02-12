@@ -95,9 +95,9 @@ $ ./platon --identity platon --datadir ./data --port 16789 --rpcaddr 0.0.0.0 --r
 
 ##### 方式二： 连接测试网络
 
-贝莱世界测试网络现已开放，可按照[测试网络连接指南](#zh-cn/basics/[Chinese-Simplified]%20快速指南#连接到贝莱世界测试网络)将计算节点连接到测试网络。
+贝莱世界测试网络现已开放，可按照[测试网络连接指南](#zh-cn/basics/[Chinese-Simplified]%20连接测试网络)将计算节点连接到测试网络。
 
-与私有网络一样，启动节点时也需要增加命令行参数：`--vc` 和 `--vc.actor`
+**注意**：与私有网络一样，启动节点时也需要增加命令行参数：`--vc` 和 `--vc.actor`
 
 #### 账户准备
 
