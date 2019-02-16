@@ -102,7 +102,7 @@ Please note: the echo command line argument is the node private key and needs to
 
 ```
 D:\platon-node> mkdir .\data\platon
-D:\platon-node> echo "1abd1200759d4693f4510fbcf7d5caad743b11b5886dc229da6c0747061fca36" > .\data\platon\nodekey
+D:\platon-node> echo 1abd1200759d4693f4510fbcf7d5caad743b11b5886dc229da6c0747061fca36 > .\data\platon\nodekey
 D:\platon-node> type .\data\platon\nodekey
 ```
 
