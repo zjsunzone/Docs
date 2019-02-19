@@ -101,7 +101,7 @@ $ ./platon --identity platon --datadir ./data --port 16789 --rpcaddr 0.0.0.0 --r
 
 节点启动之后需要解锁 `--vc.actor` 账户，作为计算节点参与可验证合约计算：
 
-```
+```                                               
 $ ./platon attach http://localhost:6789
 > personal.unlockAccount("0xd7398978d04565ccf44097106e1cb7e9148d8ec9","password", 2592000)
 > true
