@@ -178,7 +178,7 @@ Most of the software installed with the Chocolatey package manager use the defau
 Create `src/github.com/PlatONnetwork/` and `bin` directories under the current `%GOPATH%` directory and clone the source code of `PlatON-GO` under the `PlatONnetwork` directory:
 
 ```
-git clone https://github.com/PlatONnetwork/PlatON-Go.git --recursive
+git clone https://github.com/PlatONnetwork/PlatON-Go.git
 ```
 
 #### 3. Compile

@@ -42,6 +42,8 @@
 
 ## 快速开始
 
+    案例说明
+
 ### 环境准备
 
 #### 安装PlatON节点
@@ -93,15 +95,15 @@ $ ./platon --identity platon --datadir ./data --port 16789 --rpcaddr 0.0.0.0 --r
 
 ##### 方式二： 连接测试网络
 
-贝莱世界测试网络现已开放，可按照[测试网络连接指南](zh-cn/basics/[Chinese-Simplified]-连接测试网络)将计算节点连接到测试网络。
+贝莱世界测试网络现已开放，可按照[测试网络连接指南](#zh-cn/basics/[Chinese-Simplified]%20快速指南#连接到贝莱世界测试网络)将计算节点连接到测试网络。
 
-**注意**：与私有网络一样，启动节点时也需要增加命令行参数：`--vc` 和 `--vc.actor`
+与私有网络一样，启动节点时也需要增加命令行参数：`--vc` 和 `--vc.actor`
 
 #### 账户准备
 
 节点启动之后需要解锁 `--vc.actor` 账户，作为计算节点参与可验证合约计算：
 
-```                                               
+```
 $ ./platon attach http://localhost:6789
 > personal.unlockAccount("0xd7398978d04565ccf44097106e1cb7e9148d8ec9","password", 2592000)
 > true

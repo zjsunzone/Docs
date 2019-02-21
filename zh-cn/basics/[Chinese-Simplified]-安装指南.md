@@ -84,11 +84,12 @@ Ubuntu编译环境要求：
 源码地址：<https://github.com/PlatONnetwork/PlatON-Go.git>，执行如下命令编译生成 `platon` 可执行文件:
 
 ```
-$ git clone https://github.com/PlatONnetwork/PlatON-Go.git --recursive
+$ git clone https://github.com/PlatONnetwork/PlatON-Go.git --recurive
 ```
 
 #### 2. 编译
 
+##### 编译无`MPC`功能`platon`客户端
 
 ```bash
 $ cd PlatON-Go
