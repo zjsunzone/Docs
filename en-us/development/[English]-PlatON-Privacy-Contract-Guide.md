@@ -7,7 +7,7 @@ As the next-generation Trustless secure data computing architecture, the [PlatON
 ## Architecture
 
 <div align=left>
-<img src="../../zh-cn/development/privacy-contract/images/mpc_structure.png" width = "650" height="523"/>  
+<img src="zh-cn/development/privacy-contract/images/mpc_structure.png" width = "650" height="523"/>  
 </div>
 
 Architecture diagram description:
