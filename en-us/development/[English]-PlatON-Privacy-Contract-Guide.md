@@ -38,6 +38,20 @@ Architecture diagram description:
 
 ## Quick start
 
+**Notice：`Platon` support only `Intel `3 Generation and above `CPU `framework to run MPC functions, Please check if the `CPU` meets the requirements before starting. You can use the following commands to view `CPU `information.：**
+
+```
+$ cat /proc/cpuinfo
+```
+
+The following information can be found in the output:
+
+```
+model name      : Intel(R) Xeon(R) CPU E5-2620 v4 @ 2.10GHz
+```
+
+The `v4'indicates that `CPU` is a four-generation architecture.
+
 Now using the classic case of MPC, [Yao's millionaire problem](https://en.wikipedia.org/wiki/Yao%27s_Millionaires%27_Problem), to introduce privacy contract development.
 
 **Case statement:**

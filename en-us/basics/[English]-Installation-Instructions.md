@@ -68,6 +68,20 @@ The Ubuntu build environment needs to meet the following requirements:
 - Compiler: `gcc(4.9.2+)`
 - go language development kit: `go(1.7+)`
 
+**Notice：`Platon` support only `Intel `3 Generation and above `CPU `framework to run MPC functions, Please check if the `CPU` meets the requirements before starting. You can use the following commands to view `CPU `information.：**
+
+```
+$ cat /proc/cpuinfo
+```
+
+The following information can be found in the output:
+
+```
+model name      : Intel(R) Xeon(R) CPU E5-2620 v4 @ 2.10GHz
+```
+
+The `v4'indicates that `CPU` is a four-generation architecture.
+
 >**Note**: Make sure the compilation environment requirements are met！
 
 The PlatON compilation and installation process is as follows:

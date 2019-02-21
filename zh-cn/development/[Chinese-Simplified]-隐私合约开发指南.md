@@ -49,6 +49,20 @@
 
 ### 搭建开发环境
 
+**注意：对于`MPC`功能，我们官方只支持`Intel`3代及以上`CPU`架构，3代以下不支持! 开始前请检查`CPU`架构是否符合，可使用如下命令查看`CPU`信息：**
+
+```
+$ cat /proc/cpuinfo
+```
+
+在输出中可以找到如下信息：
+
+```
+model name      : Intel(R) Xeon(R) CPU E5-2620 v4 @ 2.10GHz
+```
+
+其中`v4`代表`CPU`为四代架构。
+
 下面以 `Ubuntu16.04` 操作系统为例搭建构建环境，我们假设 ${privacy-contract-compiler} 目录为 Ubuntu 对应目录 `/home/platon/privacy-contract-compiler`，  {pWasm} 为 Ubuntu 对应目录 `/home/platon/pWasm` ，其中 `platon` 为当前登录用户。用户对应自己登录的用户即可。
 
 **依赖组件：**
