@@ -619,4 +619,4 @@ $ ./platon attach http://localhost:7789
 
 ## 深入理解隐私合约编程
 
-了解更多隐私合约开发细节，请参考：[深入理解隐私合约编程](zh-cn/development/[Chinese-Simplified]-隐私合约开发指南)。
+了解更多隐私合约开发细节，请参考：[深入理解隐私合约编程](zh-cn/development/[Chinese-Simplified]-深入理解隐私合约)。
