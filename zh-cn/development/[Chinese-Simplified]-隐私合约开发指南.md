@@ -113,7 +113,7 @@
 
 ### 隐私合约实现
 
-####　隐私合约编写
+#### 隐私合约编写
 
 编写一个隐私合约 `YaoMillionairesProblem.cpp` 解决姚氏百万富翁问题。代码实现如下：
 
@@ -619,4 +619,4 @@ $ ./platon attach http://localhost:7789
 
 ## 深入理解隐私合约编程
 
-了解更多隐私合约开发细节，请参考：[深入理解隐私合约编程]([Chinese-Simplified]-Deep-Understanding-Privacy-Contract-Dev)。
+了解更多隐私合约开发细节，请参考：[深入理解隐私合约编程](zh-cn/development/[Chinese-Simplified]-隐私合约开发指南)。

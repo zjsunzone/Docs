@@ -621,5 +621,5 @@ In the result receipt, if the log is empty, the task execution fails! Refer to t
 
 ## Deep understanding of privacy contract programming
 
-For more details on privacy contract development, please refer to: [In-depth understanding of privacy contract programming]([English]-Deep-Understanding-Privacy-Contract-Dev).
+For more details on privacy contract development, please refer to: [In-depth understanding of privacy contract programming](en-us\development\[English]-Deep-Understanding-Privacy-Contract-Dev).
 
