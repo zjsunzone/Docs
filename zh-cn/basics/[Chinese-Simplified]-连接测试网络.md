@@ -3,7 +3,7 @@
 
 贝莱世界测试网络现已开放，按照以下步骤可将本地节点连接到测试网络。
 
-设置前确保本地已经按照[PlatON安装指南](./[Chinese-Simplified]-安装指南)安装好PlatON节点。
+设置前确保本地已经按照[PlatON安装指南](zh-cn/basics/[Chinese-Simplified]-安装指南)安装好PlatON节点。
 
 本文假设Ubuntu环境下工作目录为 `~/platon-node` ，Windows环境下工作目录为 `D:\platon-node`。注意后续均在工作目录下进行。
 
