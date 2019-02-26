@@ -198,7 +198,7 @@ choco install mingw
 
 利用`chocolatey`包管理器安装的软件大部分有默认的安装路径，部分软件可能会有各种各样的路径，这取决于软件的发布者。安装这些包将修改Path环境变量。最后安装路径可查看PATH。安装完之后请确保已安装的Go版本为1.7（或更高版本）。
 
-#### 3. 获取`PlatON`源码
+#### 2. 获取`PlatON`源码
 
 在当前`%GOPATH%`目录下创建`src/github.com/PlatONnetwork/`和`bin`目录，在`PlatONnetwork`目录下克隆`PlatON-GO`的源码:
 
@@ -206,7 +206,7 @@ choco install mingw
 git clone https://github.com/PlatONnetwork/PlatON-Go.git
 ```
 
-#### 4. 编译
+#### 3. 编译
 
 在源码目录`PlatON-GO`下执行编译命令，如下：
 
