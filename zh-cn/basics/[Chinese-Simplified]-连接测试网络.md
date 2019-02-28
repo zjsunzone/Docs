@@ -39,7 +39,7 @@ Address: {550ae58b051a8e942f858ef22019c1c622292f7e}
 
 使用第一步生成的账户地址在[PlatON官网](https://developer.platon.network/#/energon?lang=zh)申请测试Energon。
 
-***注意：测试Energon没有任何价值，仅限于体验测试网络功能***
+***注意：测试Energon没有任何价值，仅限于体验测试网络功能。如仅仅只是连接测试网络，无需申请！***
 
 
 ## 启动本地节点并连接测试网络
