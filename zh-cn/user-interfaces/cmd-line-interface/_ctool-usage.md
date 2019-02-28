@@ -16,17 +16,18 @@
 
 `ctool`：一个可用于快速进行合约发布、交易发送（合约调用）、查询的简易工具集。
 
-* [window版本](https://download.platon.network/ctool-windows-amd64.exe)
+该工具位于PWASM包中：
 
-> 暂时仅提供`windows`使用版本，更多版本持续开发中。
+windows版本下载地址：https://download.platon.network/0.3/pwasm-windows-x86_64-0.3.0.zip
+
+linux下载地址： https://download.platon.network/0.4/pwasm-linux-amd64-0.4.0.tar.gz
+
+解压该包，`ctool`在bin目录下。
 
 ## 使用说明
 
-
 ```
 $ ctool.exe <command> [--addr contractAddress] [--type txType(default:2)] [--func funcInfo] --abi <abi_path> --code <wasm_path> [--config <config_path>]
-
-
 ```
 
 * `command` 待执行的命令,主要有：deploy(发布合约)、invoke(合约调用)、getTxReceipt(查询回执)；
@@ -46,14 +47,11 @@ $ ctool.exe <command> [--addr contractAddress] [--type txType(default:2)] [--fun
 
 范例：
 
-
 ```JSON
 {
   "url":"http://127.0.0.1:8545",
   "from":"0x60ceca9c1290ee56b98d4e160ef0453f7c40d219"
 }
-
-
 ```
 
 - `url` PlatON开放的`JSON-RPC`地址信息； 
@@ -67,16 +65,11 @@ $ ctool.exe <command> [--addr contractAddress] [--type txType(default:2)] [--fun
 
 ```shell
 $ ctool.exe deploy --abi ./demo.cpp.abi.json --code ./demo.wasm --config ./config.json
-
-
 ```
-
 
 ```
 trasaction hash: 0xdb0f9a28fcd447702e8d5961f47144d1ea830979e3c984acc8f72c0dca8bdcfc
 contract address: 0x43355c787c50b647c425f594b441d4bd751951c1
-
-
 ```
 
 命令执行后，会返回交易哈希与合约地址。
@@ -89,8 +82,6 @@ contract address: 0x43355c787c50b647c425f594b441d4bd751951c1
 
 ```shell 
 $ ctool.exe invoke -addr "0x43355c787c50b647c425f594b441d4bd751951c1" --func 'sayHello("HelloWorld")' --abi ./demo.cpp.abi.json --config ./config.json
-
-
 ```
 
 **查询结果**
@@ -101,8 +92,6 @@ $ ctool.exe invoke -addr "0x43355c787c50b647c425f594b441d4bd751951c1" --func 'sa
 
 ```shell 
 $ ctool.exe invoke -addr "0x43355c787c50b647c425f594b441d4bd751951c1" --func 'getWorld()' --abi ./demo.cpp.abi.json --config ./config.json
-
-
 ```
 
 > 预期结果获取到屏幕输出的结果应该为：`HelloWorld`。
@@ -114,8 +103,6 @@ $ ctool.exe invoke -addr "0x43355c787c50b647c425f594b441d4bd751951c1" --func 'ge
 
 ```shell 
 $ ctool.exe getTxReceipt 0x0b8996dadd6fd821f055affd1f95dbdf718d288a17e4ac5ed4133f3393bca44d(交易哈希)
-
-
 ```
 
 

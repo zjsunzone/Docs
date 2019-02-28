@@ -254,7 +254,7 @@ digest:
 
 下面简要说明在 Ubuntu 上发布编译生成的 Wasm 合约 `YaoMillionairesContract`，完成隐私合约发布流程。更多 `Ubuntu` 下 Wasm合约开发信息请参考 [Wasm合约开发指南](zh-cn/development/[Chinese-Simplified]-Wasm%e5%90%88%e7%ba%a6%e5%bc%80%e5%8f%91%e6%8c%87%e5%8d%97#%e7%bc%96%e8%af%91%e5%90%88%e7%ba%a6)。
 
-1. 下载 Ubuntu 版本 [Wasm合约开发包](https://download.platon.network/0.5/pwasm-linux-amd64-0.5.0.tar.gz) 并解压到 ${pWasm} 。若已下载，跳至下一步。
+1. 下载 Ubuntu 版本 [Wasm合约开发包](https://download.platon.network/0.4/pwasm-linux-amd64-0.4.0.tar.gz) 并解压到 ${pWasm} 。若已下载，跳至下一步。
 
 2. 进入 ${pWasm} 目录，执行以下命令生成Wasm合约项目 `YaoProblem`。
 
