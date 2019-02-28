@@ -22,7 +22,7 @@ In the future, Samurai will provide more rich functions for different users, and
 
 - Application for block producer with staking
 
-- Participating in block producers voting (To be released)
+- Participating in block producers voting
 
 Btw, Current Samurai is a beta release. This manual intents to help you solving common issue, please feel free to submit any relevant questions at [issues](https://github.com/PlatONnetwork/Docs/issues),  and welcome to join our technical community!
 
@@ -86,27 +86,24 @@ MacOS is not supported for the time being
 
 - [How to confirm a transaction](en-us/user-interfaces/platon-samurai-EN/_Confirm-Transactions#How-to-confirm-a-transaction)
 
-### Wasm contracts
+### contracts
 
-- [What is wasm contract](en-us/user-interfaces/platon-samurai-EN/_Wasm-Contracts#What-is-Wasm-contract)
-
-- [How to deploy a contract](en-us/user-interfaces/platon-samurai-EN/_Wasm-Contracts#how-to-deploy-a-contract)
-
+- [What is wasm contract](en-us/user-interfaces/platon-samurai-EN/_Wasm-Contracts#What-is-wasm-contract)
+- [How to deploy a wasm contract](en-us/user-interfaces/platon-samurai-EN/_Wasm-Contracts#how-to-deploy-a-wasm-contract)
 - [How to add a contract that has been created ](en-us/user-interfaces/platon-samurai-EN/_Wasm-Contracts#How-to-add-a-contract-that-has-been-created)
-
-- [How to execute a contract ](en-us/user-interfaces/platon-samurai-EN/_Wasm-Contracts#How-to-execute-a-contract)
+- [How to execute a wasm contract ](en-us/user-interfaces/platon-samurai-EN/_Wasm-Contracts#How-to-execute-a-wasm-contract)
+- [What is privacy contract](en-us/user-interfaces/platon-samurai-EN/_Wasm-Contracts#What-is-privacy-contract)
+- [How to deploy a privacy contract](en-us/user-interfaces/platon-samurai-EN/_Wasm-Contracts#How-to deploy-a-privacy-contract)
+- [How to execute a privacy contract](en-us/user-interfaces/platon-samurai-EN/_Wasm-Contracts#How-to-execute-a-privacy-contract)
 
 ### Blcok Producers
 
 - [How to be a block producer](en-us/user-interfaces/platon-samurai-EN/_Validator-Node#How-to-be-a-block-producer)
-
-- [How to improve consensus probability](en-us/user-interfaces/platon-samurai-EN/_Validator-Node#how-to-improve-consensus-probability)
-
-- [Why are block producer eliminated](en-us/user-interfaces/platon-samurai-EN/_Validator-Node#Why-are-block-producer-eliminated)
-
+- [How to avoid your block producter being eliminated](en-us/user-interfaces/platon-samurai-EN/_Validator-Node#How-to-avoid-your-block-producter-being-eliminated)
+- [How to improve the probability of becoming a validator](en-us/user-interfaces/platon-samurai-EN/_Validator-Node#How-to-improve-the-probability-of-becoming-a-validator)
+- [How to vote for a block producer](en-us/user-interfaces/platon-samurai-EN/_Validator-Node#How-to-vote-for-a-block-producer)
+- [Why are block producers eliminated](en-us/user-interfaces/platon-samurai-EN/_Validator-Node#Why-are-block-producers-eliminated)
 - [How to re-register for block producer if eliminated](en-us/user-interfaces/platon-samurai-EN/_Validator-Node#how-to-re-register-for-block-producer-if-eliminated)
-
 - [How to revoke the block producer](en-us/user-interfaces/platon-samurai-EN/_Validator-Node#How-to-revoke-the-block-producer)
-
 - [How to redeem the stakes](en-us/user-interfaces/platon-samurai-EN/_Validator-Node#How-to-redeem-the-stakes)
 

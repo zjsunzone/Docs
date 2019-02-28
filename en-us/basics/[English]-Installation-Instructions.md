@@ -19,28 +19,93 @@ There are four ways of installation on Ubuntu:
 
 ### Binary package based installation
 
-The official binary package file download link for ubuntu is：<https://download.platon.network/0.4/platon-ubuntu-amd64-0.4.0.tar.gz>
+Officially, two binary packages are available. Users can download and install them on demand. The download link is as follows:
+
+- PlatON foundation package：<https://download.platon.network/0.5/platon-ubuntu-amd64-0.5.0.tar.gz>
+- PlatON package with MPC and VC functions：<https://download.platon.network/0.5/platon-ubuntu-amd64-0.5.0-with-mv.tar.gz
+
+1.Install PlatON Foundation Package
 
 ```bash
-$ wget https://download.platon.network/0.4/platon-ubuntu-amd64-0.4.0.tar.gz
-$ tar -xvzf platon-ubuntu-amd64-0.4.0.tar.gz
+# 下载
+$ wget https://download.platon.network/0.5/platon-ubuntu-amd64-0.5.0.tar.gz
+
+# 解压
+$ tar -xvzf platon-ubuntu-amd64-0.5.0.tar.gz
 ```
 
 The extracted files should be as following:
+
 - `platon` client executable file
 - `ethkey` key generator
 - `ctool`  wasm contract deploy kit
+
+2.Install PlatON with MPC and VC functions
+
+> Note：
+>1. All official binary packages with MPC function only support CPU architecture of 2.0 and above. If the native CPU architecture needs to compile source code by itself under 2.0, please refer to the compilation method [Compile PlatON client with MPC function](#)
+
+> 2. Before installing all binary packages with MPC functions, you need to install the dependency libraries of MPC VM and configure environment variables. The download link of the dependency libraries is <https://download.platon.network/0.5/platon-mpclib-ubuntu-amd64-0.5.0.tar.gz>.
+
+> 3. Dependencies need to be installed before installing all binary packages with VC functions.
+
+- Install `MPC VM` Library
+
+```bash
+# download the mpc lib 
+$ wget https://download.platon.network/0.5/platon-mpclib-ubuntu-amd64-0.5.0.tar.gz
+
+# decompressed
+$ tar -xvzf platon-mpclib-ubuntu-amd64-0.5.0.tar.gz
+```
+
+Add the decompressed path to the environment variable:
+
+```bash
+$ grep "export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:~/home/path/to/platon-mpclib-ubuntu-amd64-0.5.0" ~/.bashrc || echo "export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:~/home/path/to/platon-mpclib-ubuntu-amd64-0.5.0" >> ~/.bashrc
+
+$ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/home/path/to/platon-mpclib-ubuntu-amd64-0.5.0
+```
+
+- Install `VC` Library
+
+```
+$ sudo apt-get install libboost-all-dev 
+$ sudo apt-get install llvm-6.0-dev llvm-6.0 libclang-6.0-dev 
+$ sudo apt-get install libgmpxx4ldbl libgmp-dev libprocps4-dev libssl-dev
+```
+
+- Install PlatON：
+
+```bash
+# download
+$ wget https://download.platon.network/0.5/platon-ubuntu-amd64-0.5.0-with-mv.tar.gz
+$ tar -xvzf platon-ubuntu-amd64-0.5.0-with-mv.tar.gz
+```
 
 ### PPA based installation
 
 Add PPA to your system and update：
 
-```
+1.Install PlatON Foundation Package
+
+```bash
 # add PPA
 $ sudo add-apt-repository ppa:platonnetwork/platon
 $ sudo apt-get update
 
-# install platon
+# install
+$ sudo apt-get install platon
+```
+
+2.Install PlatON with MPC and VC functions
+
+```bash
+# add PPA
+$ sudo add-apt-repository ppa:platonnetwork/platon
+$ sudo apt-get update
+
+# install
 $ sudo apt-get install platon-all
 ```
 
@@ -50,12 +115,34 @@ After the installation, the binaries and other components of the package should 
 
 Download the `.deb` package and then install.
 
+1.Install PlatON Foundation Package
+
 ```bash
-# download
-$ wget https://download.platon.network/0.4/platon-ubuntu-amd64-0.4.0.deb
+$ wget https://download.platon.network/0.5/platon-ubuntu-amd64-0.5.0.deb
 
 # install
-$ sudo dpkg -i platon-ubuntu-amd64-0.4.0.deb
+$ sudo dpkg -i platon-ubuntu-amd64-0.5.0.deb
+```
+
+2.Install PlatON with MPC and VC functions
+
+> Note: Before installing this package, you need to install `MPC VM` and `VC` related dependencies. The `MPC VM` dependencies provided DEB installation mode, and check whether the native CPU architecture is 0.2 and above!
+
+```bash
+# download mpc lib
+$ wget https://download.platon.network/0.5/platon-mpclib-ubuntu-amd64-0.5.0.deb
+
+# install MPC lib
+$ sudo dpkg -i platon-mpclib-ubuntu-amd64-0.5.0.deb
+
+# intall VC lib
+$ sudo apt-get install libboost-all-dev 
+$ sudo apt-get install llvm-6.0-dev llvm-6.0 libclang-6.0-dev 
+$ sudo apt-get install libgmpxx4ldbl libgmp-dev libprocps4-dev libssl-dev
+
+$ wget https://download.platon.network/0.5/platon-all-ubuntu-amd64-0.5.0.deb
+
+$ sudo dpkg -i platon-all-ubuntu-amd64-0.5.0.deb
 ```
 
 After the installation, the binaries and other components of the package should be installed to `/usr/bin/`
@@ -143,7 +230,7 @@ The Windows environment supports three installation modes:
 
 ### Binary package based installation
 
-Windows version of the Platon binary download link is: <https://download.platon.network/0.4/platon-windows-x86_64-0.4.0.zip> download. No installation is required after downloading, and it can be used directly by decompression.
+Windows version of the Platon binary download link is: <https://download.platon.network/0.5/platon-windows-x86_64-0.5.0.zip> download. No installation is required after downloading, and it can be used directly by decompression.
 
 The extracted files should be as following:
 - `platon` client executable file
@@ -157,7 +244,7 @@ We use the Chocolatey package manager to install the required build tools. If yo
 Start PowerShell as an administrator and install Platon using the choco command:
 
 ```
-choco install platonnetwork --version=0.4.0
+choco install platonnetwork --version=0.5.0
 ```
 
 You will find `platon`,`ethkey` in the default installation path `C:\ProgramData\chocolatey\bin`.
@@ -220,7 +307,7 @@ The docker installation is relatively simple, you can refer to the following two
 - Pull Platon Image
 
 ```bash
-$ sudo docker pull platonnetwork/platon:tag #e.g: platonnetwork/platon:0.4.0
+$ sudo docker pull platonnetwork/platon:tag #e.g: platonnetwork/platon:0.5.0
 ```
 
 - Run Platon Container
@@ -234,7 +321,7 @@ $ sudo docker run -d platonnetwork/platon:tag
 To open port mapping, execute the following commands:
 
 ```bash
-$ sudo docker run -d -e PLATONIP="192.168.120.20" -p 6789:6789  -p 16789:16789 --name platon platonnetwork/platon:0.4.0
+$ sudo docker run -d -e PLATONIP="192.168.120.20" -p 6789:6789  -p 16789:16789 --name platon platonnetwork/platon:0.5.0
 ```
 
 `PLATONIP`is the local server address.

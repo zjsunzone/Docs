@@ -20,7 +20,7 @@ Samurai核心功能如下：
 
 - 共识节点注册与质押管理
 
-- 参与节点投票(敬请期待)
+- 参与节点投票
 
 请注意，Samurai仍处于测试阶段，可能会出现一些问题。 本指南将帮助您解决一些最常见的问题。如有更多问题欢迎提交到[issues](https://github.com/PlatONnetwork/Docs/issues) ！
 
@@ -78,27 +78,24 @@ tar.xz源代码包安装说明：
 
 - [如何确认交易](zh-cn/user-interfaces/platon-samurai/_交易#如何确认交易)
 
-### Wasm合约
+### 合约
 
 - [Wasm合约是什么](zh-cn/user-interfaces/platon-samurai/_Wasm合约#Wasm合约是什么)
-
 - [如何部署一个Wasm合约](zh-cn/user-interfaces/platon-samurai/_Wasm合约#如何部署一个Wasm合约)
-
-- [如何添加别人已部署的Wasm合约](zh-cn/user-interfaces/platon-samurai/_Wasm合约#如何添加别人已部署的合约)
-
+- [如何添加别人已部署的合约](zh-cn/user-interfaces/platon-samurai/_Wasm合约#如何添加别人已部署的合约)
 - [怎样运行wasm合约](zh-cn/user-interfaces/platon-samurai/_Wasm合约#怎样运行Wasm合约)
+- [什么是隐私合约](zh-cn/user-interfaces/platon-samurai/_Wasm合约#什么是隐私合约)
+- [如何部署隐私合约](zh-cn/user-interfaces/platon-samurai/_Wasm合约#如何部署隐私合约)
+- [怎么执行隐私合约](zh-cn/user-interfaces/platon-samurai/_Wasm合约#怎么执行隐私合约)
 
 ### 应用-共识节点
 
 - [怎样注册共识节点](zh-cn/user-interfaces/platon-samurai/_竞选节点#怎样注册共识节点)
-
-- [如何提高共识概率](zh-cn/user-interfaces/platon-samurai/_竞选节点#如何提高共识概率)
-
+- [如何避免共识节点被淘汰](zh-cn/user-interfaces/platon-samurai/_竞选节点#如何避免共识节点被淘汰)
+- [如何提高成为验证节点的概率](zh-cn/user-interfaces/platon-samurai/_竞选节点#如何提高成为验证节点的概率)
+- [如何为共识节点投票](zh-cn/user-interfaces/platon-samurai/_竞选节点#如何为共识节点投票)
 - [共识节点为什么会被淘汰](zh-cn/user-interfaces/platon-samurai/_竞选节点#共识节点为什么会被淘汰)
-
 - [被淘汰的节点如何再次加入](zh-cn/user-interfaces/platon-samurai/_竞选节点#被淘汰的节点如何再次加入)
-
 - [如何注销共识节点](zh-cn/user-interfaces/platon-samurai/_竞选节点#如何注销共识节点)
-
 - [如何提取被质押的资产](zh-cn/user-interfaces/platon-samurai/_竞选节点#如何提取被质押的资产)
 

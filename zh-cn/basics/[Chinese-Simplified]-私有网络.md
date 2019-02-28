@@ -26,6 +26,7 @@ Address   :  0xA9051ACCa5d9a7592056D07659f3F607923173ad
 PrivateKey:  1abd1200759d4693f4510fbcf7d5caad743b11b5886dc229da6c0747061fca36
 PublicKey : 8917c748513c23db46d23f531cc083d2f6001b4cc2396eb8412d73a3e4450ffc5f5235757abf9873de469498d8cf45f5bb42c215da79d59940e17fcb22dfc127
 ```
+
 PublicKey是我们需要的 ***节点ID***， PrivateKey是对应的 ***节点私钥*** 。
 
 2.生成coinbase账户（coinbase账户是矿工的钱包地址， 即当前出块的gas和增发奖励应该给到矿工指定的coinbase地址，对于创世区块，由于没有矿工，这个地址应该为0x0000000000000000000000000000000000000000），为方便测试，可以在创世区块为该账户预先分配一定的Energon
@@ -175,6 +176,7 @@ $ nohup ./platon --identity "platon" --datadir ./data --port 16789 --rpcaddr 0.0
 **Windows不支持后台运行。**
 
 ## PlatON 集群环境
+
 `PlatON集群`是有多节点参与的网络环境，这里我们假设你已经可以构建一个PlatON单节点。并且，我们将构建的是两个节点组成的网络。更多的节点在操作流程上类似。
 
 为了在本地运行platon多节点，你要确保：
@@ -365,7 +367,7 @@ $ nohup ./platon ... --nodekey "./data1/platon/nodekey" >> node1.log 2>&1 &
 
 ## 为节点启用MPC功能
 
-MPC 计算功能是PlatON 平台支持的安全多方计算功能，为实现隐私计算提供基础设施。更多MPC相关请[参考这里](zh-cn/development/[Chinese-Simplified]-%e9%9a%90%e7%a7%81%e5%90%88%e7%ba%a6%e5%bc%80%e5%8f%91%e6%8c%87%e5%8d%97)。**MPC计算功能仅能在[集群环境](#PlatON-%e9%9b%86%e7%be%a4%e7%8e%af%e5%a2%83)下启用，并且当前只支持 Ubuntu 系统。**
+MPC 计算功能是PlatON 平台支持的安全多方计算功能，为实现隐私计算提供基础设施。更多MPC相关请[参考这里](zh-cn/development/[Chinese-Simplified]-%e9%9a%90%e7%a7%81%e5%90%88%e7%ba%a6%e5%bc%80%e5%8f%91%e6%8c%87%e5%8d%97)。**MPC计算功能仅能在[集群环境](#PlatON-%e9%9b%86%e7%be%a4%e7%8e%af%e5%a2%83)下启用**
 
 如需要使用MPC计算功能，首先务必确保是用[源码编译安装](zh-cn/basics/[Chinese-Simplified]-安装指南#源码编译安装)带 `MPC` 功能的 `platon` 二进制可执行程序。并且下载配置了 mpclib 依赖库文件。
 
@@ -429,3 +431,20 @@ MPC ENGINE INIT SUCCESS
 
 则mpc初始化成功。
 
+## 为节点启用VC功能
+
+更多VC相关请[参考这里](zh-cn/development/[Chinese-Simplified]-可验证合约)。
+
+在启动节点时增加如下参数：
+
+```
+--vc --vc.actor 0xd7398978d04565ccf44097106e1cb7e9148d8ec9 --wasmlog wasm.log 
+```
+
+选项说明：
+
+| 选项 | 描述 |
+| :------------ | :------------ |
+| --vc        | （必选）开启VC计算功能 |
+| --vc.actor   | （必选）用来指定账户将计算结果和证明发布上链 |
+| --wasmlog   | 指定该参数则执行VC计算的日志会输出到`wasm.log`，不指定则该日志会输出到节点日志|

@@ -52,13 +52,27 @@ Wasm合约是使用webassebly构建，部署于PlatON上的应用。用户只需
 
 ![Image text](image/Select_contract-cn.png)
 
-2.选择要执行的合约功能函数，输入相关参数，选择【执行钱包】，点击【执行】，如下图所示：
+2.选择要执行的合约功能函数，输入相关参数，选择【执行类型】-普通交易，选择【执行钱包】，点击【执行】，如下图所示：
 
 ![Image text](image/Execution_set-cn.png)
 
 3.弹出确认对话框，输入执行钱包密码，点击【提交】，则该合约交易及发送成功。
 
 ![Image text](image/Execute_Contract-cn.png)
+
+## 什么是隐私合约
+
+隐私合约是 PlatON 上一种特殊的 MPC 合约，借助 PlatON 平台安全多方计算（MPC）的能力，实现了对计算数据的隐私保护。详情请[查看](zh-cn\development\[Chinese-Simplified]-隐私合约开发指南)
+
+## 如何部署隐私合约
+
+操作步骤与[如何部署一个Wasm合约](#如何部署一个Wasm合约)相同。
+
+## 怎么执行隐私合约
+
+操作步骤基本与[怎样运行wasm合约](#怎样运行Wasm合约)相同，执行类型请选择“MPC计算合约”。
+
+更多关于隐私合约信息请点击[这里](\zh-cn\development\[Chinese-Simplified]-深入理解隐私合约)
 
 
 

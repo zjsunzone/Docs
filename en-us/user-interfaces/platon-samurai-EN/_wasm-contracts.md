@@ -1,8 +1,8 @@
-## What is Wasm contract
+## What is wasm contract
 Wasm contracts are applications built with webassebly. and deployed on PlatON. User can publish services directly by submitting code then deploying it via PlatON Samurai.
 
 
-## How to deploy a contract
+## How to deploy a wasm contract
 
 1.On the [Contracts] page, click [Deploy Contract], as shown below:
 
@@ -46,13 +46,13 @@ As shown in the following figure:
 ![Image text](image/Address_abi.png)
 
 
-## How to execute a contract
+## How to execute a wasm contract
 
 1.On the home page of [Contract], select an existing contract, the client navigates to [Contract Information] page, as shown below:
 
 ![Image text](image/Contract_detail.png)
 
-2.Select the function of contract to be executed, input relevant parameters, selected the executor, click [Execute], as shown below:
+2.Select the function of contract to be executed, input relevant parameters, selected the Execute Type（Ordinary Tx），selected the executor, click [Execute], as shown below:
 
 ![Image text](image/Execution_set.png)
 
@@ -60,5 +60,17 @@ As shown in the following figure:
 
 ![Image text](image/Execute_Contract.png)
 
+## What is privacy contract
 
+The privacy contract is a special MPC contract on PlatON that leverages the PlatON platform's secure multi-party computing (MPC) capabilities to protect the privacy of calculated data. For more information please click [here](en-us\development\[English]-PlatON-Privacy-Contract-Guide).
+
+## How to deploy a privacy contract
+
+The operation steps are the same as [How to deploy a contract](#How-to-execute-a-contract)
+
+## How to execute a contract
+
+The operation steps are basically the same as [How to execute a contract ](#How-to-execute-a-contract), and slelect  [MPC Compute Tx] as the execution type when executing.
+
+For more information about privacy contract, please click [here](en-us\development\[English]-Deep-Understanding-Privacy-Contract-Dev).
 

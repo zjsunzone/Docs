@@ -1,35 +1,44 @@
-- [概览](#%E6%A6%82%E8%A7%88)
-- [版本说明](#%E7%89%88%E6%9C%AC%E8%AF%B4%E6%98%8E)
-  - [v0.2.0 更新说明](#v020-%E6%9B%B4%E6%96%B0%E8%AF%B4%E6%98%8E)
-  - [v0.3.0 更新说明](#v030-%E6%9B%B4%E6%96%B0%E8%AF%B4%E6%98%8E)
-- [快速入门](#%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8)
-  - [安装或引入](#%E5%AE%89%E8%A3%85%E6%88%96%E5%BC%95%E5%85%A5)
-    - [环境要求](#%E7%8E%AF%E5%A2%83%E8%A6%81%E6%B1%82)
-    - [CocoaPods](#cocoapods)
-  - [初始化代码](#%E5%88%9D%E5%A7%8B%E5%8C%96%E4%BB%A3%E7%A0%81)
-- [合约](#%E5%90%88%E7%BA%A6)
-  - [合约示例](#%E5%90%88%E7%BA%A6%E7%A4%BA%E4%BE%8B)
-  - [部署合约](#%E9%83%A8%E7%BD%B2%E5%90%88%E7%BA%A6)
-    - [**`platonDeployContract`**](#platondeploycontract)
-  - [合约call调用](#%E5%90%88%E7%BA%A6call%E8%B0%83%E7%94%A8)
-    - [**`platonCall`**](#platoncall)
-  - [合约sendRawTransaction调用](#%E5%90%88%E7%BA%A6sendrawtransaction%E8%B0%83%E7%94%A8)
-    - [**`platonSendRawTransaction`**](#platonsendrawtransaction)
-  - [合约Event](#%E5%90%88%E7%BA%A6event)
-    - [**`platonGetTransactionReceipt`**](#platongettransactionreceipt)
-  - [内置合约](#%E5%86%85%E7%BD%AE%E5%90%88%E7%BA%A6)
-    - [CandidateContract](#candidatecontract)
-      - [**`CandidateDeposit`**](#candidatedeposit)
-      - [**`CandidateApplyWithdraw`**](#candidateapplywithdraw)
-      - [**`CandidateWithdraw`**](#candidatewithdraw)
-      - [**`SetCandidateExtra`**](#setcandidateextra)
-      - [**`CandidateWithdrawInfos`**](#candidatewithdrawinfos)
-      - [**`CandidateDetails`**](#candidatedetails)
-      - [**`GetBatchCandidateDetail`**](#getbatchcandidatedetail)
-      - [**`CandidateList`**](#candidatelist)
-      - [**`VerifiersList`**](#verifierslist)
-- [web3](#web3)
-  - [web3 eth相关 (标准JSON RPC )](#web3-eth%E7%9B%B8%E5%85%B3-%E6%A0%87%E5%87%86json-rpc)
+-   [概览](#概览)
+-   [版本说明](#版本说明)
+    -   [v0.2.0 更新说明](#v0.2.0-更新说明)
+    -   [v0.3.0 更新说明](#v0.3.0-更新说明)
+    -   [v0.4.0 更新说明](#v0.4.0-更新说明)
+-   [快速入门](#快速入门)
+    -   [安装或引入](#安装或引入)
+        -   [环境要求](#环境要求)
+        -   [CocoaPods](#cocoapods)
+    -   [初始化代码](#初始化代码)
+-   [合约](#合约)
+    -   [合约示例](#合约示例)
+    -   [部署合约](#部署合约)
+        -   [**`platonDeployContract`**](#platondeploycontract)
+    -   [合约call调用](#合约call调用)
+        -   [**`platonCall`**](#platoncall)
+    -   [合约sendRawTransaction调用](#合约sendrawtransaction调用)
+        -   [**`platonSendRawTransaction`**](#platonsendrawtransaction)
+    -   [合约Event](#合约event)
+        -   [**`platonGetTransactionReceipt`**](#platongettransactionreceipt)
+    -   [内置合约](#内置合约)
+        -   [CandidateContract](#candidatecontract)
+            -   [**`CandidateDeposit`**](#candidatedeposit)
+            -   [**`CandidateApplyWithdraw`**](#candidateapplywithdraw)
+            -   [**`CandidateWithdraw`**](#candidatewithdraw)
+            -   [**`SetCandidateExtra`**](#setcandidateextra)
+            -   [**`CandidateWithdrawInfos`**](#candidatewithdrawinfos)
+            -   [**`CandidateDetails`**](#candidatedetails)
+            -   [**`GetBatchCandidateDetail`**](#getbatchcandidatedetail)
+            -   [**`CandidateList`**](#candidatelist)
+            -   [**`VerifiersList`**](#verifierslist)
+        -   [TicketContract](#ticketcontract)
+            -   [**`GetTicketPrice`**](#getticketprice)
+            -   [**`GetPoolRemainder`**](#getpoolremainder)
+            -   [**`GetCandidateEpoch`**](#getcandidateepoch)
+            -   [**`GetTicketDetail`**](#getticketdetail)
+            -   [**`GetBatchTicketDetail`**](#getbatchticketdetail)
+            -   [**`GetBatchCandidateTicketIds`**](#getbatchcandidateticketids)
+            -   [**`VoteTicket`**](#voteticket)
+-   [web3](#web3)
+    -   [web3 eth相关 (标准JSON RPC )](#web3-eth相关-标准json-rpc)
 
 # 概览
 > Platon Swift SDK是PlatON面向Swift开发者，提供的PlatON公链的Swift开发工具包
@@ -43,6 +52,9 @@
 1. 实现了PlatON协议中交易类型定义
 2. 增加内置合约CandidateContract
 
+## v0.4.0 更新说明
+1. 增加内置合约TicketContract
+
 # 快速入门
 
 ## 安装或引入
@@ -53,13 +65,12 @@
 ### CocoaPods
 
 2. 在Podfile文件中添加引用
+```
+pod 'platonWeb3', '~> 0.4.0'
+```
 
-```
-pod 'platonWeb3', '~> 0.3.0'
-```
 
 ## 初始化代码
-
 ```
 let web3 : Web3 = Web3(rpcURL: "http://192.168.1.100:6789")
 ```
@@ -79,7 +90,7 @@ namespace demo {
     {
         public:
             FirstDemo(){}
-			
+      
             /// 实现父类: platon::Contract 的虚函数
             /// 该函数在合约首次发布时执行，仅调用一次
             void init() 
@@ -92,7 +103,7 @@ namespace demo {
 
         public:
             void invokeNotify(const char *msg)
-            {	
+            { 
                 // 定义状态变量
                 platon::setState("NAME_KEY", std::string(msg));
                 // 日志输出
@@ -118,7 +129,9 @@ PLATON_ABI(demo::FirstDemo, getName)
 
 ## 部署合约
 
+
 ### **`platonDeployContract`**
+
 
 **入参**
 
@@ -170,6 +183,7 @@ _ receipt: EthereumTransactionReceiptObject?    //交易回执
 ## 合约call调用
 
 ### **`platonCall`**
+
 
 **入参**
 
@@ -254,7 +268,6 @@ _ data : AnyObject?                 //返回数据
 
 ContractSendRawCompletion定义如下
 
-
 ```
 public typealias ContractSendRawCompletion = (
 _ result : PlatonCommonResult,          //执行结果
@@ -285,11 +298,13 @@ _ data : Data?                          //交易hash
             }
         }
     }
+
 ```
 
 ## 合约Event
 
 ### **`platonGetTransactionReceipt`**
+
 
 **入参**
 
@@ -330,11 +345,17 @@ _ obj : AnyObject?                      //返回数据
             }
         }
     }
+
 ```
 
 ## 内置合约
+
+<!--- 1.1 CandidateContract -->
+
 ###  CandidateContract
-> PlatOn经济模型中候选人相关的合约接口 [合约描述](/zh-cn/technologies/platon-ppos/_Probabilistic-POS?id=验证池合约)
+> PlatOn经济模型中候选人相关的合约接口 [合约描述]()
+
+<!--- 1.1 CandidateDeposit -->
 
 #### **`CandidateDeposit`**
 > 节点候选人申请/增加质押
@@ -356,8 +377,8 @@ _ obj : AnyObject?                      //返回数据
 | value  | BigUInt  | 质押金额                   |
 | completion  | PlatonCommonCompletion  | 回调闭包                   |
 
-Extra描述
 
+Extra描述
 ```
 {
     "nodeName":string,                     //节点名称
@@ -368,12 +389,13 @@ Extra描述
 }
 ```
 
+
+
 出参（事件：CandidateDepositEvent）：
 * `Ret`: bool 操作结果
 * `ErrMsg`: string 错误信息
 
 合约方法
-
 ```
     func CandidateDeposit(){
         let nodeId = "0x6bad331aa2ec6096b2b6034570e1761d687575b38c3afc3a3b5f892dac4c86d0fc59ead0f0933ae041c0b6b43a7261f1529bad5189be4fba343875548dc9efd3";//节点id
@@ -424,6 +446,8 @@ Extra描述
     }
 ```
 
+<!--- 1.2 CandidateApplyWithdraw -->
+
 #### **`CandidateApplyWithdraw`**
 > 节点质押金退回申请，申请成功后节点将被重新排序，发起的地址必须是质押金退款的地址 from==owner
 
@@ -447,7 +471,6 @@ Extra描述
 | param1 | String | 执行结果，json格式字符串类型 |
 
 param1描述
-
 ```
 {
     "Ret":boolean,                         //是否成功 true:成功  false:失败
@@ -456,7 +479,6 @@ param1描述
 ```
 
 **合约使用**
-
 ```
     func CandidateApplyWithdraw(){
         let nodeId = "0x6bad331aa2ec6096b2b6034570e1761d687575b38c3afc3a3b5f892dac4c86d0fc59ead0f0933ae041c0b6b43a7261f1529bad5189be4fba343875548dc9efd3";
@@ -494,6 +516,8 @@ param1描述
     }
 ```
 
+<!--- 1.3 CandidateWithdraw -->
+
 #### **`CandidateWithdraw`**
 > 节点质押金提取，调用成功后会提取所有已申请退回的质押金到owner账户。
 
@@ -516,7 +540,6 @@ param1描述
 | param1 | String | 执行结果，json格式字符串类型 |
 
 param1描述
-
 ```
 {
     "Ret":boolean,                         //是否成功 true:成功  false:失败
@@ -525,7 +548,6 @@ param1描述
 ```
 
 **合约使用**
-
 ```
     func CandidateWithdraw(){
         let nodeId = "0x6bad331aa2ec6096b2b6034570e1761d687575b38c3afc3a3b5f892dac4c86d0fc59ead0f0933ae041c0b6b43a7261f1529bad5189be4fba343875548dc9efd3";
@@ -558,6 +580,8 @@ param1描述
     }
 ```
 
+<!--- 1.4 SetCandidateExtra -->
+
 #### **`SetCandidateExtra`**
 > 设置节点附加信息, 发起的地址必须是质押金退款的地址 from==owner
 
@@ -573,7 +597,6 @@ param1描述
 | value  | BigUInt  | 转账金额，一般为nil                   |
 | completion  | PlatonCommonCompletion  | 回调闭包                   |
 Extra描述
-
 ```
 {
     "nodeName":string,                     //节点名称
@@ -591,7 +614,6 @@ Extra描述
 | param1 | String | 执行结果，json格式字符串类型 |
 
 param1描述
-
 ```
 {
     "Ret":boolean,                         //是否成功 true:成功  false:失败
@@ -600,7 +622,6 @@ param1描述
 ```
 
 **合约使用**
-
 ```
     func SetCandidateExtra(){
         let nodeId = "0x6bad331aa2ec6096b2b6034570e1761d687575b38c3afc3a3b5f892dac4c86d0fc59ead0f0933ae041c0b6b43a7261f1529bad5189be4fba343875548dc9efd3";//节点id
@@ -648,8 +669,9 @@ param1描述
     }
 ```
 
-#### **`CandidateWithdrawInfos`**
+<!--- 1.5 CandidateWithdrawInfos -->
 
+#### **`CandidateWithdrawInfos`**
 > 获取节点申请的退款记录列表
 
 **入参**
@@ -675,7 +697,6 @@ param1描述
 ```
 
 **合约使用**
-
 ```
     func CandidateWithdrawInfos() {
         contract.CandidateWithdrawInfos(nodeId: "0x6bad331aa2ec6096b2b6034570e1761d687575b38c3afc3a3b5f892dac4c86d0fc59ead0f0933ae041c0b6b43a7261f1529bad5189be4fba343875548dc9efd3") { (result, data) in
@@ -690,6 +711,8 @@ param1描述
         }
     }
 ```
+
+<!--- 1.6 CandidateDetails -->
 
 #### **`CandidateDetails`**
 > 获取候选人信息
@@ -730,7 +753,6 @@ param1描述
 ```
 
 **合约使用**
-
 ```
     func CandidateDetails(){
         contract.CandidateDetails(nodeId: "0x6bad331aa2ec6096b2b6034570e1761d687575b38c3afc3a3b5f892dac4c86d0fc59ead0f0933ae041c0b6b43a7261f1529bad5189be4fba343875548dc9efd3") { (result, data) in
@@ -746,8 +768,9 @@ param1描述
     }
 ```
 
-#### **`GetBatchCandidateDetail`**
+<!--- 1.7 GetBatchCandidateDetail -->
 
+#### **`GetBatchCandidateDetail`**
 > 批量获取候选人信息
 
 **入参**
@@ -787,7 +810,6 @@ param1描述
 ```
 
 **合约使用**
-
 ```
     func GetBatchCandidateDetail(){
        var nodes = "0x6bad331aa2ec6096b2b6034570e1761d687575b38c3afc3a3b5f892dac4c86d0fc59ead0f0933ae041c0b6b43a7261f1529bad5189be4fba343875548dc9efd3"
@@ -807,8 +829,10 @@ param1描述
     }
 ```
 
-#### **`CandidateList`**
+<!--- 1.8 CandidateList -->
 
+
+#### **`CandidateList`**
 > 获取所有入围节点的信息列表
 
 **入参**
@@ -846,7 +870,6 @@ param1描述
 ```
 
 **合约使用**
-
 ```
     func CandidateList(){
         contract.CandidateList { (result, data) in
@@ -862,8 +885,9 @@ param1描述
     }
 ```
 
-#### **`VerifiersList`**
+<!--- 1.9 VerifiersList -->
 
+#### **`VerifiersList`**
 > 获取参与当前共识的验证人列表
 
 **入参**
@@ -901,7 +925,6 @@ param1描述
 ```
 
 合约使用：
-
 ```
     func VerifiersList(){
         contract.VerifiersList { (result, data) in
@@ -917,8 +940,381 @@ param1描述
     }
 ```
 
+<!--- 2 TicketContract -->
+
+###  TicketContract
+> PlatOn经济模型中投票相关的合约接口 [合约描述]()
+
+<!--- 2.1 GetTicketPrice -->
+
+#### **`GetTicketPrice`**
+> 获取票价
+
+**入参**
+
+无
+
+
+**返回**
+
+- String：当前票价(单位为e)
+
+合约方法
+
+```
+    func GetTicketPrice(){
+        contract.GetTicketPrice { (result, data) in
+            switch result{
+            case .success:
+                if let price = data as? String{
+                    let text = "price is:\(price)"
+                    self.showMessage(text: text)
+                }
+            case .fail(let code, let errMsg):
+                let text = "error code:\(code ?? 0) errMsg:\(errMsg ?? "")"
+                self.showMessage(text: text)
+            }
+        }
+    }
+```
+
+<!--- 2.2 GetPoolRemainder -->
+
+#### **`GetPoolRemainder`**
+> 获取票价
+
+**入参**
+
+无
+
+
+
+**返回**
+
+- String：剩余票数量
+
+合约方法
+
+```
+    func GetPoolRemainder() {
+        contract.GetPoolRemainder { (result, data) in
+            switch result{
+                
+            case .success:
+                if let remain = data as? String{
+                    let text = "PoolRemainder is:\(remain)"
+                    self.showMessage(text: text)
+                }
+            case .fail(let code, let errMsg):
+                let text = "error code:\(code ?? 0) errMsg:\(errMsg ?? "")"
+                self.showMessage(text: text)
+            }
+        }
+    }
+```
+
+<!--- 2.3 GetCandidateEpoch -->
+
+#### **`GetCandidateEpoch`**
+> 获取候选人票龄
+
+**入参**
+
+| **参数名** | **类型** | **参数说明** |
+| ------ | ------ | ------ |
+| candidateId | String  | 候选人节点ID |
+| completion |  PlatonCommonCompletion | 回调闭包 |
+
+
+**返回**
+
+- String：票龄(如果没有查询到返回0)
+
+合约方法
+
+```
+    func GetCandidateEpoch(){
+        contract.GetCandidateEpoch(candidateId: "0xaafbc9c699270bd33c77f1b2a5c3653eaf756f1860891327dfd8c29960a51c9aebb6c081cbfe2499db71e9f4c19e609f44cbd9514e59b6066e5e895b8b592abf") { (result, data) in
+            switch result{
+                
+            case .success:
+                if let epoch = data as? String{
+                    let text = "CandidateEpoch is:\(epoch)"
+                    self.showMessage(text: text)
+                }
+            case .fail(let code, let errMsg):
+                let text = "error code:\(code ?? 0) errMsg:\(errMsg ?? "")"
+                self.showMessage(text: text)
+            }
+        }
+    }
+```
+
+
+<!--- 2.4 GetTicketDetail -->
+
+#### **`GetTicketDetail`**
+> 获取票详情
+**入参**
+
+| **参数名** | **类型** | **参数说明** |
+| ------ | ------ | ------ |
+| ticketId | String  | 选票ID |
+| completion |  PlatonCommonCompletion | 回调闭包 |
+
+
+**返回**
+
+- String：json格式字符串
+
+```
+{
+    "TicketId": "0x6bf2236d95a98c798abf760e43d8a1a0f375ce095f6f286198053800262988c5",  //票Id
+    "Owner": "0x493301712671ada506ba6ca7891f436d29185821",  //票的所属者
+    "Deposit": 1000000000000000000,  //购票时的票价
+    "CandidateId": "4f6c8fd10bfb512793f81a3594120c76b6991d3d06c0cc652035cbfae3fcd7cdc3f3d7a82021dfdb9ea99f014755ec1a640d832a0362b47be688bb31d504f62d",  //候选人Id（节点Id）
+    "BlockNumber": 15548,   //购票时的块高
+    "State": 1,         //选票状态（1->正常，2->被选中，3->过期，4->掉榜）
+    "RBlockNumber": 0   //票被释放时的块高
+}
+```
+
+
+合约方法
+
+```
+    func GetTicketDetail(){
+        guard self.ticketIDs.count > 0 else {
+            self.showMessage(text: "ticketIDs count is 0, vote for candidate first!")
+            return
+        }
+        contract.GetTicketDetail(ticketId: self.ticketIDs.first!) { (result, data) in
+            switch result{
+            case .success:
+                if let detail = data as? String{
+                    let text = "GetTicketDetail:\(detail)"
+                    self.showMessage(text: text)
+                }
+            case .fail(let code, let errMsg):
+                let text = "error code:\(code ?? 0) errMsg:\(errMsg ?? "")"
+                self.showMessage(text: text)
+            }
+        }
+    }
+```
+
+
+<!--- 2.5 GetBatchTicketDetail -->
+
+#### **`GetBatchTicketDetail`**
+> 批量获取票详情
+
+**入参**
+
+| **参数名** | **类型** | **参数说明** |
+| ------ | ------ | ------ |
+| ticketIds | Array  | 选票ID数组 |
+| completion |  PlatonCommonCompletion | 回调闭包 |
+
+
+
+**返回**
+
+- String：json格式字符串
+
+```
+[
+    {
+        "TicketId": "0x6bf2236d95a98c798abf760e43d8a1a0f375ce095f6f286198053800262988c5",
+        "Owner": "0x493301712671ada506ba6ca7891f436d29185821",
+        "Deposit": 1000000000000000000,
+        "CandidateId": "4f6c8fd10bfb512793f81a3594120c76b6991d3d06c0cc652035cbfae3fcd7cdc3f3d7a82021dfdb9ea99f014755ec1a640d832a0362b47be688bb31d504f62d",
+        "BlockNumber": 15548,
+        "State": 1,
+        "RBlockNumber": 0
+    },
+    {
+        "TicketId": "0x7f3d95634ebdbf0121a7de207b00cf2d2b4846000ec41b4a8a88d1e019701a5e",
+        "Owner": "0x493301712671ada506ba6ca7891f436d29185821",
+        "Deposit": 1000000000000000000,
+        "CandidateId": "4f6c8fd10bfb512793f81a3594120c76b6991d3d06c0cc652035cbfae3fcd7cdc3f3d7a82021dfdb9ea99f014755ec1a640d832a0362b47be688bb31d504f62d",
+        "BlockNumber": 15548,
+        "State": 1,
+        "RBlockNumber": 0
+    }
+]
+```
+
+合约方法
+
+```
+    func GetBatchTicketDetail(){
+        
+        guard self.ticketIDs.count > 0 else {
+            self.showMessage(text: "ticketIDs count is 0, vote for candidate first!")
+            return
+        }
+        self.showLoading()
+        contract.GetBatchTicketDetail(ticketIds: self.ticketIDs) { (result, data) in
+            switch result{
+                
+            case .success:
+                if let detail = data as? String{
+                    self.showMessage(text: "CandidateEpoch :" + detail)
+                }
+            case .fail(let code, let errMsg):
+                let text = "error code:\(code ?? 0) errMsg:\(errMsg ?? "")"
+                self.showMessage(text: text)
+            }
+        }
+    }
+```
+
+<!--- 2.6 GetBatchCandidateTicketIds -->
+
+#### **`GetBatchCandidateTicketIds`**
+> 批量获取候选人选票
+
+**入参**
+
+| **参数名** | **类型** | **参数说明** |
+| ------ | ------ | ------ |
+| nodeIds | Array  | 候选人节点ID数组 |
+| completion |  PlatonCommonCompletion | 回调闭包 |
+
+
+
+
+**返回**
+
+- String：json格式字符串
+
+```
+{
+    //节点id
+    "01d033b5b07407e377a3eb268bdc3f07033774fb845b7826a6b741430c5e6b719bda5c4877514e8052fa5dbc2f20fb111a576f6696b6a16ca765de49e11e0541": [
+        //节点id下对应的选票
+        "0xb04bb4680653b39790681234bf95499aff790c5adfc5e07732a9efcc2700dd4d",  
+        "0x025c3f4c27707afceaef05f844027d6f19186c58a021477082a567b7a42edbaa"
+    ],
+    "4f6c8fd10bfb512793f81a3594120c76b6991d3d06c0cc652035cbfae3fcd7cdc3f3d7a82021dfdb9ea99f014755ec1a640d832a0362b47be688bb31d504f62d": [
+        "0x10bf96889470610767243064e21741d91cd7380864b59eeb06478c1f1814d5e8",
+        "0x61dc68f275183aa230b58a660a46cf23de84b54c174ab8b87217797981988bf4"
+    ]
+}
+```
+
+合约方法
+
+```
+    func GetBatchCandidateTicketIds(){
+        contract.GetBatchCandidateTicketIds(nodeIds: ["0xaafbc9c699270bd33c77f1b2a5c3653eaf756f1860891327dfd8c29960a51c9aebb6c081cbfe2499db71e9f4c19e609f44cbd9514e59b6066e5e895b8b592abf"]) { (result, data) in
+            switch result{
+                
+            case .success:
+                if let tickets = data as? String{
+                    self.showMessage(text: "GetBatchCandidateTicketIds :" + tickets)
+                }
+            case .fail(let code, let errMsg):
+                let text = "error code:\(code ?? 0) errMsg:\(errMsg ?? "")"
+                self.showMessage(text: text)
+            }
+        }
+    }
+```
+
+<!--- 2.7 VoteTicket -->
+#### **`VoteTicket`**
+> 给节点投票
+
+**入参**
+
+| **参数名** | **类型** | **参数说明** |
+| ------ | ------ | ------ |
+| count | UInt64  | 票数量 |
+| price | BigUInt | 票价 |
+| nodeId | String | 节点ID |
+| sender  | String  | 账户地址|
+| privateKey  | String  | 私钥，需要与账户地址对应|
+| gasPrice  | BigUInt  | 手续费用，Energon价格|
+| gas  | BigUInt  | 手续费用，Energon数量|
+| completion  | PlatonCommonCompletion  | 回调闭包|
+
+
+**返回事件**
+
+| **参数名** | **类型** | **参数说明** |
+| ------ | ------ | ------ |
+| param1 | String | 执行结果，json格式字符串类型 |
+
+param1描述
+```
+{
+    "Ret":boolean,                         //是否成功 true:成功  false:失败
+    "ErrMsg":string,                       //错误信息，失败时存在
+    "Data":"5"                             //成功选票的数量
+}
+```
+
+合约方法
+
+```
+    func VoteTicket(){
+        self.showLoading()
+        contract.VoteTicket(count: 5, price: BigUInt("1")!, nodeId: "0xaafbc9c699270bd33c77f1b2a5c3653eaf756f1860891327dfd8c29960a51c9aebb6c081cbfe2499db71e9f4c19e609f44cbd9514e59b6066e5e895b8b592abf", sender: sender, privateKey: privateKey, gasPrice: gasPrice, gas: gas) { (result, data) in
+            switch result{
+                
+            case .success:
+                if let data = data as? Data{
+                    print("vote hash is is:\(data.toHexString())")
+                    
+                    web3.eth.platonGetTransactionReceipt(txHash: data.toHexString(), loopTime: 15, completion: { (result, receipt) in
+                        if let receipt = receipt as? EthereumTransactionReceiptObject{
+                            if String((receipt.status?.quantity)!) == "1"{
+                                let rlpItem = try? RLPDecoder().decode((receipt.logs.first?.data.bytes)!)
+                                if (rlpItem?.array?.count)! > 0{
+                                    let message = ABI.stringDecode(data: Data(rlpItem!.array![0].bytes!))
+                                    
+                                    guard let dic = try? JSONSerialization.jsonObject(with: message.data(using: .utf8)!, options: .mutableContainers) as? [String:Any], let count = Int(dic?["Data"] as? String ?? "") else{
+                                        let message = "Fatal Error: data parser error!"
+                                        print(message)
+                                        self.showMessage(text: message)
+                                        
+                                        return
+                                    }
+                                    
+                                    //variable count is the vote numbers that take effect on chain
+                                    //generate ticket from transaction hash
+                                    let tickets = VoteContract.generateTickets(txHash: data, count: UInt32(count))
+                                    let text = "ticket id:\(tickets)"
+                                    print(text)
+                                    self.showMessage(text: text)
+                                    self.ticketIDs.append(contentsOf: tickets)
+                                }
+                            }else if String((receipt.status?.quantity)!) == "0"{
+                                let message = "VoteTicket receipt status: 0"
+                                print(message)
+                                self.showMessage(text: message)
+                            }
+                        }
+                    })
+                }
+            case .fail(let code, let errMsg):
+                let text = "error code:\(code ?? 0) errMsg:\(errMsg ?? "")"
+                self.showMessage(text: text)
+            }
+        }
+    }
+```
+
+
+
+
+
+
+
+
+
 # web3
-
 ## web3 eth相关 (标准JSON RPC )
-
 - Swift可 api的使用请参考[Web3.swift github](https://github.com/Boilertalk/Web3.swift)

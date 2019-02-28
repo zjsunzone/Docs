@@ -27,16 +27,16 @@ Windows合约开发环境需要符合以下条件：
 
 `Window` 版本pWASM开发工具: <https://download.platon.network/0.3/pwasm-windows-x86_64-0.3.0.zip>
 
-`Linux` 版本pWASM开发工具: <https://download.platon.network/0.4/pwasm-linux-amd64-0.4.0.tar.gz>
+`Linux` 版本pWASM开发工具: <https://download.platon.network/0.5/pwasm-linux-amd64-0.5.0.tar.gz>
 
 pWASM开发工具包为一个压缩包，下载完成后解压到工作目录，如`D:\`（以下关于合约环境搭建的操作均在该目录下完成）。
 
 `Linux` 下载
 
 ```shell
-$ wget https://download.platon.network/0.4/pwasm-linux-amd64-0.4.0.tar.gz
-$ tar -xzvf pwasm-linux-amd64-0.4.0.tar.gz
-$ mv pwasm-linux-amd64-0.4.0 pWASM
+$ wget https://download.platon.network/0.5/pwasm-linux-amd64-0.5.0.tar.gz
+$ tar -xzvf pwasm-linux-amd64-0.5.0.tar.gz
+$ mv pwasm-linux-amd64-0.5.0 pWASM
 ```
 
 解压后所有文件均位于`pWASM`目录下，该目录文件结构如下：

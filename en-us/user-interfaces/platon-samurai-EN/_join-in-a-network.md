@@ -10,7 +10,7 @@
 ![Image text](image/Welcome_to_Samurai.png)
 
 
-## How to create a PlatON PrivateNet
+## How to create a PlatON Private Net
 
 ### Creating private-net
 
