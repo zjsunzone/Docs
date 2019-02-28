@@ -18,7 +18,7 @@ Ubuntu环境支持以下四种安装方式：
 - debian包
 - 源码
 
-> **注意**：在通过官方二进制包、PPA源、debian包安装时，需要本机CPU架构在2.0及2.0以上，否则需要通过编译编码的方式安装PlatON。
+> **注意**：在通过官方二进制包、PPA源和debian包安装时，需要本机CPU架构在2.0及2.0以上，否则需要通过编译编码的方式安装PlatON。
 
 ### 官方二进制包下载
 
@@ -90,7 +90,7 @@ $ tar -xvzf platon-ubuntu-amd64-0.5.0-with-mv.tar.gz
 
 添加`PPA`源并安装`PlatON`软件包，安装方式如下：
 
-1. 安装Platon基础包
+1. 安装PlatON基础包
 
 ```bash
 # 添加PPA
@@ -101,7 +101,7 @@ $ sudo apt-get update
 $ sudo apt-get install platon
 ```
 
-2. 安装带MPC及VC功能的Platon包
+2. 安装带MPC及VC功能的PlatON包
 
 ```bash
 # 添加PPA
@@ -131,8 +131,6 @@ $ sudo dpkg -i platon-ubuntu-amd64-0.5.0.deb
 2. 安装带MPC及VC功能的PlatON包
 
 > 注意：安装此包之前需要安装`MPC VM`和`VC`相关依赖，其中`MPC VM`依赖提供deb安装方式，并检查本机CPU架构是否在0.2及0.2以上！
-
-安装`MPC VM`依赖
 
 ```bash
 # 下载MPC lib安装包 
@@ -174,7 +172,7 @@ Ubuntu编译环境要求：
 源码地址：<https://github.com/PlatONnetwork/PlatON-Go.git>，执行如下命令编译生成 `platon` 可执行文件:
 
 ```
-$ git clone https://github.com/PlatONnetwork/PlatON-Go.git --recurive
+$ git clone https://github.com/PlatONnetwork/PlatON-Go.git --recursive
 ```
 
 #### 2. 编译
@@ -234,7 +232,7 @@ $ make all-with-vc
 
 ##### 编译带`MPC`及`VC`功能`PlatON`客户端
 
->**注意**: 编译PlatON之前需要先安装`MPC VM`依赖，请参考[编译`MPC VM`](#编译带`MPC`功能`PlatON`客户端)。
+>**注意**: 编译PlatON之前需要先安装`MPC VM`依赖，请参考上文[编译MPC功能PlatON客户端](#编译带MPC功能PlatON客户端)。
 
 - 编译`platon`
 
@@ -334,7 +332,7 @@ Windows编译环境需要符合以下条件：
 在当前`%GOPATH%`目录下创建`src/github.com/PlatONnetwork/`和`bin`目录，在`PlatONnetwork`目录下克隆`PlatON-GO`的源码:
 
 ```
-> git clone https://github.com/PlatONnetwork/PlatON-Go.git
+> git clone https://github.com/PlatONnetwork/PlatON-Go.git --recursive
 ```
 
 #### 3. 编译
