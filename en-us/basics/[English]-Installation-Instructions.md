@@ -17,6 +17,9 @@ There are four ways of installation on Ubuntu:
 - debian package
 - source code
 
+> ** Note **: When installing through official binary packages, PPA sources and Debian packages, the native CPU architectures need to be above 2.0 and 2.0, otherwise PlatON needs to be installed by compiling and encoding.
+
+
 ### Binary package based installation
 
 Officially, two binary packages are available. Users can download and install them on demand. The download link is as follows:
@@ -155,20 +158,6 @@ The Ubuntu build environment needs to meet the following requirements:
 - Compiler: `gcc(4.9.2+)`
 - go language development kit: `go(1.7+)`
 
-**Notice：`Platon` support only `Intel `3 Generation and above `CPU `framework to run MPC functions, Please check if the `CPU` meets the requirements before starting. You can use the following commands to view `CPU `information.：**
-
-```
-$ cat /proc/cpuinfo
-```
-
-The following information can be found in the output:
-
-```
-model name      : Intel(R) Xeon(R) CPU E5-2620 v4 @ 2.10GHz
-```
-
-The `v4'indicates that `CPU` is a four-generation architecture.
-
 >**Note**: Make sure the compilation environment requirements are met！
 
 The PlatON compilation and installation process is as follows:
@@ -176,12 +165,12 @@ The PlatON compilation and installation process is as follows:
 #### 1. Clone `platon` source code to local target folder:
 
 ```
-$ git clone https://github.com/PlatONnetwork/PlatON-Go.git
+$ git clone https://github.com/PlatONnetwork/PlatON-Go.git --recurive
 ```
 
 #### 2. Compilation
 
-##### Compiling `Platon` without `mpc` capability by default
+##### Compiling `Platon` without `MPC` capability by default
 
 ```bash
 $ cd PlatON-Go
@@ -189,7 +178,7 @@ $ find ./build -name "*.sh" -exec chmod u+x {} \;
 $ make all
 ```
 
-##### Compiling `Platon` with `mpc` capability 
+##### Compiling `Platon` with `MPC` capability 
 
 To enable `MPC` function on `platon`, compile `MPC VM` module and link it to the platon. Steps are as follows:
 
@@ -220,6 +209,31 @@ After compilation, the `platon`、 `ethkey` and `ctool` executable files will be
 >**Hint**：
 >MPC is secure multi-party computing feature supported by the Platon platform for privacy calculations. **Only Ubuntu supported now**. For more information about MPC, please refer [Reference](en-us/development/%5BEnglish%5D-PlatON-Privacy-Contract-Guide)
 
+##### Compiling `Platon` with `VC` capability 
+
+- Compiling `platon`
+
+```bash
+$ cd PlatON-Go
+$ find ./build/ -name "*.sh" -exec chmod u+x {} \;
+$ make all-with-vc
+```
+
+After compilation, the `platon`、 `ethkey` and `ctool` executable files will be generated in the `PlatON-Go/build/bin` directory，and then copy these executable files to your own working directory.
+
+>**Hint**：`VC` is the infrastructure of PlatON Platform for Validation Computing, please refer[Reference](en-us/development/[English]-Verifiable-Contract)
+
+##### Compiling `Platon` with `MPC` and `VC` capability 
+
+>**Note**: Before compiling PlatON, you need to install `MPC VM`dependencies. Refer to [Compile MPC VM]( Compiling `Platon` with `MPC`capability).
+
+```bash
+$ cd PlatON-Go
+$ find ./build/ -name "*.sh" -exec chmod u+x {} \;
+$ make all-with-mv
+```
+
+After compilation, the `platon`、 `ethkey` and `ctool` executable files will be generated in the `PlatON-Go/build/bin` directory，and then copy these executable files to your own working directory.
 
 ## Installing on Windows
 
@@ -228,14 +242,32 @@ The Windows environment supports three installation modes:
 - Chocolatey installation
 - source code
 
+
+> **Note**：When installing through official binary packages and Chocolate, the native CPU architectures need to be above 2.0 and 2.0, otherwise PlatON needs to be installed by compiling and encoding.
+
 ### Binary package based installation
 
 Windows version of the Platon binary download link is: <https://download.platon.network/0.5/platon-windows-x86_64-0.5.0.zip> download. No installation is required after downloading, and it can be used directly by decompression.
+
+The `PlatON'binary download links for Windows versions are as follows:
+
+- PlatON Foundation Package：<https://download.platon.network/0.5/platon-windows-x86_64-0.5.0.zip>
+- PlatON package with MPC and VC functions：<https://download.platon.network/0.5/platon-windows-x86_64-0.5.0-with-mv.zip>
+
+ No installation is required after downloading, and it can be used directly by decompression. 
 
 The extracted files should be as following:
 - `platon` client executable file
 - `ethkey` key generator
 - `ctool`  wasm contract deploy kit
+
+> **Note**:If MPC functions are required, the relevant dependencies need to be installed in the following ways:
+
+Download the dependency packages：<https://download.platon.network/0.5/platon-mpclib-windows-x86_x64-0.5.0.zip>，decompress the file and configure the environment variable，If the decompressed path is：D:/platon/mpclib/，the added environment variable is:
+ 
+ ```
+ LD_LIBRARY_PATH = D:/platon/mpclib/
+ ```
 
 ### Installation via Chocolatey
 
@@ -243,11 +275,23 @@ We use the Chocolatey package manager to install the required build tools. If yo
 
 Start PowerShell as an administrator and install Platon using the choco command:
 
+1.Install PlatON Foundation Package
+
+Start PowerShell as an administrator and install platonnetwork：
+
 ```
-choco install platonnetwork --version=0.5.0
+> choco install platonnetwork --version=0.5.0
 ```
 
-You will find `platon`,`ethkey` in the default installation path `C:\ProgramData\chocolatey\bin`.
+2.Install PlatON with MPC and VC functions
+
+Start PowerShell as an administrator and install platonnetwork-all：
+
+```
+> choco install platonnetwork-all --version=0.5.0
+```
+
+After complation, you will find `platon`,`ethkey` in the default installation path `C:\ProgramData\chocolatey\bin`.
 
 ### Source code based installation
 
@@ -279,7 +323,7 @@ Most of the software installed with the Chocolatey package manager use the defau
 Create `src/github.com/PlatONnetwork/` and `bin` directories under the current `%GOPATH%` directory and clone the source code of `PlatON-GO` under the `PlatONnetwork` directory:
 
 ```
-git clone https://github.com/PlatONnetwork/PlatON-Go.git
+git clone https://github.com/PlatONnetwork/PlatON-Go.git --recursive
 ```
 
 #### 3. Compile
@@ -288,6 +332,34 @@ Execute the compilation command under the source directory `PlatON-GO`, as follo
 
 ```
 go run build/ci.go install ./cmd/platon
+```
+
+#### 3. 编译
+
+Executing different compilation commands under the source directory `PlatON-GO` can generate executable files with different functions, as follows:
+
+1.Compiling PlatON Foundation Package
+
+```
+> go run build/ci.go install ./cmd/platon
+```
+
+2.Compiling PlatON with MPC function
+
+```
+> go run build/ci.go install -mpc on ./cmd/platon
+```
+
+2.Compiling PlatON with VC function
+
+```
+> go run build/ci.go install -vc on ./cmd/platon
+```
+
+3.Compiling PlatON with MPC and VC functions
+
+```
+> go run build/ci.go install -mv on ./cmd/platon
 ```
 
 After compilation, the `platon`、 `ethkey` and `ctool` executable files will be generated in the `PlatON-Go/build/bin` directory，and then copy these executable files to your own working directory.

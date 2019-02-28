@@ -47,13 +47,13 @@ Address: {550ae58b051a8e942f858ef22019c1c622292f7e}
 - Windows命令行
 
 ```
-D:\platon-node> platon.exe --identity platon --datadir .\data --port 16789 --rpcport 6789 --rpcapi "db,eth,net,web3,admin,personal" --rpc --debug --verbosity 3 --rpcaddr 0.0.0.0  --syncmode "full" --gcmode "archive" --testnet
+D:\platon-node> platon.exe --identity platon --datadir .\data --port 16789 --testnet --rpcport 6789 --rpcapi "db,eth,net,web3,admin,personal" --rpc --debug --verbosity 3 --rpcaddr 0.0.0.0  --syncmode "full" --gcmode "archive" 
 ```
 
 - Linux命令行
 
 ```
-$ ./platon --identity platon --datadir ./data --port 16789 --rpcport 6789 --rpcapi "db,eth,net,web3,admin,personal" --rpc --debug --verbosity 3 --rpcaddr 0.0.0.0  --syncmode "full" --gcmode "archive" --testnet
+$ ./platon --identity platon --datadir ./data --port 16789 --testnet --rpcport 6789 --rpcapi "db,eth,net,web3,admin,personal" --rpc --debug --verbosity 3 --rpcaddr 0.0.0.0  --syncmode "full" --gcmode "archive" 
 ```
 
 ***提示：***

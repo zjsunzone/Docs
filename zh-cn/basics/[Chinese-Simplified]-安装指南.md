@@ -18,6 +18,8 @@ Ubuntu环境支持以下四种安装方式：
 - debian包
 - 源码
 
+> **注意**：在通过官方二进制包、PPA源、debian包安装时，需要本机CPU架构在2.0及2.0以上，否则需要通过编译编码的方式安装PlatON。
+
 ### 官方二进制包下载
 
 官方现提供两种二进制包，用户可按需下载安装，其下载地址如下：
@@ -214,7 +216,7 @@ $ make all-with-mpc
 
 编译完成之后在`PlatON-Go/build/bin`目录下会生成`platon`、`ethkey`和`ctool`可执行文件，将此三个可执行文件拷贝到自己工作目录运行即可。
 
->**提示**：`MPC`计算功能是`PlatON`平台实现隐私计算提供的基础设施。更多MPC相关请[参考这里](zh-cn/development/[Chinese-Simplified]-%e9%9a%90%e7%a7%81%e5%90%88%e7%ba%a6%e5%bc%80%e5%8f%91%e6%8c%87%e5%8d%97)
+>**提示**：`MPC`计算功能是`PlatON`平台实现隐私计算的基础设施。更多MPC相关请[隐私合约](zh-cn/development/[Chinese-Simplified]-%e9%9a%90%e7%a7%81%e5%90%88%e7%ba%a6%e5%bc%80%e5%8f%91%e6%8c%87%e5%8d%97)
 
 ##### 编译带`VC`功能`PlatON`客户端
 
@@ -228,17 +230,11 @@ $ make all-with-vc
 
 编译完成之后在`PlatON-Go/build/bin`目录下会生成`platon`、`ethkey`和`ctool`可执行文件，将此三个可执行文件拷贝到自己工作目录运行即可。
 
->**提示**：`VC`验证计算功能是`PlatON`平台实现隐私计算提供的基础设施。更多VC相关请[参考这里](zh-cn/development/[Chinese-Simplified]-可验证合约)
+>**提示**：`VC`验证计算功能是`PlatON`平台实现可验证计算的基础设施。更多VC相关请参考[可验证合约](zh-cn/development/[Chinese-Simplified]-可验证合约)
 
 ##### 编译带`MPC`及`VC`功能`PlatON`客户端
 
-- 安装`VC`依赖
-
-  请参考[编译带`VC`功能`PlatON`客户端](#编译带`VC`功能`PlatON`客户端)中安装`VC`依赖。
-
-- 编译`MPC VM`
-
-  请参考[编译带`MPC`功能`PlatON`客户端](#编译带`MPC`功能`PlatON`客户端)中编译`MPC VM`的方式安装MPC依赖。 
+>**注意**: 编译PlatON之前需要先安装`MPC VM`依赖，请参考[编译`MPC VM`](#编译带`MPC`功能`PlatON`客户端)。
 
 - 编译`platon`
 
@@ -258,20 +254,16 @@ Window环境支持以下三种安装方式：
 - Chocolatey安装
 - 源码
 
+> **注意**：在通过官方二进制包和Chocolatey安装时，需要本机CPU架构在2.0及2.0以上，否则需要通过编译编码的方式安装PlatON。
+
 ### 官方二进制下载安装
 
 Windows各版本的`PlatON`二进制文件下载地址如下：
 
 - Platon基础包：<https://download.platon.network/0.5/platon-windows-x86_64-0.5.0.zip>
-- 带MPC及VC功能的Platon包：<https://download.platon.network/0.5/platon-all-windows-x86_64-0.5.0.zip>
+- 带MPC及VC功能的Platon包：<https://download.platon.network/0.5/platon-windows-x86_64-0.5.0-with-mv.zip>
 
-下载后无需安装，直接解压即可使用，如需MPC功能则需要安装相关依赖，安装方式如下：
-
- windows版本`MPC VM`依赖下载地址：<https://download.platon.network/0.5/platon-mpclib-windows-x86_x64-0.5.0.zip>，下载之后解压文件，并配置环境变量，若解压后路径为：D:/platon/mpclib/，则添加的环境变量为:
- 
- ```
- LD_LIBRARY_PATH = D:/platon/mpclib/
- ```
+下载后无需安装，直接解压即可使用
 
 解压内容如下：
 
@@ -279,11 +271,19 @@ Windows各版本的`PlatON`二进制文件下载地址如下：
 - `ethkey` 公私钥对生成工具
 - `ctool`  合约发布调用工具
 
+> **注意**： 如需MPC功能则需要安装相关依赖，安装方式如下：
+
+ windows版本`MPC VM`依赖下载地址：<https://download.platon.network/0.5/platon-mpclib-windows-x86_x64-0.5.0.zip>，解压文件，将解压后的路径按照如下方式添加到系统环境变量，若解压后路径为：D:/platon/mpclib/，则添加的环境变量为:
+ 
+ ```
+ LD_LIBRARY_PATH = D:/platon/mpclib/
+ ```
+
 ### Chocolatey安装
 
-1. 安装PlatON基础包
-
 我们使用`chocolatey`包管理器来安装所需的构建工具。如果你还没有`chocolatey`，可以按照<https://chocolatey.org>上的说明进行安装。
+
+1.安装PlatON基础包
 
 用管理员身份启动`PowerShell`,然后使用`choco`命令安装`platonnetwork`：
 
@@ -293,7 +293,7 @@ Windows各版本的`PlatON`二进制文件下载地址如下：
 
 `platon`，`ethkey`等将默认被安装到`C:\ProgramData\chocolatey\bin`目录。
 
-2. 安装带MPC及VC功能PlatON包
+2.安装带MPC及VC功能PlatON包
 
 用管理员身份启动`PowerShell`,然后使用`choco`命令安装`platonnetwork-all`：
 
@@ -341,15 +341,20 @@ Windows编译环境需要符合以下条件：
 
 在源码目录`PlatON-GO`下执行不同编译命令可生成带有不同功能的可执行文件，如下：
 
-1. 编译PlatON基础包
+1.编译PlatON基础包
 
 ```
 > go run build/ci.go install ./cmd/platon
 ```
 
-2. 编译带MPC功能的PlatON包
+2.编译带MPC功能的PlatON包
 ```
 > go run build/ci.go install -mpc on ./cmd/platon
+```
+
+2.编译带VC功能的PlatON包
+```
+> go run build/ci.go install -vc on ./cmd/platon
 ```
 
 3.编译带MPC及VC功能的PlatON包
