@@ -61,24 +61,19 @@ MacOS is not supported for the time being
 ### Network
 
 - [How to join in PlatON TestNet](en-us/user-interfaces/platon-samurai-EN/_Join-in-a-network#How-to-join-in-PlatON-TestNet)
-
 - [How to create a PlatON Private-net](en-us/user-interfaces/platon-samurai-EN/_Join-in-a-network#How-to-create-a-PlatON-Private-net)
 
 ### Wallet
 
 - [How to create a wallet](en-us/user-interfaces/platon-samurai-EN/_Classic-wallet#How-to-create-a-wallet)
-
 - [How to import & restore a wallet](en-us/user-interfaces/platon-samurai-EN/_Classic-wallet#how-to-import-amp-restore-a-wallet&-restore-a-wallet)
-
 - [How to send and receive funds](en-us/user-interfaces/platon-samurai-EN/_Classic-wallet#How-to-send-and-receive-funds)
-
 - [Why is the test Energon in the wallet cleard](en-us/user-interfaces/platon-samurai-EN/_Classic-wallet#Why-is-the-test-Energon-in-the-wallet-cleard)
 
 ### Joint Wallet
 
 - [What is Joint wallet](en-us/user-interfaces/platon-samurai-EN/_Joint-wallet#What-is-joint-wallet)
 - [How to create a Joint wallet](en-us/user-interfaces/platon-samurai-EN/_Joint-wallet#How-to-create-a-joint-wallet)
-
 - [How to add a Joint wallet that has been created](en-us/user-interfaces/platon-samurai-EN/_Joint-wallet#How-to-add-a-joint-wallet-that-has-been-created)
 - [How to send and receive funds with Joint wallet](en-us/user-interfaces/platon-samurai-EN/_Joint-wallet#How-to-send-and-receive-funds-with-Joint-wallet)
 
@@ -93,7 +88,7 @@ MacOS is not supported for the time being
 - [How to add a contract that has been created ](en-us/user-interfaces/platon-samurai-EN/_Contracts#How-to-add-a-contract-that-has-been-created)
 - [How to execute a wasm contract ](en-us/user-interfaces/platon-samurai-EN/_Contracts#How-to-execute-a-wasm-contract)
 - [What is privacy contract](en-us/user-interfaces/platon-samurai-EN/_Contracts#What-is-privacy-contract)
-- [How to deploy a privacy contract](en-us/user-interfaces/platon-samurai-EN/_Contracts#How-to deploy-a-privacy-contract)
+- [How to deploy a privacy contract](en-us/user-interfaces/platon-samurai-EN/_Contracts#How-to-deploy-a-privacy-contract)
 - [How to execute a privacy contract](en-us/user-interfaces/platon-samurai-EN/_Contracts#How-to-execute-a-privacy-contract)
 
 ### Blcok Producers

@@ -51,27 +51,20 @@ tar.xz源代码包安装说明：
 ### 网络初始化
 
 - [怎么加入PlatON测试网络](zh-cn/user-interfaces/platon-samurai/_网络初始化#怎么加入PlatON测试网络)
-
 - [如何创建PlatON本地私有网络](zh-cn/user-interfaces/platon-samurai/_网络初始化#如何创建PlatON本地私有网络)
 
 ### 钱包
 
 - [如何创建一个钱包](zh-cn/user-interfaces/platon-samurai/_钱包#如何创建一个钱包)
-
 - [如何导入/恢复一个已有的钱包](zh-cn/user-interfaces/platon-samurai/_钱包#%e5%a6%82%e4%bd%95%e5%af%bc%e5%85%a5%e6%81%a2%e5%a4%8d%e4%b8%80%e4%b8%aa%e5%b7%b2%e6%9c%89%e7%9a%84%e9%92%b1%e5%8c%85)
-
 - [如何发送、接收Energon](zh-cn/user-interfaces/platon-samurai/_钱包#%e5%a6%82%e4%bd%95%e5%8f%91%e9%80%81%e3%80%81%e6%8e%a5%e6%94%b6-energon)
-
 - [为什么钱包中的测试币被清零了](zh-cn/user-interfaces/platon-samurai/_钱包#为什么钱包中的测试币被清零了)
 
 ### 联名钱包
 
 - [什么是联名钱包](zh-cn/user-interfaces/platon-samurai/_联名钱包#什么是联名钱包)
-
 - [如何创建一个联名钱包](zh-cn/user-interfaces/platon-samurai/_联名钱包#如何创建一个联名钱包)
-
 - [如何添加已创建的联名钱包](zh-cn/user-interfaces/platon-samurai/_联名钱包#如何添加已创建的联名钱包)
-
 - [如何使用联名钱包发送、接收Energon](zh-cn/user-interfaces/platon-samurai/_联名钱包#如何使用联名钱包发送、接收Energon)
 
 ### 交易
