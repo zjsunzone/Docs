@@ -80,13 +80,13 @@ tar.xz源代码包安装说明：
 
 ### 合约
 
-- [Wasm合约是什么](zh-cn/user-interfaces/platon-samurai/_Wasm合约#Wasm合约是什么)
-- [如何部署一个Wasm合约](zh-cn/user-interfaces/platon-samurai/_Wasm合约#如何部署一个Wasm合约)
-- [如何添加别人已部署的合约](zh-cn/user-interfaces/platon-samurai/_Wasm合约#如何添加别人已部署的合约)
-- [怎样运行wasm合约](zh-cn/user-interfaces/platon-samurai/_Wasm合约#怎样运行Wasm合约)
-- [什么是隐私合约](zh-cn/user-interfaces/platon-samurai/_Wasm合约#什么是隐私合约)
-- [如何部署隐私合约](zh-cn/user-interfaces/platon-samurai/_Wasm合约#如何部署隐私合约)
-- [怎么执行隐私合约](zh-cn/user-interfaces/platon-samurai/_Wasm合约#怎么执行隐私合约)
+- [Wasm合约是什么](zh-cn/user-interfaces/platon-samurai/_合约#Wasm合约是什么)
+- [如何部署一个Wasm合约](zh-cn/user-interfaces/platon-samurai/_合约#如何部署一个Wasm合约)
+- [如何添加别人已部署的合约](zh-cn/user-interfaces/platon-samurai/_合约#如何添加别人已部署的合约)
+- [怎样运行wasm合约](zh-cn/user-interfaces/platon-samurai/_合约#怎样运行Wasm合约)
+- [什么是隐私合约](zh-cn/user-interfaces/platon-samurai/_合约#什么是隐私合约)
+- [如何部署隐私合约](zh-cn/user-interfaces/platon-samurai/_合约#如何部署隐私合约)
+- [怎么执行隐私合约](zh-cn/user-interfaces/platon-samurai/_合约#怎么执行隐私合约)
 
 ### 应用-共识节点
 

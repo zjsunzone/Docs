@@ -60,50 +60,50 @@ MacOS is not supported for the time being
 
 ### Network
 
-- [How to join in PlatON TestNet](en-us/user-interfaces/platon-samurai-EN/_Join-in-a-Network#How-to-join-in-PlatON-TestNet)
+- [How to join in PlatON TestNet](en-us/user-interfaces/platon-samurai-EN/_Join-in-a-network#How-to-join-in-PlatON-TestNet)
 
-- [How to create a PlatON Private-net](en-us/user-interfaces/platon-samurai-EN/_Join-in-a-Network#How-to-create-a-PlatON-Private-net)
+- [How to create a PlatON Private-net](en-us/user-interfaces/platon-samurai-EN/_Join-in-a-network#How-to-create-a-PlatON-Private-net)
 
 ### Wallet
 
-- [How to create a wallet](en-us/user-interfaces/platon-samurai-EN/_Classic-Wallet#How-to-create-a-wallet)
+- [How to create a wallet](en-us/user-interfaces/platon-samurai-EN/_Classic-wallet#How-to-create-a-wallet)
 
-- [How to import & restore a wallet](en-us/user-interfaces/platon-samurai-EN/_Classic-Wallet#how-to-import-amp-restore-a-wallet&-restore-a-wallet)
+- [How to import & restore a wallet](en-us/user-interfaces/platon-samurai-EN/_Classic-wallet#how-to-import-amp-restore-a-wallet&-restore-a-wallet)
 
-- [How to send and receive funds](en-us/user-interfaces/platon-samurai-EN/_Classic-Wallet#How-to-send-and-receive-funds)
+- [How to send and receive funds](en-us/user-interfaces/platon-samurai-EN/_Classic-wallet#How-to-send-and-receive-funds)
 
-- [Why is the test Energon in the wallet cleard](en-us/user-interfaces/platon-samurai-EN/_Classic-Wallet#Why-is-the-test-Energon-in-the-wallet-cleard)
+- [Why is the test Energon in the wallet cleard](en-us/user-interfaces/platon-samurai-EN/_Classic-wallet#Why-is-the-test-Energon-in-the-wallet-cleard)
 
 ### Joint Wallet
 
-- [What is Joint wallet](en-us/user-interfaces/platon-samurai-EN/_Joint-Wallet#What-is-joint-wallet)
-- [How to create a Joint wallet](en-us/user-interfaces/platon-samurai-EN/_Joint-Wallet#How-to-create-a-joint-wallet)
+- [What is Joint wallet](en-us/user-interfaces/platon-samurai-EN/_Joint-wallet#What-is-joint-wallet)
+- [How to create a Joint wallet](en-us/user-interfaces/platon-samurai-EN/_Joint-wallet#How-to-create-a-joint-wallet)
 
-- [How to add a Joint wallet that has been created](en-us/user-interfaces/platon-samurai-EN/_Joint-Wallet#How-to-add-a-joint-wallet-that-has-been-created)
-- [How to send and receive funds with Joint wallet](en-us/user-interfaces/platon-samurai-EN/_Joint-Wallet#How-to-send-and-receive-funds-with-Joint-wallet)
+- [How to add a Joint wallet that has been created](en-us/user-interfaces/platon-samurai-EN/_Joint-wallet#How-to-add-a-joint-wallet-that-has-been-created)
+- [How to send and receive funds with Joint wallet](en-us/user-interfaces/platon-samurai-EN/_Joint-wallet#How-to-send-and-receive-funds-with-Joint-wallet)
 
 ### Transaction
 
-- [How to confirm a transaction](en-us/user-interfaces/platon-samurai-EN/_Confirm-Transactions#How-to-confirm-a-transaction)
+- [How to confirm a transaction](en-us/user-interfaces/platon-samurai-EN/_Confirm-transactions#How-to-confirm-a-transaction)
 
 ### contracts
 
-- [What is wasm contract](en-us/user-interfaces/platon-samurai-EN/_Wasm-Contracts#What-is-wasm-contract)
-- [How to deploy a wasm contract](en-us/user-interfaces/platon-samurai-EN/_Wasm-Contracts#how-to-deploy-a-wasm-contract)
-- [How to add a contract that has been created ](en-us/user-interfaces/platon-samurai-EN/_Wasm-Contracts#How-to-add-a-contract-that-has-been-created)
-- [How to execute a wasm contract ](en-us/user-interfaces/platon-samurai-EN/_Wasm-Contracts#How-to-execute-a-wasm-contract)
-- [What is privacy contract](en-us/user-interfaces/platon-samurai-EN/_Wasm-Contracts#What-is-privacy-contract)
-- [How to deploy a privacy contract](en-us/user-interfaces/platon-samurai-EN/_Wasm-Contracts#How-to deploy-a-privacy-contract)
-- [How to execute a privacy contract](en-us/user-interfaces/platon-samurai-EN/_Wasm-Contracts#How-to-execute-a-privacy-contract)
+- [What is wasm contract](en-us/user-interfaces/platon-samurai-EN/_Contracts#What-is-wasm-contract)
+- [How to deploy a wasm contract](en-us/user-interfaces/platon-samurai-EN/_Contracts#how-to-deploy-a-wasm-contract)
+- [How to add a contract that has been created ](en-us/user-interfaces/platon-samurai-EN/_Contracts#How-to-add-a-contract-that-has-been-created)
+- [How to execute a wasm contract ](en-us/user-interfaces/platon-samurai-EN/_Contracts#How-to-execute-a-wasm-contract)
+- [What is privacy contract](en-us/user-interfaces/platon-samurai-EN/_Contracts#What-is-privacy-contract)
+- [How to deploy a privacy contract](en-us/user-interfaces/platon-samurai-EN/_Contracts#How-to deploy-a-privacy-contract)
+- [How to execute a privacy contract](en-us/user-interfaces/platon-samurai-EN/_Contracts#How-to-execute-a-privacy-contract)
 
 ### Blcok Producers
 
-- [How to be a block producer](en-us/user-interfaces/platon-samurai-EN/_Validator-Node#How-to-be-a-block-producer)
-- [How to avoid your block producter being eliminated](en-us/user-interfaces/platon-samurai-EN/_Validator-Node#How-to-avoid-your-block-producter-being-eliminated)
-- [How to improve the probability of becoming a validator](en-us/user-interfaces/platon-samurai-EN/_Validator-Node#How-to-improve-the-probability-of-becoming-a-validator)
-- [How to vote for a block producer](en-us/user-interfaces/platon-samurai-EN/_Validator-Node#How-to-vote-for-a-block-producer)
-- [Why are block producers eliminated](en-us/user-interfaces/platon-samurai-EN/_Validator-Node#Why-are-block-producers-eliminated)
-- [How to re-register for block producer if eliminated](en-us/user-interfaces/platon-samurai-EN/_Validator-Node#how-to-re-register-for-block-producer-if-eliminated)
-- [How to revoke the block producer](en-us/user-interfaces/platon-samurai-EN/_Validator-Node#How-to-revoke-the-block-producer)
-- [How to redeem the stakes](en-us/user-interfaces/platon-samurai-EN/_Validator-Node#How-to-redeem-the-stakes)
+- [How to be a block producer](en-us/user-interfaces/platon-samurai-EN/_Validator-node#How-to-be-a-block-producer)
+- [How to avoid your block producter being eliminated](en-us/user-interfaces/platon-samurai-EN/_Validator-node#How-to-avoid-your-block-producter-being-eliminated)
+- [How to improve the probability of becoming a validator](en-us/user-interfaces/platon-samurai-EN/_Validator-node#How-to-improve-the-probability-of-becoming-a-validator)
+- [How to vote for a block producer](en-us/user-interfaces/platon-samurai-EN/_Validator-node#How-to-vote-for-a-block-producer)
+- [Why are block producers eliminated](en-us/user-interfaces/platon-samurai-EN/_Validator-node#Why-are-block-producers-eliminated)
+- [How to re-register for block producer if eliminated](en-us/user-interfaces/platon-samurai-EN/_Validator-node#how-to-re-register-for-block-producer-if-eliminated)
+- [How to revoke the block producer](en-us/user-interfaces/platon-samurai-EN/_Validator-node#How-to-revoke-the-block-producer)
+- [How to redeem the stakes](en-us/user-interfaces/platon-samurai-EN/_Validator-node#How-to-redeem-the-stakes)
 
