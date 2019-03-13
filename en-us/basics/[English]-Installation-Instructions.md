@@ -165,7 +165,7 @@ The PlatON compilation and installation process is as follows:
 #### 1. Clone `platon` source code to local target folder:
 
 ```
-$ git clone https://github.com/PlatONnetwork/PlatON-Go.git --recurive
+$ git clone https://github.com/PlatONnetwork/PlatON-Go.git --recursive
 ```
 
 #### 2. Compilation
