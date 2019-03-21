@@ -1,7 +1,8 @@
+# Privacy Contract Development Guide
 
 ## Introduction
 
-As the next-generation Trustless secure data computing architecture, the [PlatON](#) platform uses Secure Multi-Party Computing (`MPC`) as a protocol for privacy computing, providing the infrastructure for privacy computing. The PlatON public-chain network and the external computing network are combined into a data-centric composite network to provide users with secure computing services to realize the flow of data values. On the `PlatON` platform, the **MPC Compute Virtual Machine**(`MPC VM`) is a key component of the PlatON computing architecture, which uses **privacy contracts** for `MPC` calculations and provides stable runtime services.
+The `PlatON` platform is the next-generation `Trustless` private data computing architecture based on secure multi-party computing for data privacy preserving features, using privacy contracts to implement privacy computing business logic, providing an infrastructure for privacy computing.
 
 
 ## Architecture
@@ -9,126 +10,106 @@ As the next-generation Trustless secure data computing architecture, the [PlatON
 <div align=left>
 <img src="zh-cn/development/privacy-contract/images/mpc_structure.png" width = "650" height="523"/>  
 </div>
-
 Architecture diagram description:
 
-- PlatON
+- PlatON Network
 
-    Here is the `PlatON` blockchain node with `MPC` functionality.
+   A network of `PlatON` blockchain nodes, including compute nodes and other non-computing nodes.
 
 - Privacy Contract
 
-    Privacy contract, a special secure multi-party computing (`MPC`) contract developed in `C++` for operation in the MPC Execution Virtual Machine (`MPC VM`) at the PlatON node. The privacy contract uses the MPC capabilities provided by the PlatON node to protect the privacy of the computing data.
+   Privacy contracts, deployed on blockchains, implement privacy computing business logic.
 
-- MPC VM
+- Computation Node
 
-    The `MPC` execution virtual machine, provides a privacy contract runtime environment, and executes MPC computing objects at the bottom to implement the MPC algorithm, which relies on the computing services provided by the PlatON node.
+   The compute node, as a `Platon` network node, contains a privacy algorithm to execute the virtual machine, providing a privacy computing runtime service.
 
-- Privacy App
+- Data Node
 
-    The privacy application client, as the privacy calculation initiator, initiates a calculation request to the node, queries the calculation result, and the like.
+   The data node, as a private data provider, assists the computing node in completing the privacy calculation service.
 
-- Privacy Data Service
+- Privacy Computation Client
 
-    The privacy data service, as a provider of privacy calculation data, provides data to the compute nodes. This service is associated with the MPC VM and participates in MPC computing.
-
-- Data Source
-
-    A data source that provides raw data streams (such as databases, files, network streams, etc.) for private data services and is the source of private data.
+   The privacy calculation client, as the privacy calculation request initiator, pays the calculation fee and is able to decrypt the privacy calculation result.
 
 ## Quick start
 
-**Notice：`Platon` support only `Intel `3 Generation and above `CPU `framework to run MPC functions, Please check if the `CPU` meets the requirements before starting. You can use the following commands to view `CPU `information.：**
+The privacy contract development is now presented in the classic case of MPC [Yao's Millionaire Problem](https://en.wikipedia.org/wiki/Yao%27s_Millionaires%27_Problem).
 
+**Case statement**:
+
+Two millionaires `Alice` and `Bob` want to know who two of them are richer, but they don't want to let each other know anything about their wealth.
+
+**Solution**:
+
+Using the `MPC` calculation, the two rich people can compare with the other party without knowing the specific property of the other party, and calculate who is the richest.
+
+### Setting up the environment
+
+- Setting up an environment reference: [Building a privacy development environment](en-us/development/privacy-contract-EN/_setting-up-privacy-computation-environment).
+
+- Configure working directory:
+
+   Create a working directory `YaoProblem`, install the privacy development environment compilation tool to this directory, and the workspace directory tree looks like this:
+
+```bash
+include/
+├── batcher.h
+├── bit.h
+├── block.h
+├── comparable.h
+├── constants.h
+├── emp-tool.def
+├── float_circuit.h
+├── integer.h
+├── number.h
+└── swappable.h
 ```
-$ cat /proc/cpuinfo
+
+### Create a wallet
+
+  For the privacy calculation participants, the privacy calculation requester, respectively create 3 wallet files and corresponding accounts:
+
+**Windows command line**
+
+```bash
+> mkdir data
+> platon.exe --datadir .\data account new
+Your new account is locked with a password. Please give a password. Do not forget this password.
+Passphrase:
+Repeat passphrase:
+Address: {0x9a568e649c3a9d43b7f565ff2c835a24934ba447}Copy to clipboardErrorCopied
 ```
 
-The following information can be found in the output:
+**Linux command line**
 
+```bash
+$ mkdir -p data
+$ ./platon --datadir ./data account new
+Your new account is locked with a password. Please give a password. Do not forget this password.
+Passphrase:
+Repeat passphrase:
+Address: {0x9a568e649c3a9d43b7f565ff2c835a24934ba447}Copy to clipboardErrorCopied
 ```
-model name      : Intel(R) Xeon(R) CPU E5-2620 v4 @ 2.10GHz
-```
 
-The `v4'indicates that `CPU` is a four-generation architecture.
+The above user work platform (Linux or Windows) performs 3 wallet creation operations, such as this sample output:
 
-Now using the classic case of MPC, [Yao's millionaire problem](https://en.wikipedia.org/wiki/Yao%27s_Millionaires%27_Problem), to introduce privacy contract development.
+> ` 0x9a568e649c3a9d43b7f565ff2c835a24934ba447`
 
-**Case statement:**
+> `0xce3a4aa58432065c4c5fae85106aee4aef77a115`
 
-Two millionaires, Alice and Bob, want to know who are richer, but they don't want to let each other know anything about their wealth.
+> `0x9a568e649c3a9d43b7f565ff2c835a24934ba447`
 
-**Solution:**
+Since the subsequent calculations need to consume `energon`, it is necessary to recharge the three wallet addresses separately.
 
-Using MPC calculations, two rich people can compare with each other without knowing the specific property of the other party, and calculate who is the richest.
+- Testnet environment
+  Apply for the `testnet` `energon` on [PlatON official website](https://developer.platon.network/#/energon?lang=zh).
+- Private network environment
+  Obtain `energon` from the private network consensus node `coinbase account`.
 
-### Build a development environment
+### Writing a privacy contract
 
-Let's take the `Ubuntu16.04` operating system as an example to build a build environment. Let's assume that the `${privacy-contract-compiler}` directory is the Ubuntu directory `/home/platon/privacy-contract-compiler`, and `${pWasm}` is the Ubuntu directory `/home/platon/pWasm` , where `platon` is the currently logged user. The user can correspond to the user who logged in.
-
-**Dependent components:**
-
-- **PlatON cluster environment**
-
-    The privacy contract operation relies on the Platon network cluster environment to provide the core functionality of the blockchain. To enable the node to provide MPC computing power, MPC computing must be enabled.
-
-    1. Install the platon executable with MPC functionality, view [the installation guide](#).
-    2. Set up the cluster environment, view [the PlatON cluster environment](#).
-    3. Enable MPC calculations on the node, view [enable MPC calculations](#).
-
-- **Protobuf 3.5.2**
-
-    `Protobuf` is used in the privacy contract to implement custom structs and to provide pb message packaging and unpacking capabilities. The current protobuf needs to be a customized version of `3.5.2` and can be installed from [source](https://github.com/PlatONnetwork/privacy-contract-vm#building--installing).
-
-- **Plang compiler**
-
-    `Plang` is a custom compiler for `PlatON` that compiles privacy contracts to generate `Wasm smart contract` source code files and JAVA agents. The [privacy-contract-compiler](https://github.com/PlatONnetwork/privacy-contract-compiler#Build)  open source toolkit is available on the official website. After downloading, extract it to the `${privacy-contract-compiler} `directory and install it according to the `README`.
-
-- **emp-tool library**
-
-    Use [emp-tool](https://github.com/PlatONnetwork/emp-tool)  to provide the core MPC calculation object. Download the library using the following command.
-
-    ```bash
-    $ git clone https://github.com/PlatONnetwork/emp-tool.git
-    ```
-
-    The emp-tool/include directory contains the header files needed for contract development:
-
-    ```bash
-    include/
-    ├── batcher.h
-    ├── bit.h
-    ├── block.h
-    ├── comparable.h
-    ├── constants.h
-    ├── emp-tool.def
-    ├── float_circuit.h
-    ├── integer.h
-    ├── number.h
-    └── swappable.h
-    ```
-
-### Introduction to Privacy Service Development
-
-The development of privacy services based on privacy contracts, the implementation mainly includes:
-
-- [Privacy Contract Implementation](#privacy-contract-implementation)
-
-    The main implementation is based on the `MP-C` algorithm written by `emp-toolkit`, which is then compiled and deployed to the `PlatON` platform.
-
-- [Privacy Data Service Implementation](#private-data-service-implementation)
-
-    It mainly implements the docking of `MPC VM`, provides private data for privacy calculation, and is developed based on the `Private Data Service Development Kit'.
-
-- [Private Client Implementation](#private-client-implementation)
-
-    It mainly implements the initiation of the privacy calculation request and the acquisition of the calculation result, and is developed based on the "private client development package".
-
-### Privacy contract implementation
-
-#### Privacy Contract Coding
-
-Write a privacy contract `YaoMillionairesProblem.cpp` to solve Yao's millionaire problem. The code is implemented as follows:
+Write a privacy contract `YaoMillionairesProblem.cpp` that solves `Yao’s millionaire problem`. code show as below:
 
 ```c++
 #include <iostream>
@@ -156,34 +137,11 @@ Bool YaoMillionairesProblem(int money1, int money2) {
 }
 ```
 
-Currently, the privacy contract project needs to create a project directory under the `plang` project after `make`, and then into the `{privacy-contract-compiler}/build/bin` directory, here is `YaoProblem`.
+### Compiling the privacy contract
 
-```bash
-$ pwd
-/home/platon/privacy-contract/privacy-contract-compiler/build/bin
-$ mkdir YaoProblem && cd YaoProblem
-```
+#### Update configuration file
 
-Save the above code as the file `YaoMillionairesProblem.cpp` and save the code file to the `YaoProblem` directory.
-
-#### Privacy Contract Compilation
-
-Before compiling the privacy contract, copy `emp-tool/include` to the project directory `YaoProblem` and look at the workspace directory tree as follows:
-
-```bash
-.
-├── clang                           # clang compiler
-├── plang                           # plang compiler
-├── YaoProblem                      # Contract Development Directory
-|   ├── config.json                 # configuration file
-|   ├── YaoMillionairesProblem.cpp  # Privacy Agreement
-|   └── include                     # emp-tool library header file
-|       ├── integer.h               # privacy calculation object header file
-|       └── ...
-└── ...
-```
-
-`config.json` is a configuration file that configures the basic information of two data providers. The user needs to change the account address of the data service. The configuration is as follows:
+`config.json` is used to configure participant information, settlement rules, interface pricing, etc. in the calculation. Users need to update the configuration according to their own calculation requirements. This sample configuration is as follows:
 
 ```json
 {
@@ -206,18 +164,29 @@ Before compiling the privacy contract, copy `emp-tool/include` to the project di
 }
 ```
 
-Config file field description:
+Configuration file description:
 
-- `invitor` : Address of computation originator; is one of `parties`.
-- `parties`: List of computation participator addresses; currently only supports two parties.
-- `method-price`: Prices for contract methods, in the example, the function `YaoMillionairesProblem` is priced as **200000**.
-- `profit-rules`: Profit distribution ratio.
-- `urls`: Addresses of MPC servers participating in the computation. The contents is a JSON object where the keys are the addresses of the participants and the values are strings used to set up the MPC server addresses. The latter consist of the fixed string `DirectNodeServer` and the parameters `-h` and `-p` used to set the node's address and MPC server port. The MPC port is set [here](%English%5d-%e7%a7%81%e6%9c%89%e7%bd%91%e7%bb%9c#Enable MPC ability in a node).
+-  `invitor` The inviting party's wallet address in the invitor data node.
 
-Compile command:
+- `parties` A list of wallet addresses corresponding to the two data nodes.
+- `method-price` MPC algorithm function pricing (or charging), in the example the function `YaoMillionairesProblem` is priced as **200000**.
+- `profit-rules` Specify the charge allocation rules after the calculation is completed, and allocate them according to the ratio. In the example, the allocation ratio is 1:2.
+- `urls` Specify the participants' MPC service address information of the calculation. The key of each element is the wallet address of data provider, and the value is the MPC service address information (ICE specification address, where `DirectNodeServer` is fixed, `-h` and `-p` are node address and MPC service port respectively).
 
-```shell
-$ ../plang ./YaoMillionairesProblem.cpp -config ./config.json -I ./include -mpcc YaoMillionairesContract.cpp
+#### Compiling
+
+The compile command is as follows,
+
+**Linux platform**:
+
+```bash
+$ ./bin/plang ./YaoMillionairesProblem.cpp -config ./config.json -I ./include -mpcc YaoMillionairesContract.cpp
+```
+
+**Windows platform**：
+
+```bash
+> .\bin\plang YaoMillionairesProblem.cpp -config config.json -I .\include -mpcc YaoMillionairesContract.cpp
 ```
 
 Terminal output:
@@ -231,31 +200,27 @@ digest:
  * 0588f14217b11e0f77e50d03a88ba866  YaoMillionairesProblem  YaoMillionairesProblem(int,int)
 ```
 
-The output file is as follows:
+After compiling, it will generate a WASM contract, Java privacy contract proxy class, and other readme files, the directory tree are as follows:
 
 ```
 ├── code
-│   └── java
-│       ├── MPCYaoMillionairesProblem.java              # For data providers
-│       ├── MPCYaoMillionairesProblem-README.TXT
-│       ├── ProxyYaoMillionairesProblem.java            # For the calculation initiator
-│       └── ProxyYaoMillionairesProblem-README.TXT
-└── YaoMillionairesContract.cpp                         # Generate WASM contract, final contract file
+│ └── java
+│ ├── MPCYaoMillionairesProblem.java # For data providers
+│ ├── MPCYaoMillionairesProblem-README.TXT
+│ ├── ProxyYaoMillionairesProblem.java # For the calculation initiator
+│ └── ProxyYaoMillionairesProblem-README.TXT
+└── YaoMillionairesContract.cpp # Generate WASM contract, final contract file
 ```
 
 For more details on the `plang` compiler, refer to [Usage](https://github.com/PlatONnetwork/privacy-contract-compiler#Usage).
 
-**Note: Any updates to the configuration file or privacy contract code will need to be recompiled to take effect.**
+**Note: Any updates to the configuration file or privacy contract code will need to be recompiled to take effect. **
 
-#### Privacy contract release
+### Privacy contract release
 
-As a chain service that provides privacy calculations, the privacy contract will eventually be compiled into the `PlatON` network, which must be compiled into [Wasm contract](#) file, and then compile and release the Wasm contract to finally achieve the privacy contract release.
+The following demonstrates the release of a Wasm contract on Ubuntu to complete the privacy contract release process. For more information on Wasm contract development, please refer to [Wasm Contract Development Guide](en-us/development/[English]-Wasm-Contract-Development-Guide).
 
-The following is a brief description of the release of the Wasm contract `YaoMillionairesContract` generated on Ubuntu to complete the privacy contract release process. For more information on Wasm contract development under `Ubuntu`, please refer to [Wasm Contract Development Guide](#).
-
-
-1. Download the Ubuntu version [Wasm Contract Development Kit 0.4](https://download.platon.network/0.4/pwasm-linux-amd64-0.4.0.tar.gz) and extract it to ${pWasm}. If you have already downloaded, skip to the next step.
-
+1. Download the Ubuntu version [Wasm Contract Development Kit](https://download.platon.network/0.4/pwasm-linux-amd64-0.4.0.tar.gz) and extract it to ${pWasm}. If you have already downloaded, skip to the next step.
 2. Go to the ${pWasm} directory and execute the following command to generate the Wasm contract project `YaoProblem`.
 
 ```bash
@@ -275,23 +240,23 @@ $ make
 
 ```bash
 {
-  "url":"http://127.0.0.1:6789",
-  "gas":"0x99999788888",
-  "gasPrice":"0x333330",
+  "url": "http://127.0.0.1:6789",
+  "gas": "0x99999788888",
+  "gasPrice": "0x333330",
   "from":"0x9a568e649c3a9d43b7f565ff2c835a24934ba447"
 }
 ```
 
-**Note: The release contract can be initiated by any account.**
+> **Note: The release contract can be initiated by any account. **
 
 5. Connect the `http://127.0.0.1:6789` node to unlock the `0x9a568e649c3a9d43b7f565ff2c835a24934ba447` account.
 
 ```bash
-$ platon 
+$ platon
 > personal.unlockAccount("your-account")
 Unlock account 0x9a568e649c3a9d43b7f565ff2c835a24934ba447
 Passphrase:
-true
+True
 ```
 
 6. Publish the Wasm contract.
@@ -305,20 +270,17 @@ Assume that the contract address after the contract is issued is:
 
 > 0x43355c787c50b647c425f594b441d4bd75198888
 
+### Data Node Service Implementation
 
-### Privacy Data Service Implementation
+Developers need to use the Privacy Data Service Development Kit (`mpc-data-sdk`) to build private data services. For more details, refer to [Privacy Data Services Development Kit](en-us/development/[English]-Deep-Understanding-Privacy-Contract-Dev).
 
-By introducing the Privacy Data Service Development Kit (`mpc-data-sdk`), the data provider can register its own private data service to the `MPC VM` and provide calculation data. For more details, refer to the [Private Data Service Development Kit](#).
+#### Project construction
 
-**Private Data Provider & MPC Compute Node:**
+> `mpc-data-sdk` only provides the `JAVA` version, so the reader needs to have a certain JAVA programming foundation.
 
-The privacy data provider's wallet file is saved on the MPC compute node, and the data provider's private data service must be registered to the node's `MPC VM`. Because privacy calculations are multi-party calculations, there are currently only two-party calculations, distinguished by `Alice` and `Bob`. When compiling the privacy contract, the `Alice` party address is configured as `0x9a568e649c3a9d43b7f565ff2c835a24934ba447`, and the `Bob` party address is `0xce3a4aa58432065c4c5fae85106aee4aef77a115`.
+Create two Maven projects using `Intellij`, one is Alice data node service program, and the other is Bob data node service program. Do the following:
 
-**Step 1: Write a private data service code**
-
-Currently `mpc-data-sdk` only provides the `JAVA` version, so the reader needs to have a certain JAVA programming foundation. The following steps will demonstrate how to access `mpc-data-sdk` in the simplest way, some of which need to be done manually.
-
-* Create a JAVA normal Maven project, modify `pom.xml`, add the maven repository address
+- Create a JAVA normal Maven project, modify `pom.xml`, add the maven repository address
 
 ```xml
 <repositories>
@@ -330,7 +292,7 @@ Currently `mpc-data-sdk` only provides the `JAVA` version, so the reader needs t
 </repositories>
 ```
 
-* Introducing `mpc-data-sdk` dependency
+- Introducing `mpc-data-sdk` dependency
 
 ```xml
 <dependency>
@@ -340,157 +302,155 @@ Currently `mpc-data-sdk` only provides the `JAVA` version, so the reader needs t
 </dependency>
 ```
 
-* Code implement
+- Code implementation
 
-Create a new `net.platon.vm.mpc` package in the project and put the JAVA code `MPCYaoMillionairesProblem.java` generated by `plang` to compile the privacy contract into the package. **Do not modify the package name!!** Next implement the `inputImpl` method.
+Create a new `net.platon.vm.mpc` package in the project, add the `MPCYaoMillionairesProblem.java` to the `net.platon.vm.mpc` package (***Note***: **Do not modify the package name!**), then implement the `inputImpl` method for the Alice data node service program and the Bob data node service program respectively.
 
-The Alice side only needs to implement the methods in the `MPCYaoMillionairesProblem_YaoMillionairesProblem_int_int_01` class. The code is implemented as follows:
+#### Interface Implementation
 
-```java
-/**
- * YaoMillionairesProblem(int,int)
- */
-final class MPCYaoMillionairesProblem_YaoMillionairesProblem_int_int_01 extends mpc_f_0588f14217b11e0f77e50d03a88ba866_01 {
-    public byte[] inputImpl(final InputRequestPara para) {
-        int ret_value = 0;
-        // TODO: assemble data
+**Alice Data Node Service Program: **
 
-        ret_value = 1000000; // Alice 1 million
-
-        return Data.Int32(ret_value);
-    }
-}
-```
-
-The Bob side only needs to implement the methods in the `MPCYaoMillionairesProblem_YaoMillionairesProblem_int_int_02` class. The code is implemented as follows:
+Implement the `inputImpl` method in the `MPCYaoMillionairesProblem_YaoMillionairesProblem_int_int_01` class. The code is implemented as follows:
 
 ```java
 /**
  * YaoMillionairesProblem(int,int)
  */
-final class MPCYaoMillionairesProblem_YaoMillionairesProblem_int_int_02 extends mpc_f_0588f14217b11e0f77e50d03a88ba866_02 {
-    public byte[] inputImpl(final InputRequestPara para) {
-        int ret_value = 0;
+Final class MPCYaoMillionairesProblem_YaoMillionairesProblem_int_int_01 extends mpc_f_0588f14217b11e0f77e50d03a88ba866_01 {
+    Public byte[] inputImpl(final InputRequestPara para) {
+        Int ret_value = 0;
         // TODO: assemble data
 
-        ret_value = 2000000; // Bob 2 million
+        Ret_value = 1000000; // For Example Alice Input 1 million
 
-        return Data.Int32(ret_value);
+        Return Data.Int32(ret_value);
     }
 }
 ```
 
-The file name and function name appear in the file are exactly the same and are not short, but this is in line with the naming convention. So don't confuse the class name or the method name is too long, the class name format description:
+**Bob Data Node Service Program: **
+
+Implement the methods in the `MPCYaoMillionairesProblem_YaoMillionairesProblem_int_int_02` class, the code is implemented as follows:
+
+```java
+/**
+ * YaoMillionairesProblem(int,int)
+ */
+Final class MPCYaoMillionairesProblem_YaoMillionairesProblem_int_int_02 extends mpc_f_0588f14217b11e0f77e50d03a88ba866_02 {
+    Public byte[] inputImpl(final InputRequestPara para) {
+        Int ret_value = 0;
+        // TODO: assemble data
+
+        Ret_value = 2000000; // For Example Bob Input 2 million
+
+        Return Data.Int32(ret_value);
+    }
+}
+```
+
+Class name format description:
 
 `MPCYaoMillionairesProblem_YaoMillionairesProblem_int_int_01`
 
-    MPCYaoMillionairesProblem           MPC prefix + algorithm function name in privacy contract
-    YaoMillionairesProblem              method name
-    int_int                             type of two input parameters
-    01                                  data provider number, Alice is 01, Bob is 02
+```
+- MPCYaoMillionairesProblem MPC prefix + algorithm function name in privacy contract
+- YaoMillionairesProblem method name
+- int_int type of two input parameters
+- 01 Data provider number, Alice is 01, Bob is 02
+```
 
 `mpc_f_0588f14217b11e0f77e50d03a88ba866_01`
 
-    mpc_f                               specific prefix
-    0588f14217b11e0f77e50d03a88ba866    method The MD5 value of YaoMillionairesProblem, MD5 is used here for future function overloading.
-    01                                  data provider number, Alice is 01, Bob is 02
+```
+- mpc_f specific prefix
+- 0588f14217b11e0f77e50d03a88ba866 Method The MD5 value of the YaoMillionairesProblem function signature
+- 01 Data provider number, Alice is 01, Bob is 02
+```
 
-**Note: The data provider MUST implement the `InputImpl` method in the proxy class, otherwise the data obtained during the calculation is the default value of the associated type.**
+> **Note: The data node program MUST implement the `InputImpl` method of the proxy class**
 
-* Define program entry
+#### Implementation program entry main
 
-Added application entry class, which is used to accept parameters and start the service when launching the application:
+Both projects add data node service program entry classes as follows:
 
 ```java
-public class Client {
-    public static void main(String[] args) {
+Public class Client {
+    Public static void main(String[] args) {
         ConfigInfo cfgInfo = new ConfigInfo(args);
         // Here you can hardcode the parameters in cfgInfo
         // cfgInfo.walletPath=""
         // cfgInfo.walletPass=""
         // cfgInfo.iceCfgFile=""
         AppClient app = new AppClient(cfgInfo);
-        app.start(args);
+        App.start(args);
     }
 }
 ```
 
-The program needs to pass in 3 parameters, which can be passed in via the `args` system variable or hardcoded in the `main` function.
+The program needs to pass in 3 parameters, the parameter description:
 
-`main` function into the parameter description:
+| Parameter  | Description                            | Available |
+| :--------- | :------------------------------------- | :-------- |
+| walletPath | Privacy Data Provider Wallet File Path | No        |
+| walletPass | Account Password                       | No        |
+| iceCfgFile | ICE Profile                            | No        |
 
-| Parameter  | Description                            | Empty |
-| :--------- | :------------------------------------- | :---- |
-| walletPath | Privacy data provider wallet file path | No    |
-| walletPass | Account password                       | No    |
-| iceCfgFile | ICE profile                            | No    |
+#### Packaged Data Node Program
 
-**Step 2: Configure related files**
-
-The `cfg.client1.config` of the `Alice` side is configured as follows:
-
-
-```
-TaskCallback.Proxy=tasksession:default -h 127.0.0.1 -p 10001
-Callback.Client.Endpoints=default -h 10.10.8.163
-```
-
-The `cfg.client2.config` of the `Bob` side is configured as follows:
-
-```
-TaskCallback.Proxy=tasksession:default -h 127.0.0.1 -p 10002
-Callback.Client.Endpoints=default -h 10.10.8.163
-```
-
-Configuration file description:
-
-- Two data providers (`Alice` & `Bob`) are required in the MPC calculation process to start the private data service at the same time, but the `Alice` and `Bob` sides are not started in the order.
-- The address and port of `TaskCallback.Proxy` and [Startup with MPC calculation function](#) In the PlatON node, the address and port configured in the ICE configuration file specified by the parameter `--mpc.ice` are the same.
-- If the configuration of `--mpc.ice` is not specified when starting the node, the default port is `8201`.
-- `Callback.Client.Endpoints` is the server address where the data privacy service is started.
-
-
-**Step 3: Packing and running**
-
-You can run the maven project as an executable jar package, execute it in the path of the project `pom.xml`
+Package the two engineering projects separately, and execute the path where the project `pom.xml` is located:
 
 ```bash
 $ mvn build
 ```
 
-You can also execute the main function directly. We run as a jar package with the following commands:
+The two data node service programs output: `mpc-data-sdk-client1-1.0-SNAPSHOT.jar`, `mpc-data-sdk-client2-1.0-SNAPSHOT.jar`.
 
-Alice side:
+#### Configuring the data node program
+
+This example assumes that it is built as a private network and implemented on the same machine.
+
+The `Alice` data node creates the configuration file `cfg.client1.config` with the following contents:
+
+```config
+TaskCallback.Proxy=tasksession:default -h 127.0.0.1 -p 10001
+Callback.Client.Endpoints=default -h 127.0.0.1
+```
+
+The `Bob` data node creates the configuration file `cfg.client2.config` with the following contents:
+
+```config
+TaskCallback.Proxy=tasksession:default -h 127.0.0.1 -p 10002
+Callback.Client.Endpoints=default -h 127.0.0.1
+```
+
+Configuration file description:
+
+- The address and port of `TaskCallback.Proxy` and [Startup with MPC calculation function](en-us/basics/[English]-Private-Networks#Enabling-MPC-for-a-node) In the `PlatON` node, the address and port configured in the ICE configuration file specified by the parameter `--mpc.ice` are the same (the default port is 8201).
+- `Callback.Client.Endpoints` is the server address where the data privacy service is started.
+
+#### The program runs
+
+Run the Alice data node:
 
 ```bash
 $ java -jar mpc-data-sdk-client1-1.0-SNAPSHOT.jar --walletPath=./config/9a568e649c3a9d43b7f565ff2c835a24934ba447 --walletPass=11111111 --iceCfgFile=./config/cfg.client1.config
 ```
 
-Bob side:
+Run the Bob data node:
 
 ```bash
 $ java -jar mpc-data-sdk-client2-1.0-SNAPSHOT.jar --walletPath=./config/ce3a4aa58432065c4c5fae85106aee4aef77a115 --walletPass=11111111 --iceCfgFile=./config/cfg.client2.config
 ```
 
-The above command will cause the program to connect to the MPC compute node when it starts. It should be noted that only the data provider and the respective `MPC` compute nodes are successfully connected to proceed to the next step.
+After the data node program is started, it will be registered to the computation node and run as a data service. They wait for privacy calculation requests and provide data services in privacy calculations.
 
+### Privacy Computing Client Implementation
 
-### Privacy Client Implementation
+The privacy computing client is based on the client development kit (`mpc-proxy-sdk`), which implements privacy calculation initiation, calculation result query, etc., and the development package details refer to [Privacy Client Development Kit] (#privacy-contract-develop-manual #私客户端开发包).
 
-By introducing the privacy client development kit (`mpc-proxy-sdk`), users can build their own privacy client to initiate calculations, query calculation results, etc. Development package interface details refer to [Privacy Client Development Kit](#).
+#### Creating a maven project
 
-precondition:
-
-1. Two MPC compute nodes have been running normally;
-2. The privacy data service program has been successfully connected to each computing node;
-3. Be prepared to calculate the originator's wallet and password;
-4. The contract address of the `WASM` contract on the chain has been obtained;
-
-After confirming that the above four conditions have been met, start the following process:
-
-**Step 1: Privacy client implementation code**
-
-- Create a JAVA normal Maven project, modify `pom.xml`, add the maven repository address
+- Create a JAVA normal Maven project with `IntelliJ`, modify `pom.xml`, add the maven repository address
 
 ```xml
 <repositories>
@@ -512,20 +472,28 @@ After confirming that the above four conditions have been met, start the followi
 </dependency>
 ```
 
-- Code implementation
+- Add privacy contract proxy class
 
-Create a new `platon.mpc.proxy` package in the project, compile `plang` and generate `ProxyYaoMillionairesProblem.java` in the JAVA code to create the program entry. The main function is implemented as follows:
+Create a new `platon.mpc.proxy` package and put `ProxyYaoMillionairesProblem.java` generated by `plang` into the package. This file provides interface encapsulation such as privacy calculation initiation and calculation result query.
+
+#### Source implementation
+
+Create a program entry function based on the `ProxyYaoMillionairesProblem` class, and complete the privacy calculation initiation and calculation result query.
+
+> **Note: The originator's wallet path, wallet address, and unlock password need to be filled in correctly, and the wallet address account should have sufficient energon**
+
+The main function is implemented as follows:
 
 ```java
-public static void main(String[] args) {
+Public static void main(String[] args) {
     /*
     * 0. The following parameters are required
     */
-    //Calculate the originator wallet file, where the request is initiated by the Alice side
+    / / Calculate the originator wallet file, where the request is initiated by the Alice side
     String walletPath = "config/9a568e649c3a9d43b7f565ff2c835a24934ba447";
     //wallet password
     String walletPass = "11111111";
-    //RPC port address of any node
+    / / RPC port address of any node
     String url = "http://127.0.0.1:6789";
     //The corresponding WASM contract address issued
     String contractAddress = "0x43355c787c50b647c425f594b441d4bd75198888";
@@ -540,98 +508,33 @@ public static void main(String[] args) {
     * 2. Initiate the calculation and get the calculated transaction hash, if it fails, try again 3 times
     */
     String transactionHash = client.startCalc(ProxyYaoMillionairesProblem.Method.boolean_YaoMillionairesProblem_int_int, 3);
-
-}
-```
-
-**Step 2: Initiate a calculation request**
-
-In this step, for debugging purposes, you can run the main function directly on the IDE to initiate the calculation. At this time, the transaction hash that initiates the calculation is output in the console:
-
-```
-Transaction hash: 0xa7423e579c6a6bbbc57d6201c6bef3f09944bad78c7036f0108fa27daef5ff6c
-```
-
-**Step 3: Query results**
-
-Can be obtained by the method provided in sdk, the code is implemented as follows:
-
-```java
-public static void main(String[] args) {
+    
     /*
-    * 0. The following parameters are required
-    */
-    //Calculate the originator wallet file, where the request is initiated by the Alice side
-    String walletPath = "config/9a568e649c3a9d43b7f565ff2c835a24934ba447";
-    //wallet password
-    String walletPass = "11111111";
-    //RPC port address of any node
-    String url = "http://127.0.0.1:6789";
-    //The corresponding WASM contract address issued
-    String contractAddress = "0x43355c787c50b647c425f594b441d4bd75198888";
-
-    /*
-    * Create a new client
-    */
-    ProxyYaoMillionairesProblem client = new ProxyYaoMillionairesProblem(url, walletPath, walletPass);
-    client.setContractAddress(contractAddress);
-
-   /*
-    * By initiating a transaction hash, querying results, timeout 1s
-    * transactionHash shows the transaction in the console for the second step.
+   * 3. Query calculation results
    */
    String cipher = client.getResultByTransactionHash(transactionHash, 1000);
-        if (cipher != null) {
-            boolean b = client.getBool(cipher);
-            logger.info("Client1 result : {} richer", b ? "alice" : "bob");
+        If (cipher != null) {
+            Boolean b = client.getBool(cipher);
+            Logger.info("Client1 result : {} is richer", b ? "alice" : "bob");
         } else {
-            logger.info("try later!");
+            Logger.info("try later!");
         }
    }
 }
 ```
 
-The result `cipher` returned by the transaction hash is the ciphertext, and the `getBool(cipher)` method decrypts and converts the ciphertext to the appropriate type.
-
-**Note: The plaintext can only be decrypted by the calculation initiator in the previous step. Others can only get the ciphertext. The conversion with the `getBool(cipher)` method will fail.**
-
-Query transaction receipt:
+`IntelliJ` directly runs the main function to initiate the calculation, and the console will output the transaction hash that initiated the calculation:
 
 ```bash
-$ ./platon attach http://localhost:7789
-> eth.getTransactionReceipt("0xa7423e579c6a6bbbc57d6201c6bef3f09944bad78c7036f0108fa27daef5ff6c")
+Transaction hash: 0xa7423e579c6a6bbbc57d6201c6bef3f09944bad78c7036f0108fa27daef5ff6c
+Client1 result : alice is richer
 ```
 
-The results are as follows:
+The entire privacy calculation is completed, and the result is: **Alice data node input value is larger than the Bob data node input value**. Meanwhile the input data is not leaked between data nodes during the calculation.
 
-```json
-{
-  blockHash: "0x7b59c274d6e4e67cbee9e92e754ada44e6ff88fe4de632680758a3d6eb9eecc0",
-  blockNumber: 4977,
-  contractAddress: null,
-  cumulativeGasUsed: 112767,
-  from: "0x60ceca9c1290ee56b98d4e160ef0453f7c40d219",
-  gasUsed: 112767,
-  logs: [{
-      address: "0xb136a7190dd23c57c1d8f07011174af3bbe3cfe2",
-      blockHash: "0x7b59c274d6e4e67cbee9e92e754ada44e6ff88fe4de632680758a3d6eb9eecc0",
-      blockNumber: 4977,
-      data: "0xf84301b84064396361306232363866376163336339323732313565666234636335653038393339336631376631663336363765656666313664396536653836313866353137",
-      logIndex: 0,
-      removed: false,
-      topics: ["0x9938524d0b7638d8cb06ef86cc46ae3074007aea703ce237efe1470b6bdb5f31"],
-      transactionHash: "0xa7423e579c6a6bbbc57d6201c6bef3f09944bad78c7036f0108fa27daef5ff6c",
-      transactionIndex: 0
-  }],
-  logsBloom: "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000020000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000004000000000000000000000000000000000000000000000000000000000000000000000800000000000000000000000000000000",
-  status: "0x1",
-  to: "0xb136a7190dd23c57c1d8f07011174af3bbe3cfe2",
-  transactionHash: "0xa7423e579c6a6bbbc57d6201c6bef3f09944bad78c7036f0108fa27daef5ff6c",
-  transactionIndex: 0
-}
-```
+> **Note: Only the calculation initiator can decrypt the plaintext, others can only get the ciphertext, and the `getBool(cipher)` method conversion will fail. **
 
-In the result receipt, if the log is empty, the task execution fails! Refer to the full project [mpc-proxy-sdk](https://github.com/PlatONnetwork/privacy-contract-sdk/blob/master/README.md) for more details and descriptions.
+For more details and descriptions please refer to the full project [mpc-proxy-sdk](https://github.com/PlatONnetwork/privacy-contract-sdk/blob/master/README.md).
 
 ## Deep understanding of privacy contract programming
 
