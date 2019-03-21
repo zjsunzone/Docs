@@ -116,7 +116,7 @@ $ echo "1abd1200759d4693f4510fbcf7d5caad743b11b5886dc229da6c0747061fca36" > ./da
 $ cat ./data/platon/nodekey
 ```
 
-5. **Execute the following command to initialize the genesis state.**
+5. Execute the following command to initialize the genesis state.
 
 - Windows command line:
 
@@ -326,7 +326,7 @@ $ echo "9baaf2b3e0dadae0e265de63c70421364fb4415022cd3885c4bbeec0539a5320" > ./da
 $ cat ./data1/platon/nodekey
 ```
 
-5. **Initialize the genesis information for node 0 and start the node.**
+5. Initialize the genesis information for node 0 and start the node.
 
 - Windows command line:
 
@@ -361,3 +361,83 @@ $ ./platon --identity "platon" --datadir ./data1 --port 16790 --rpcaddr 0.0.0.0 
 ```
 
 7. **The cluster is set up successfully when both nodes indicate that consensus was reached and that blocks are being inserted into the chain.**
+
+## Enabling MPC for a node
+
+The MPC Compute feature is a secure multi-party computing feature supported by the `PlatON` platform that provides the infrastructure for privacy calculations. More MPC related please [reference here](en-us/development/[English]-PlatON-Privacy-Contract-Guide). **MPC calculation function can only be enabled in [Cluster Environment](#PlatON-%e9%9b%86%e7%be%a4%e7%8e%af%e5%a2%83)**
+
+The following operations are also required when starting the node:
+
+1. Check the dependency library
+
+```bash
+$ env | grep LD_LIBRARY_PATH
+LD_LIBRARY_PATH=/home/platon/platon-node/mpclib
+```
+
+2. MPC computing service communication uses a separate port, the default is 8201. If multiple compute nodes are enabled on a single machine, enable the `--mpc.ice` option to enable MPC calculations in an explicitly declared manner.
+
+```
+--mpc --mpc.ice ./{mpc-ice-config-file} --mpc.actor 0xa7e6d8a00ba33ea732b2c924e1edc4e4b753e9ca
+```
+
+Option Description:
+
+| Options     | Description                                                  |
+| :---------- | :----------------------------------------------------------- |
+| --mpc       | (Required) Turn on mpc calculation function                  |
+| --mpc.ice   | (Optional) The mpc node initializes the ice configuration. The configuration file is ./{mpc-ice-config-file} |
+| --mpc.actor | (Optional) mpc calculates the specified wallet address, which is consistent with the privacy contract participant address (can be set via rpc interface eth_setActor(Address)) |
+
+
+3. Configuration file settings. If the `--mpc.ice` option is enabled when the node is started, you need to configure the `{mpc-ice-config-file}` file in the node working directory to configure the `MPC communication port` and keep the default port. . File configuration is as follows
+
+```
+MpcNode.Server.Endpoints=default -p 8201
+```
+
+> **note: The port behind `-p` defaults to 8201 and can be modified by itself but not duplicated by other ports in the system. **
+
+4. Since two nodes are deployed on the same machine, two ports are specified for differentiation.
+
+```
+$ touch cfg.server0.config
+$ echo "MpcNode.Server.Endpoints=default -p 10001" > cfg.server0.config
+
+$ touch cfg.server1.config
+$ echo "MpcNode.Server.Endpoints=default -p 10002" > cfg.server1.config
+```
+
+5. Start the node
+
+
+```
+$ nohup ./platon ... --nodekey "./data0/platon/nodekey" --mpc --mpc.ice ./cfg.server0.config --mpc.actor 0x9a568e649c3a9d43b7f565ff2c835a24934ba447 >> node0.log 2>&1 &
+$ nohup ./platon ... --nodekey "./data1/platon/nodekey" --mpc --mpc.ice ./cfg.server1.config --mpc.actor 0xce3a4aa58432065c4c5fae85106aee4aef77a115 >> node1.log 2>&1 &
+```
+
+6. View the log. /log/platon_mpc_xxx.log (xxx is the current node process number) as printed as follows:
+
+```
+MPC ENGINE INIT SUCCESS
+```
+
+Then mpc is initialized successfully.
+
+## Enable VC function for the node
+
+For more VC related please refer to [here] (zh-cn/development/[Chinese-Simplified]-validable contract).
+
+Add the following parameters when starting the node:
+
+```
+--vc --vc.actor 0xd7398978d04565ccf44097106e1cb7e9148d8ec9 --wasmlog wasm.log
+```
+
+Option Description:
+
+| Options    | Description                                                  |
+| :--------- | :----------------------------------------------------------- |
+| --vc       | (Required) Enable VC calculation function                    |
+| --vc.actor | (Required) is used to specify the account will be calculated and the certificate is released on the chain |
+| --wasmlog  | Specify this parameter to execute the VC calculation log will be output to `wasm.log`. If not specified, the log will be output to the node log |
