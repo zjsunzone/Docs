@@ -1,4 +1,4 @@
-> PlatON不是一个狭义的区块链平台，PlatON更应该认为是大规模计算网络，一个基于密码学算法构建的Trustless计算基础设施。
+> PlatON不是一个狭义的区块链平台，PlatON更应该被认为是大规模计算网络，一个基于密码学算法构建的Trustless计算基础设施。
 
 <img src="zh-cn/basics/images/architecture-cn.png"  alt="architecture" />
 
