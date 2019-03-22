@@ -190,9 +190,9 @@ Assuming that the compilation directory is `home/path/to/mpcvm/build`, the compi
 Append the compiled `MPC VM` libraries path `~/home/path/to/mpcvm/build/lib` to current user libraries environment variable:
 
 ```bash
-grep "export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:~/home/path/to/mpcvm/build/lib" ~/.bashrc || echo "export  LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:~/home/path/to/mpcvm/build/lib" >> ~/.bashrc
+$ grep "export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:~/home/path/to/mpcvm/build/lib" ~/.bashrc || echo "export  LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:~/home/path/to/mpcvm/build/lib" >> ~/.bashrc
 
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/home/path/to/mpcvm/build/lib
+& export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/home/path/to/mpcvm/build/lib
 ```
 
 - Compiling `platon`
@@ -321,12 +321,18 @@ Most of the software installed with the Chocolatey package manager use the defau
 Create `src/github.com/PlatONnetwork/` and `bin` directories under the current `%GOPATH%` directory and clone the source code of `PlatON-GO` under the `PlatONnetwork` directory:
 
 ```
-git clone https://github.com/PlatONnetwork/PlatON-Go.git --recursive
+> git clone https://github.com/PlatONnetwork/PlatON-Go.git --recursive
 ```
 
 #### 3. Compile
 
-Executing different compilation commands under the source directory `PlatON-GO` can generate executable files with different functions, as follows:
+Before compiling the project, we need to run the following scripts in the `PlatON-GO` directory to compile the lib libraries, and the script needs to be executed in the bash environment:
+
+```
+> ./build/build_deps.sh
+```
+
+Then executing different compilation commands under the source directory `PlatON-GO` can generate executable files with different functions, as follows:
 
 1.Compiling PlatON Foundation Package
 
