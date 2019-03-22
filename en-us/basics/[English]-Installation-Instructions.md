@@ -30,10 +30,8 @@ Officially, two binary packages are available. Users can download and install th
 1.Install PlatON Foundation Package
 
 ```bash
-# 下载
 $ wget https://download.platon.network/0.5/platon-ubuntu-amd64-0.5.0.tar.gz
 
-# 解压
 $ tar -xvzf platon-ubuntu-amd64-0.5.0.tar.gz
 ```
 
@@ -327,14 +325,6 @@ git clone https://github.com/PlatONnetwork/PlatON-Go.git --recursive
 ```
 
 #### 3. Compile
-
-Execute the compilation command under the source directory `PlatON-GO`, as follows:
-
-```
-go run build/ci.go install ./cmd/platon
-```
-
-#### 3. 编译
 
 Executing different compilation commands under the source directory `PlatON-GO` can generate executable files with different functions, as follows:
 
