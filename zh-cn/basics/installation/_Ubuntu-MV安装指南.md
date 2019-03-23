@@ -100,8 +100,6 @@ $ git clone https://github.com/PlatONnetwork/PlatON-Go.git --recurive
 
   `MPC`功能和`VC`功能可以相互独立安装，以下提供三种编译方式，用户可以按需选择。
 
-> **注意：编译带`MPC`或`VC`功能的`PlatON`源码之前需要确保环境已经安装好相关依赖，安装方式请参考[这里](#依赖安装)**。
-
 - **编译带`MPC`功能`PlatON`客户端**
 
 ```bash
@@ -133,6 +131,7 @@ $ make all-with-mv
 编译完成之后在`PlatON-Go/build/bin`目录下会生成`platon`、`ethkey`和`ctool`可执行文件，将此三个可执行文件拷贝到自己工作目录运行即可。
 
 > 注意：重复编译会覆盖之前生成的可执行文件。
+
 
 ## 依赖包安装
 
