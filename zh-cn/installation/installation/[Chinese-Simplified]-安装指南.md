@@ -2,8 +2,6 @@
 
 `PlatON`支持以下不同的运行环境，根据以下链接可以找到对应平台的安装指南：
 
-
-
 + `PlatON`基础环境安装 
 
 	- [Ubuntu环境安装](/zh-cn/basics/installation/_Ubuntu安装指南)

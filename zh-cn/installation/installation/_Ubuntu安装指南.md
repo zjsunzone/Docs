@@ -12,29 +12,18 @@
 - [Debian](#Debian安装)
 - [源码](#源码编译安装)
 
+> **注意：由于目前官方提供的二进制包、PPA源和Debian包只支持16.04版本，在非16.04版本的环境安装`PlatON`只能通过编译源码的方式安装。**
+
+
 #### PPA源安装
 
-添加`PPA`源，然后安装`PlatON`客户端，由于没有发布18.04版本的PPA源，所以在ubuntu18.04和ubuntu16.04上的安装方式有些差别：
-
-- Ubuntu16.04
+添加`PPA`源，然后安装`PlatON`客户端，如下：
 
 ```bash
 # 添加PPA
 $ sudo add-apt-repository ppa:platonnetwork/platon
 $ sudo apt-get update
 
-# 安装PlatON
-$ sudo apt-get install platon
-```
-- Ubuntu18.04
-
-```
-# 添加PPA
-$ sudo add-apt-repository ppa:platonnetwork/platon
-$ sudo vi platonnetwork-ubuntu-platon-bionic.list
->> 将文件中bionic改为xenial
-
-$ sudo apt-get update
 # 安装PlatON
 $ sudo apt-get install platon
 ```
