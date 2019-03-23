@@ -71,7 +71,7 @@ After the installation, the binaries and other components of the package should 
 
 The Ubuntu build environment needs to meet the following requirements:
 
-- System version: `Ubuntu 16.04.1 and above`
+- System version: `Ubuntu 16.04.1`
 - git:`2.19.1 and above`
 - Compiler: `gcc(4.9.2+)`
 - go language development kit: `go(1.7+)`
