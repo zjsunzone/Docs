@@ -10,9 +10,7 @@ Window环境支持以下三种安装方式：
 
 ### 官方二进制下载安装
 
-Windows各版本的`PlatON`二进制文件下载地址如下：
-
-- Platon基础包：<https://download.platon.network/0.5/platon-windows-x86_64-0.5.0.zip>
+Windows各版本的`PlatON`二进制包下载地址：<https://download.platon.network/0.5/platon-windows-x86_64-0.5.0.zip>
 
 下载后无需安装，直接解压即可使用。
 
