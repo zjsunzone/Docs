@@ -82,7 +82,7 @@ $ sudo dpkg -i platon-all-ubuntu-amd64-0.5.0.deb
 - go语言开发包：`go(1.7+)`
 - cmake:`3.0+` 
 
-> **注意：保证满足编译环境要求**
+> **注意：保证满足编译环境要求！**
 
 执行以下步骤完成编译安装：
 
@@ -90,13 +90,13 @@ $ sudo dpkg -i platon-all-ubuntu-amd64-0.5.0.deb
 
  请参考[这里](#依赖包安装)安装`MPC`及`VC`相关依赖包。
 
-### 1. 获取源码
+### 2. 获取源码
 
 ```
 $ git clone https://github.com/PlatONnetwork/PlatON-Go.git --recurive
 ```
 
-### 2. 编译
+### 3. 编译
 
   `MPC`功能和`VC`功能可以相互独立安装，以下提供三种编译方式，用户可以按需选择。
 
