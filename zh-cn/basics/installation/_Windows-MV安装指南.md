@@ -68,18 +68,21 @@ Window环境支持以下三种安装方式：
 ### 3. 编译
 
 > **注意:以下编译命令均需在`Git-bash`环境运行， 且步骤1中编译环境都安装！**
+进入源码目录`PlatON-GO`：
+
+```
+> cd PlatON-GO
+```
 
 在编译源码目录之前需要在源码目录`PlatON-GO`下执行以下脚本编译所需依赖库：
 
 ```
-> cd PlatON-GO
 > ./build/build_deps.sh
 ```
 
 在源码目录`PlatON-GO`下执行以下编译命令生成可执行文件`platon`、`ethkey`和`ctool`：
 
 ```
-> cd PlatON-GO
 > go run build/ci.go install -mv on ./cmd/platon
 > go run build/ci.go install ./cmd/ethkey
 > go run build/ci.go install ./cmd/ctool
