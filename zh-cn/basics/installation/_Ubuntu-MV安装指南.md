@@ -113,6 +113,16 @@ $ make all-with-mv
   
 以下提供三种`MPC`依赖安装方式，分别为二进制包安装、Debian包安装和编译`MPC`库源码安装，其中二进制包和Debian包的安装方式适用于CPU架构在0.2及以上Ubuntu16.04系统，若CPU架构在0.2及以下，需要自行编译`MPC`库源码安装！
 
+- **Debian包安装方式:**
+
+```
+# 下载MPC lib安装包 
+$ wget https://download.platon.network/0.5/platon-mpclib-ubuntu-amd64-0.5.0.deb
+
+# 安装MPC lib
+$ sudo dpkg -i platon-mpclib-ubuntu-amd64-0.5.0.deb
+```
+
 - **二进制包安装方式：**
 
 ```bash
@@ -128,16 +138,6 @@ $ mv platon-mpclib-ubuntu-amd64-0.5.0 platon-mpclib
 $ grep "export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:~/home/path/to/platon-mpclib" ~/.bashrc || echo "export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:~/home/path/to/platon-mpclib" >> ~/.bashrc
 
 $ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/home/path/to/platon-mpclib
-```
-
-- **Debian包安装方式:**
-
-```
-# 下载MPC lib安装包 
-$ wget https://download.platon.network/0.5/platon-mpclib-ubuntu-amd64-0.5.0.deb
-
-# 安装MPC lib
-$ sudo dpkg -i platon-mpclib-ubuntu-amd64-0.5.0.deb
 ```
 
 - **编译MPC库源码安装** 
