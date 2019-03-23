@@ -46,6 +46,8 @@ Start PowerShell as an administrator and install Platon using the choco command:
 > choco install golang
 // install mingw
 > choco install mingw
+// install cmake
+> choco install cmake
 ```
 Most of the software installed with the Chocolatey package manager use the default installation path, although some publishers override the default settings in their software. Installing these packages will modify the PATH environment variable. The final installation path can be found in PATH.
 
