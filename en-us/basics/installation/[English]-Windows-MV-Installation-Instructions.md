@@ -18,8 +18,8 @@ After complation, you will find `platon,ethkey` in the default installation path
 
 ### Binary package based Installation
 1. Create `PlatON` working directory `%PLATON%` 
-2. Download the dependency package from [here] (https://download.platon.network/0.5/platon-mpclib-windows-x86_x64-0.5.0.zip) and extract it to `%PLATON%\mpclib`
-3. Download the `PlatON` binary package with privacy and verifiable contracts from [here] (https://download.platon.network/0.5/platon-windows-x86_64-0.5.0-with-mv.zip) and extract it. To the working directory `%PLATON%`
+2. Download the dependency package from [here](https://download.platon.network/0.5/platon-mpclib-windows-x86_x64-0.5.0.zip) and extract it to `%PLATON%\mpclib`
+3. Download the `PlatON` binary package with privacy and verifiable contracts from [here](https://download.platon.network/0.5/platon-windows-x86_64-0.5.0-with-mv.zip) and extract it. To the working directory `%PLATON%`
 
 The extracted files should be as following:
 
@@ -33,6 +33,7 @@ The Windows build environment requires:
 - git:`2.19.1`
 - go language development kit: `go(1.11+)`
 - mingw: `mingw(V6.0.0)`
+- cmake: `3.0+`
 
 > Note: You can install the above compilation environment by yourself. Before compiling the `Platon` source code, make sure that the above environment works properly. The `chocolatey` installation can also be used, referring to the following ways.
 

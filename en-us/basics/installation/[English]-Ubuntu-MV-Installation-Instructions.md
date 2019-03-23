@@ -26,11 +26,11 @@ $ sudo apt-get install platon-all
 
 After the installation, the binaries and other components of the package should be installed to `/usr/bin`
 
-
 ### Binary package based Installation
 
 #### 1. Dependencies Installation 
-Please refer to [here](#Dependency package installation) to install related dependencies.
+
+Please refer to [here](#Dependency-package-Installation) to install related dependencies.
 
 #### 2. PlatON Installaion
 

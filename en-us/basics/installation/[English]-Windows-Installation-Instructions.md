@@ -26,11 +26,13 @@ The extracted files should be as following:
 - `ctool` wasm contract deploy kit
 
 ### Source code based Installation
+
 The Windows build environment requires:
 
 - git:`2.19.1`
 - go language development kit: `go(1.11+)`
 - mingw: `mingw(V6.0.0)`
+- cmake: `3.0+`
 
 > Note: You can install the above compilation environment by yourself. Before compiling the `Platon` source code, make sure that the above environment works properly. The `chocolatey` installation can also be used, referring to the following ways.
 
