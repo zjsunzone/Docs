@@ -19,7 +19,7 @@ After complation, you will find `platon,ethkey` in the default installation path
 ### Binary package based Installation
 1. Create `PlatON` working directory `%PLATON%` 
 2. Download the dependency package from [here](https://download.platon.network/0.5/platon-mpclib-windows-x86_x64-0.5.0.zip) and extract it to `%PLATON%\mpclib`
-3. Download the `PlatON` binary package with privacy and verifiable contracts from [here](https://download.platon.network/0.5/platon-windows-x86_64-0.5.0-with-mv.zip) and extract it. To the working directory `%PLATON%`
+3. Download the `PlatON` binary package with privacy and verifiable contracts from [here](https://download.platon.network/0.5/platon-windows-x86_64-0.5.0-with-mv.zip) and extract it to the working directory `%PLATON%`
 
 The extracted files should be as following:
 
@@ -47,6 +47,8 @@ Start PowerShell as an administrator and install Platon using the choco command:
 > choco install golang
 // install mingw
 > choco install mingw
+// install cmake
+> choco install cmake
 ```
 Most of the software installed with the Chocolatey package manager use the default installation path, although some publishers override the default settings in their software. Installing these packages will modify the PATH environment variable. The final installation path can be found in PATH.
 
@@ -83,4 +85,4 @@ Run the following scripts in the source directory `PlatON-GO` to generate the `p
 After compilation, the `platon`、 `ethkey` and `ctool` executable files will be generated in the `PlatON-Go/build/bin` directory，and then copy these executable files to your own working directory.
 
 #### 5. Dependency package installation
-Download the dependency package from [here] (https://download.platon.network/0.5/platon-mpclib-windows-x86_x64-0.5.0.zip) and extract it to `%PLATON%\mpclib`
+Download the dependency package from [here](https://download.platon.network/0.5/platon-mpclib-windows-x86_x64-0.5.0.zip) and extract it to `%PLATON%\mpclib`
