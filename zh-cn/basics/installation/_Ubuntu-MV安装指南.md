@@ -91,7 +91,7 @@ $ sudo dpkg -i platon-all-ubuntu-amd64-0.5.0.deb
 ### 2. 获取源码
 
 ```
-$ git clone https://github.com/PlatONnetwork/PlatON-Go.git --recurive
+$ git clone https://github.com/PlatONnetwork/PlatON-Go.git --recursive
 ```
 
 ### 3. 编译

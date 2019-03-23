@@ -13,13 +13,27 @@ This document is a PlatON installation guide on Ubuntu and is available in four 
 
 ### PPA based Installation
 
-Add the `PPA` source and install the `PlatON` client as follows:
+Add the `PPA` source and install the `PlatON` client as follows. Note, there are some differences in installation methods between ubuntu18.04 and ubuntu16.04:
+
+- Ubuntu16.04 
 
 ```bash
 # Add PPA
 $ sudo add-apt-repository ppa:platonnetwork/platon
 $ sudo apt-get update
 
+# Install Platon
+$ sudo apt-get install platon-all
+```
+- Ubuntu18.04 
+
+```bash
+# 添加PPA
+$ sudo add-apt-repository ppa:platonnetwork/platon
+$ sudo vi platonnetwork-ubuntu-platon-bionic.list
+>> Change bionic to xenial in the file
+
+$ sudo apt-get update
 # Install Platon
 $ sudo apt-get install platon
 ```

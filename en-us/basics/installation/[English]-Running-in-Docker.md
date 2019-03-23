@@ -7,6 +7,7 @@ The docker installation is relatively simple, you can refer to the following two
 
 ### Run Container
 - Pull Platon Image
+
 ```bash
 $ sudo docker pull platonnetwork/platon:tag #e.g: platonnetwork/platon:0.5.0
 ```
