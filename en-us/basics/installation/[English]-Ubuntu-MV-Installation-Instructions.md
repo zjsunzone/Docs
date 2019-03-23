@@ -113,6 +113,16 @@ $ sudo apt-get install libgmpxx4ldbl libgmp-dev libprocps4-dev libssl-dev
 #### 2. **Extended library installation**
 The following three installation modes are provided. The binary package and debian package installation modes are applicable to Ubuntu system with CPU architecture of 0.2 or above. If the CPU architecture is 0.2 or below, you need to compile source code yourself!
 
+- **Debian package based installation**
+
+```
+# Download lib installation package
+$ wget https://download.platon.network/0.5/platon-mpclib-ubuntu-amd64-0.5.0.deb
+
+# Install lib
+$ sudo dpkg -i platon-mpclib-ubuntu-amd64-0.5.0.deb
+```
+
 - **Binary package based installation**
 
 ```bash
@@ -128,16 +138,6 @@ $ mv platon-mpclib-ubuntu-amd64-0.5.0 platon-mpclib
 $ grep "export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:~/home/path/to/platon-mpclib" ~/.bashrc || echo "export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:~/home/path/to/platon-mpclib" > > ~/.bashrc
 
 $ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/home/path/to/platon-mpclib
-```
-
-- **Debian package based installation**
-
-```
-# Download lib installation package
-$ wget https://download.platon.network/0.5/platon-mpclib-ubuntu-amd64-0.5.0.deb
-
-# Install lib
-$ sudo dpkg -i platon-mpclib-ubuntu-amd64-0.5.0.deb
 ```
 
 - **Compile library source installation**
