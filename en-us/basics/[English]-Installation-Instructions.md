@@ -16,5 +16,7 @@ Two different Platon clients are available to choose from, depending on your nee
 + `PlatON` extended client
 
    In addition to the basic features, additional privacy contracts and verifiable contract support are provided. Follow the appropriate link below to find installation instructions for your platform. 
+   
    - [Installation Instructions for Ubuntu](/en-us/basics/installation/%5BEnglish%5D-Ubuntu-MV-Installation-Instructions)
+   
    - [Installation Instructions for Windows](/en-us/basics/installation/%5BEnglish%5D-Windows-MV-Installation-Instructions)
