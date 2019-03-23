@@ -25,7 +25,7 @@ Window环境支持以下三种安装方式：
 
 ### 官方二进制下载安装
 
-Windows各版本的`PlatON`二进制包下载地址：<https://download.platon.network/0.5/platon-windows-x86_64-0.5.0.zip>
+Windows版本的`PlatON`二进制包下载地址：<https://download.platon.network/0.5/platon-windows-x86_64-0.5.0.zip>
 
 下载后无需安装，直接解压即可使用。
 
@@ -58,6 +58,8 @@ Windows各版本的`PlatON`二进制包下载地址：<https://download.platon.n
 > choco install golang
 // 安装mingw
 > choco install mingw
+// 安装cmake
+> choco install cmake
 ```
 
 利用`chocolatey`包管理器安装的软件大部分有默认的安装路径，部分软件可能会有各种各样的路径，这取决于软件的发布者。安装这些包将修改Path环境变量。最后安装路径可查看PATH。安装完之后请确保已安装的Go版本为1.7（或更高版本）。
@@ -73,26 +75,24 @@ Windows各版本的`PlatON`二进制包下载地址：<https://download.platon.n
 
 #### 3. 编译
 
-> 注意:以下编译命令均需在`Git-bash`环境运行， 且步骤1中编译环境都安装！
+> 注意:以下编译命令均需在`Git-bash`环境运行， 且步骤1中编译环境都已经成功安装！
 
-在编译源码目录之前需要在源码目录`PlatON-GO`下执行以下脚本编译所需依赖库：
+进入源码目录`PlatON-GO`：
 
 ```
 > cd PlatON-GO
+```
+
+在编译源码目录之前在源码目录`PlatON-GO`下执行以下脚本编译所需依赖库：
+
+```
 > ./build/build_deps.sh
 ```
 
-在源码目录`PlatON-GO`下执行以下编译命令可生成`PlatON`可执行文件，如下：
+在源码目录`PlatON-GO`下执行以下编译命令可生成`PlatON`、`ethkey`、`ctool`可执行文件，如下：
 
 ```
-> cd PlatON-GO
 > go run build/ci.go install ./cmd/platon
-```
-
-`ethkey`、`ctool`工具编译：
-
-```
-> cd PlatON-GO
 > go run build/ci.go install ./cmd/ethkey
 > go run build/ci.go install ./cmd/ctool
 ```
