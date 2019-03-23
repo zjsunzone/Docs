@@ -9,7 +9,7 @@
 ### 隐私计算架构
 
 <div align=left>
-<img src="privacy-contract/images/mpc_structure.png" width = "650" height="523"/>  
+<img src="zh-cn/development/privacy-contract/images/mpc_structure.png" width = "650" height="523"/>  
 </div>
 
 
