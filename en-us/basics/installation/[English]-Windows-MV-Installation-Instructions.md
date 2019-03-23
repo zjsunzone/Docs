@@ -85,4 +85,4 @@ Run the following scripts in the source directory `PlatON-GO` to generate the `p
 After compilation, the `platon`、 `ethkey` and `ctool` executable files will be generated in the `PlatON-Go/build/bin` directory，and then copy these executable files to your own working directory.
 
 #### 5. Dependency package installation
-Download the dependency package from [here](https://download.platon.network/0.5/platon-mpclib-windows-x86_x64-0.5.0.zip) and extract it to `%PLATON%\mpclib`
+Download the dependency package from [here](https://download.platon.network/0.5/platon-mpclib-windows-x86_x64-0.5.0.zip) and extract it to `%PLATON%\mpclib`.
