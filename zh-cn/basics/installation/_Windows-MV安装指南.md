@@ -2,24 +2,9 @@
 
 Window环境支持以下三种安装方式：
 
-- [二进制包](#二进制包安装)
 - [Chocolatey安装](#Chocolatey安装)
+- [二进制包](#二进制包安装)
 - [源码](#源码编译安装)
-
-
-## 依赖安装
-
- windows版本`MPC`依赖下载地址：<https://download.platon.network/0.5/platon-mpclib-windows-x86_x64-0.5.0.zip>，将解压之后的库文件放在`platon`可执行文件同级目录下的`mpclib`目录中，`platon`启动时会在该目录加载所需库文件。
-
-## 二进制包安装
-
-Windows版本带MPC及VC功能的`PlatON`二进制文件下载地址如下：<https://download.platon.network/0.5/platon-windows-x86_64-0.5.0-with-mv.zip>
-
-解压内容如下：
-
-- `platon` PlatON客户端
-- `ethkey` 公私钥对生成工具
-- `ctool`  合约发布调用工具
 
 ## Chocolatey安装
 
@@ -29,7 +14,19 @@ Windows版本带MPC及VC功能的`PlatON`二进制文件下载地址如下：<ht
 > choco install platonnetwork-all --version=0.5.0
 ```
 
-`platon`，`ethkey`等将默认被安装到`C:\ProgramData\chocolatey\bin`目录。
+`platon`，`ethkey`等将默认被安装到`C:\ProgramData\chocolatey\bin`目录，并加入`PATH`环境变量。
+
+
+## 二进制包安装
+1. 创建`PlatON`工作目录`%PLATON%`
+2. 从[这里](https://download.platon.network/0.5/platon-mpclib-windows-x86_x64-0.5.0.zip)下载MPC依赖包，并解压到`%PLATON%\mpclib`
+3. 从[这里](https://download.platon.network/0.5/platon-windows-x86_64-0.5.0-with-mv.zip)下载带MPC及VC功能的`PlatON`二进制包，并解压到工作目录`%PLATON%`
+   解压内容如下：
+
+   - `platon` PlatON客户端
+   - `ethkey` 公私钥对生成工具
+   - `ctool`  合约发布调用工具
+
 
 ## 源码编译安装
 
@@ -103,7 +100,9 @@ Windows版本带MPC及VC功能的`PlatON`二进制文件下载地址如下：<ht
 > go run build/ci.go install ./cmd/ctool
 ```
 
-编译完成之后在`PlatON-Go/build/bin`目录下会生成`platon`、`ethkey`和`ctool`的执行文件，将此三个可执行文件拷贝到自己工作目录运行即可。
+### 4. 可执行文件安装
 
-> 注意：重复编译会覆盖之前生成的可执行文件。
+编译完成之后在`PlatON-Go/build/bin`目录下会生成`platon`、`ethkey`和`ctool`的执行文件，将此三个可执行文件拷贝到工作目录`%PLATON%`。
 
+### 5. 依赖包安装
+从[这里](https://download.platon.network/0.5/platon-mpclib-windows-x86_x64-0.5.0.zip)下载MPC依赖包，并解压到目录`%PLATON%\mpclib`

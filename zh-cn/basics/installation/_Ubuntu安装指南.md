@@ -7,12 +7,29 @@
 
 ### 安装方式： 
 
-- [二进制包](#二进制包安装)
 - [PPA源](#PPA源安装)
+- [二进制包](#二进制包安装)
 - [Debian](#Debian安装)
 - [源码](#源码编译安装)
 
 > **注意：由于目前官方提供的二进制包、PPA源和Debian包只支持16.04版本，在非16.04版本的环境安装`PlatON`只能通过编译源码的方式安装。**
+
+
+#### PPA源安装
+
+添加`PPA`源，然后安装`PlatON`客户端，如下：
+
+```bash
+# 添加PPA
+$ sudo add-apt-repository ppa:platonnetwork/platon
+$ sudo apt-get update
+
+# 安装PlatON
+$ sudo apt-get install platon
+```
+
+安装完成后，可执行程序将安装到： `/usr/bin/`。
+
 
 #### 二进制包安装
 
@@ -30,20 +47,6 @@ $ tar -xvzf platon-ubuntu-amd64-0.5.0.tar.gz
 - `ethkey` 公私钥对生成工具
 - `ctool`  合约发布调用工具
 
-#### PPA源安装
-
-添加`PPA`源，然后安装`PlatON`客户端，如下：
-
-```bash
-# 添加PPA
-$ sudo add-apt-repository ppa:platonnetwork/platon
-$ sudo apt-get update
-
-# 安装PlatON
-$ sudo apt-get install platon
-```
-
-安装完成后，可执行程序将安装到： `/usr/bin/`。
 
 #### Debian安装
 

@@ -2,23 +2,12 @@
 
 Window环境支持以下三种安装方式：
 
-- [官方二进制包](#官方二进制下载安装)
 - [Chocolatey安装](#Chocolatey安装)
+- [官方二进制包](#官方二进制下载安装)
 - [源码](#源码编译安装)
 
 > **注意**：在通过官方二进制包和Chocolatey安装时，需要本机CPU架构在2.0及2.0以上，否则需要通过编译编码的方式安装PlatON。
 
-### 官方二进制下载安装
-
-Windows各版本的`PlatON`二进制包下载地址：<https://download.platon.network/0.5/platon-windows-x86_64-0.5.0.zip>
-
-下载后无需安装，直接解压即可使用。
-
-解压内容如下：
-
-- `platon` PlatON客户端
-- `ethkey` 公私钥对生成工具
-- `ctool`  合约发布调用工具
 
 ### Chocolatey安装
 
@@ -34,6 +23,19 @@ Windows各版本的`PlatON`二进制包下载地址：<https://download.platon.n
 `platon`，`ethkey`等将默认被安装到`C:\ProgramData\chocolatey\bin`目录。
 
 
+### 官方二进制下载安装
+
+Windows各版本的`PlatON`二进制包下载地址：<https://download.platon.network/0.5/platon-windows-x86_64-0.5.0.zip>
+
+下载后无需安装，直接解压即可使用。
+
+解压内容如下：
+
+- `platon` PlatON客户端
+- `ethkey` 公私钥对生成工具
+- `ctool`  合约发布调用工具
+
+
 ### 源码编译安装
 
 **Windows编译环境需要符合以下条件：**
@@ -43,7 +45,7 @@ Windows各版本的`PlatON`二进制包下载地址：<https://download.platon.n
 - mingw：`mingw（V6.0.0）`
 - cmake: `3.0+`
 
-说明：可自行安装以上编译环境，在编译`Platon`源码之前请确保以上环境可正常运行。也可使用`chocolatey`安装，可参考以下方式：
+可自行安装以上编译环境，在编译`PlatON`源码之前请确保以上环境可正常运行。也可使用`Chocolatey`安装，可参考以下方式：
 
 #### 1. 安装编译环境
 
@@ -65,6 +67,7 @@ Windows各版本的`PlatON`二进制包下载地址：<https://download.platon.n
 在当前`%GOPATH%`目录下创建`src/github.com/PlatONnetwork/`和`bin`目录，在`PlatONnetwork`目录下克隆`PlatON-GO`的源码:
 
 ```
+> cd src/github.com/PlatONnetwork/
 > git clone https://github.com/PlatONnetwork/PlatON-Go.git --recursive
 ```
 
@@ -85,7 +88,8 @@ Windows各版本的`PlatON`二进制包下载地址：<https://download.platon.n
 > cd PlatON-GO
 > go run build/ci.go install ./cmd/platon
 ```
-工具编译
+
+`ethkey`、`ctool`工具编译：
 
 ```
 > cd PlatON-GO
