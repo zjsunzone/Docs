@@ -26,9 +26,10 @@ $ sudo apt-get update
 # 安装PlatON
 $ sudo apt-get install platon
 ```
+
 - Ubuntu18.04
 
-```
+```bash
 # 添加PPA
 $ sudo add-apt-repository ppa:platonnetwork/platon
 $ sudo vi platonnetwork-ubuntu-platon-bionic.list
