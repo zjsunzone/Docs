@@ -101,7 +101,7 @@ Address: {566c274db7ac6d38da2b075b4ae41f4a5c481d21}
 
 ```
 D:\platon-node> mkdir .\data\platon
-D:\platon-node> echo 1abd1200759d4693f4510fbcf7d5caad743b11b5886dc229da6c0747061fca36> .\data\platon\nodekey
+D:\platon-node> echo 1abd1200759d4693f4510fbcf7d5caad743b11b5886dc229da6c0747061fca36 > .\data\platon\nodekey
 D:\platon-node> type .\data\platon\nodekey
 ```
 
