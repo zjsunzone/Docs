@@ -101,7 +101,7 @@ Address: {566c274db7ac6d38da2b075b4ae41f4a5c481d21}
 
 ```
 D:\platon-node> mkdir .\data\platon
-D:\platon-node> echo 1abd1200759d4693f4510fbcf7d5caad743b11b5886dc229da6c0747061fca36> .\data\platon\nodekey
+D:\platon-node> echo 1abd1200759d4693f4510fbcf7d5caad743b11b5886dc229da6c0747061fca36 > .\data\platon\nodekey
 D:\platon-node> type .\data\platon\nodekey
 ```
 
@@ -298,11 +298,11 @@ PublicKey是我们需要的 ***节点ID***， PrivateKey是对应的 ***节点�
 
 ```
 D:\platon-node> mkdir .\data0\platon
-D:\platon-node> echo 1abd1200759d4693f4510fbcf7d5caad743b11b5886dc229da6c0747061fca36> .\data0\platon\nodekey
+D:\platon-node> echo 1abd1200759d4693f4510fbcf7d5caad743b11b5886dc229da6c0747061fca36 > .\data0\platon\nodekey
 D:\platon-node> type .\data0\platon\nodekey
 
 D:\platon-node> mkdir .\data1\platon
-D:\platon-node> echo 9baaf2b3e0dadae0e265de63c70421364fb4415022cd3885c4bbeec0539a5320> .\data1\platon\nodekey
+D:\platon-node> echo 9baaf2b3e0dadae0e265de63c70421364fb4415022cd3885c4bbeec0539a5320 > .\data1\platon\nodekey
 D:\platon-node> type .\data1\platon\nodekey
 ```
 
